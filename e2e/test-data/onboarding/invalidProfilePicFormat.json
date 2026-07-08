@@ -1,0 +1,5 @@
+{
+  "fixtureKey": "invalidProfilePicture",
+  "fileName": "invalid-profile-picture.exe",
+  "expectedError": "unsupported file format"
+}

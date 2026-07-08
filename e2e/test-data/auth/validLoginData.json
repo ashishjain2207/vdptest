@@ -1,0 +1,5 @@
+{
+  "identifierSource": "E2E_NORMAL_USER_USERNAME or E2E_NORMAL_USER_EMAIL",
+  "passwordSource": "E2E_NORMAL_USER_PASSWORD",
+  "expectedRedirect": "/posts"
+}

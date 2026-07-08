@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 64 64" role="img" aria-label="Playwright profile picture fixture">
+  <rect width="64" height="64" fill="#2563eb"/>
+  <circle cx="32" cy="24" r="12" fill="#ffffff"/>
+  <path d="M12 58c4-14 14-22 20-22s16 8 20 22" fill="#ffffff"/>
+</svg>

@@ -1,0 +1,9 @@
+{
+  "fullName": "Duplicate Username User",
+  "username": "testuser",
+  "emailPrefix": "e2e.duplicate",
+  "emailDomain": "example.test",
+  "password": "ValidE2EPassword123!",
+  "dateOfBirth": "1995-04-15",
+  "expectedError": "username is already taken"
+}

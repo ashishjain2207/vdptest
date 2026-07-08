@@ -1,0 +1,5 @@
+{
+  "fixtureKey": "unsupportedMedia",
+  "fileName": "unsupported-media.exe",
+  "expectedError": "unsupported file type"
+}

@@ -1,0 +1,7 @@
+{
+  "displayNamePrefix": "Playwright Profile",
+  "bioPrefix": "Updated by Playwright E2E",
+  "website": "https://example.test/profile",
+  "profilePictureFixtureKey": "validProfilePicture",
+  "coverPhotoFixtureKey": "validCoverPhoto"
+}

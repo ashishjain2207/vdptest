@@ -1,0 +1,5 @@
+{
+  "targetUsername": "seeded-public-user",
+  "targetUserIdSource": "E2E_TARGET_USER_ID",
+  "targetUsernameSource": "E2E_TARGET_USERNAME"
+}

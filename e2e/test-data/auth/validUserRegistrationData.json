@@ -1,0 +1,8 @@
+{
+  "fullName": "Playwright Test User",
+  "usernamePrefix": "e2euser",
+  "emailPrefix": "e2e.registration",
+  "emailDomain": "example.test",
+  "password": "ValidE2EPassword123!",
+  "dateOfBirth": "1995-04-15"
+}
