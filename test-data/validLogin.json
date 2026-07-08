@@ -1,0 +1,8 @@
+{
+  "role": "normal",
+  "emailEnv": "VDP_E2E_NORMAL_USER_EMAIL",
+  "passwordEnv": "VDP_E2E_NORMAL_USER_PASSWORD",
+  "usernameEnv": "VDP_E2E_NORMAL_USER_USERNAME",
+  "userIdEnv": "VDP_E2E_NORMAL_USER_USER_ID",
+  "displayNameEnv": "VDP_E2E_NORMAL_USER_DISPLAY_NAME"
+}

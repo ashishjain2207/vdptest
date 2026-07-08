@@ -1,0 +1,8 @@
+{
+  "role": "existing",
+  "usernameEnv": "VDP_E2E_EXISTING_USER_USERNAME",
+  "emailEnv": "VDP_E2E_EXISTING_USER_EMAIL",
+  "passwordEnv": "VDP_E2E_EXISTING_USER_PASSWORD",
+  "userIdEnv": "VDP_E2E_EXISTING_USER_USER_ID",
+  "displayNameEnv": "VDP_E2E_EXISTING_USER_DISPLAY_NAME"
+}

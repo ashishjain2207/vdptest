@@ -1,0 +1,8 @@
+{
+  "displayNamePrefix": "E2E Registration User",
+  "usernamePrefix": "e2e-registration",
+  "emailPrefix": "e2e.registration",
+  "emailDomain": "example.test",
+  "homeCountry": "DE",
+  "password": "PlaywrightE2E!2345"
+}

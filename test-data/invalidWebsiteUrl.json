@@ -1,0 +1,7 @@
+{
+  "urls": [
+    "not-a-valid-url",
+    "ftp://unsupported.example.test",
+    "https://"
+  ]
+}
