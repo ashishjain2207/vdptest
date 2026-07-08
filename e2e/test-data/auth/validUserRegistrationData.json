@@ -1,0 +1,10 @@
+{
+  "fullName": "{{UNIQUE_FULL_NAME}}",
+  "username": "{{UNIQUE_USERNAME}}",
+  "email": "{{UNIQUE_EMAIL}}",
+  "password": "Playwright!234",
+  "confirmPassword": "Playwright!234",
+  "dateOfBirth": "1990-01-01",
+  "homeCountry": "DE",
+  "acceptTerms": true
+}

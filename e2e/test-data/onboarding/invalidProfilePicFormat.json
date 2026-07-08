@@ -1,0 +1,4 @@
+{
+  "fileKey": "invalidProfilePictureFile",
+  "expectedError": "Please select an image file"
+}

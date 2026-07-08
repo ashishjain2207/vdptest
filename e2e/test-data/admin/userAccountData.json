@@ -1,0 +1,4 @@
+{
+  "searchQuery": "{{E2E_ADMIN_TARGET_USER_QUERY}}",
+  "profileKey": "{{E2E_ADMIN_TARGET_USER_PROFILE_KEY}}"
+}

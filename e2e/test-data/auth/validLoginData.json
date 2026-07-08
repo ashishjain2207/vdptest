@@ -1,0 +1,4 @@
+{
+  "usernameOrEmail": "{{E2E_NORMAL_USER_USERNAME_OR_EMAIL}}",
+  "password": "{{E2E_NORMAL_USER_PASSWORD}}"
+}
