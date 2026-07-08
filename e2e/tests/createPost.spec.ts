@@ -1,10 +1,11 @@
 import { test, expect } from '../fixtures/test';
 import { CleanupRegistry } from '../utils/cleanup';
-import { buildCreatePostData } from '../utils/dataFactory';
+import { buildCreatePostData, getEmptyPostData } from '../utils/dataFactory';
 import { getRoleMissingReason } from '../utils/env';
+import { UPLOAD_FIXTURES } from '../utils/uploadFiles';
 
 test.describe('create post', () => {
-  test('creates a text-only post from the feed composer', async ({ auth, env, request, homeFeedPage, createPostPage }) => {
+  test('User creates a valid text post', async ({ auth, env, request, homeFeedPage, createPostPage }) => {
     test.skip(!env.user.isConfigured, getRoleMissingReason(env, 'user'));
 
     const cleanup = new CleanupRegistry();
@@ -29,8 +30,27 @@ test.describe('create post', () => {
     }
   });
 
-  test.fixme(
-    'shows moderation feedback for blocked content',
-    'This requires deterministic moderation rules or a seeded moderation response in the target environment.',
-  );
+  test('Post creation fails with empty text and no media', async ({ auth, env, createPostPage }) => {
+    test.skip(!env.user.isConfigured, getRoleMissingReason(env, 'user'));
+
+    const emptyPost = getEmptyPostData();
+
+    await auth.loginAsPrimaryUser('/posts');
+    await createPostPage.expectComposerVisible();
+    await createPostPage.fillContent(emptyPost.content);
+
+    await expect(createPostPage.submitButton).toBeDisabled();
+    await expect(createPostPage.page).toHaveURL(/\/posts$/);
+  });
+
+  test('User uploads unsupported media file type in post', async ({ auth, env, createPostPage }) => {
+    test.skip(!env.user.isConfigured, getRoleMissingReason(env, 'user'));
+
+    await auth.loginAsPrimaryUser('/posts');
+    await createPostPage.expectComposerVisible();
+    await createPostPage.attachFile(UPLOAD_FIXTURES.unsupportedMedia);
+
+    await expect(createPostPage.submitButton).toBeDisabled();
+    await expect(createPostPage.page).toHaveURL(/\/posts$/);
+  });
 });

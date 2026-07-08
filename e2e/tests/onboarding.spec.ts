@@ -2,7 +2,7 @@ import { test, expect } from '../fixtures/test';
 import { getRoleMissingReason } from '../utils/env';
 
 test.describe('onboarding', () => {
-  test('completes the home-country onboarding step for a dedicated onboarding account', async ({ env, loginPage, onboardingPage }) => {
+  test('Onboarding flow completes successfully with optional steps skipped', async ({ env, loginPage, onboardingPage }) => {
     test.skip(!env.onboarding.isConfigured, getRoleMissingReason(env, 'onboarding'));
 
     await loginPage.goto();
@@ -17,7 +17,7 @@ test.describe('onboarding', () => {
   });
 
   test.fixme(
-    'legacy multi-step onboarding fields are not present in the current app',
-    'The current onboarding flow only asks for home country, so DOB/confirm-password/terms style steps cannot be automated here.',
+    'Uploading invalid profile picture format during onboarding shows error',
+    'The current onboarding flow only asks for home country and does not expose profile-picture upload controls.',
   );
 });

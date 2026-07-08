@@ -1,0 +1,4 @@
+{
+  "fileName": "invalid-upload.txt",
+  "expectedError": "Unsupported file type"
+}

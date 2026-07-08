@@ -1091,7 +1091,7 @@ const ProfileSettings = () => {
       title={t('profileSettings.title')}
       description={t('profileSettings.description')}
     >
-      <div className="space-y-6">
+      <div className="space-y-6" data-testid="edit-profile-page">
         {/* Hidden file inputs */}
         <input
           ref={avatarFileInputRef}
@@ -1100,6 +1100,7 @@ const ProfileSettings = () => {
           aria-label={t('profileSettings.uploadProfilePicture')}
           onChange={onAvatarFileChange}
           style={{ display: 'none' }}
+          data-testid="edit-profile-avatar-input"
         />
         <input
           ref={coverFileInputRef}
@@ -1108,6 +1109,7 @@ const ProfileSettings = () => {
           aria-label={t('profileSettings.changeCoverImage')}
           onChange={onCoverFileChange}
           style={{ display: 'none' }}
+          data-testid="edit-profile-cover-input"
         />
 
         {/* Cover Image */}
@@ -1562,7 +1564,7 @@ const ProfileSettings = () => {
           <Button variant="outline" disabled={saving || loading} onClick={handleCancel}>
             <LangText path="common.cancel"  />
           </Button>
-          <Button onClick={handleSave} disabled={saving || loading}>
+          <Button onClick={handleSave} disabled={saving || loading} data-testid="edit-profile-save">
             {saving ? (t('common.saving')) : (t('common.saveChanges'))}
           </Button>
         </div>

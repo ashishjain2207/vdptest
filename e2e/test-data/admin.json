@@ -1,7 +1,0 @@
-{
-  "expectedRoleOptions": [
-    "VdpConnect.Member",
-    "VdpConnect.Support",
-    "VdpConnect.Admin"
-  ]
-}

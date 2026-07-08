@@ -402,7 +402,7 @@ export function EditPostModal({ open, onOpenChange, post, onPostUpdated }) {
 
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
-      <DialogContent className="sm:max-w-lg p-0 gap-0 overflow-hidden">
+      <DialogContent className="sm:max-w-lg p-0 gap-0 overflow-hidden" data-testid="edit-post-modal">
         <DialogHeader className="p-4 pb-0 border-b border-border">
           <DialogTitle><LangText path="posts.edit_post"  /></DialogTitle>
         </DialogHeader>
@@ -427,6 +427,7 @@ export function EditPostModal({ open, onOpenChange, post, onPostUpdated }) {
                   : 'Was möchten Sie teilen?'
               }
               aria-label={t('posts.post_content')}
+              data-testid="edit-post-content-input"
               className="min-h-[120px] resize-none"
               value={mainText}
               onChange={(e) => {
@@ -864,7 +865,7 @@ export function EditPostModal({ open, onOpenChange, post, onPostUpdated }) {
               >
                 {charCount} / {MAX_LENGTH}
               </span>
-              <Button onClick={handleSubmit} disabled={!canSubmit}>
+              <Button onClick={handleSubmit} disabled={!canSubmit} data-testid="edit-post-save">
                 {isSubmitting
                   ? language === 'EN'
                     ? 'Checking and publishing...'

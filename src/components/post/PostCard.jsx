@@ -278,6 +278,8 @@ export function PostCard({
           post.isRepost ? 'border-l-4 border-l-primary border-border' : 'border-border',
         )}
         onClick={handlePostClick}
+        data-testid="post-card"
+        data-post-id={String(post.id ?? post.Id ?? '')}
       >
         {intl && intlCc ? (
           <div
@@ -369,13 +371,13 @@ export function PostCard({
                 <>
                   <DropdownMenu>
                     <DropdownMenuTrigger asChild>
-                      <Button variant="ghost" size="icon" className="h-8 w-8 -mr-2 -mt-1 text-muted-foreground hover:text-foreground focus:outline-none focus:ring-0" onClick={(e) => e.stopPropagation()} aria-label={t('posts.post_actions')}>
+                      <Button variant="ghost" size="icon" className="h-8 w-8 -mr-2 -mt-1 text-muted-foreground hover:text-foreground focus:outline-none focus:ring-0" onClick={(e) => e.stopPropagation()} aria-label={t('posts.post_actions')} data-testid="post-card-actions">
                         <MoreHorizontal className="w-4 h-4" />
                       </Button>
                     </DropdownMenuTrigger>
                     <DropdownMenuContent align="end" onClick={(e) => e.stopPropagation()}>
                       {isAuthor ? (
-                        <DropdownMenuItem onClick={(e) => { e.stopPropagation(); onEdit?.(post); }}>
+                        <DropdownMenuItem onClick={(e) => { e.stopPropagation(); onEdit?.(post); }} data-testid="post-card-edit">
                           <Pencil className="w-4 h-4 mr-2" />
                           <LangText path="messages.edit"  />
                         </DropdownMenuItem>
@@ -387,6 +389,7 @@ export function PostCard({
                             e.stopPropagation();
                             setDeleteDialogOpen(true);
                           }}
+                          data-testid="post-card-delete"
                         >
                           <Trash2 className="w-4 h-4 mr-2" />
                           <LangText path="messages.delete"  />
@@ -603,6 +606,7 @@ export function PostCard({
                 size="sm"
                 aria-label={actionLabels.comment}
                 aria-expanded={commentsExpanded}
+                data-testid="post-card-comment-toggle"
                 className={cn(
                   'gap-1.5 h-8 px-2',
                   commentsExpanded

@@ -50,7 +50,7 @@ export function HomeCountryOnboardingForm({ onCompleted, idPrefix = 'home-countr
   };
 
   return (
-    <div className="space-y-6">
+    <div className="space-y-6" data-testid="onboarding-home-country-form">
       <div className="space-y-2">
         <label htmlFor={fieldId} className="text-sm font-medium text-foreground">
           <LangText path="profile.home_country" />
@@ -75,7 +75,7 @@ export function HomeCountryOnboardingForm({ onCompleted, idPrefix = 'home-countr
         ) : null}
       </div>
 
-      <Button type="button" className="w-full" disabled={saving} onClick={() => void handleSave()}>
+      <Button type="button" className="w-full" disabled={saving} onClick={() => void handleSave()} data-testid="onboarding-continue">
         {saving ? (
           <>
             <Loader2 className="h-4 w-4 animate-spin" aria-hidden />

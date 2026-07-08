@@ -2,7 +2,12 @@ import { test, expect } from '../fixtures/test';
 import { getRoleMissingReason } from '../utils/env';
 
 test.describe('admin panel', () => {
-  test('loads admin users and exposes row actions for a known target user', async ({ auth, env, adminPanelPage, page }) => {
+  test.fixme(
+    'Admin user removes inappropriate post',
+    'The current admin content-moderation UI exposes resolve and dismiss actions, but not a deterministic explicit remove/delete-post control for the approved scenario.',
+  );
+
+  test('Admin user suspends and reactivates a user account', async ({ auth, env, adminPanelPage, page }) => {
     test.skip(!env.admin.isConfigured, getRoleMissingReason(env, 'admin'));
 
     const targetHandle = env.adminSuspendTargetHandle || env.targetUserHandle;
@@ -20,22 +25,13 @@ test.describe('admin panel', () => {
 
     await expect(row).toBeVisible();
     await adminPanelPage.openUserActions(row);
-    await expect(page.getByTestId('admin-user-change-role')).toBeVisible();
     await expect(page.getByTestId('admin-user-suspend-toggle')).toBeVisible();
-  });
+    await page.getByTestId('admin-user-suspend-toggle').click();
 
-  test('loads admin content moderation and opens the first case when the queue is not empty', async ({ auth, env, adminPanelPage, page }) => {
-    test.skip(!env.admin.isConfigured, getRoleMissingReason(env, 'admin'));
+    await expect.poll(async () => (await row.textContent()) ?? '').toMatch(/Suspended|Gesperrt/i);
 
-    await auth.loginAsAdminUser('/admin/content-moderation');
-    await adminPanelPage.expectModerationLoaded();
-
-    const itemCount = await adminPanelPage.moderationItems().count();
-    if (itemCount === 0) {
-      return;
-    }
-
-    await adminPanelPage.openFirstModerationItem();
-    await expect(page.getByRole('dialog')).toBeVisible();
+    await adminPanelPage.openUserActions(row);
+    await page.getByTestId('admin-user-suspend-toggle').click();
+    await expect.poll(async () => (await row.textContent()) ?? '').toMatch(/Active|Aktiv/i);
   });
 });

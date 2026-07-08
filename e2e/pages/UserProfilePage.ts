@@ -48,4 +48,8 @@ export class UserProfilePage {
   postCard(postId: string): Locator {
     return this.page.locator(`[data-testid="post-card"][data-post-id="${postId}"]`);
   }
+
+  postCardByText(content: string): Locator {
+    return this.page.locator('[data-testid="post-card"]').filter({ hasText: content }).first();
+  }
 }

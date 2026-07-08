@@ -81,6 +81,13 @@ export class EditProfilePage {
     await this.coverInput.setInputFiles(filePath);
   }
 
+  async applyCropperIfVisible(): Promise<void> {
+    const applyButton = this.page.getByRole('button', { name: /apply|anwenden/i });
+    if (await applyButton.count()) {
+      await applyButton.click();
+    }
+  }
+
   async save(): Promise<void> {
     await this.saveButton.click();
   }

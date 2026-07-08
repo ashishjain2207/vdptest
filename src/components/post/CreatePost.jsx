@@ -398,6 +398,7 @@ export function CreatePost({ onPostCreated, variant, onOpenChange, organizationI
         !isModal && isFocused && 'shadow-soft',
       )}
       onSubmit={(e) => e.preventDefault()}
+      data-testid="create-post-form"
     >
       <div className="min-w-0">
         <input
@@ -408,6 +409,7 @@ export function CreatePost({ onPostCreated, variant, onOpenChange, organizationI
           className="hidden"
           aria-label={label('addImage')}
           onChange={handleFileChange}
+          data-testid="create-post-file-input"
         />
 
         <div className="flex gap-3">
@@ -431,6 +433,7 @@ export function CreatePost({ onPostCreated, variant, onOpenChange, organizationI
                 ref={textareaRef}
                 placeholder={label('sharePrompt')}
                 aria-label={toastT('posts.post_content')}
+                data-testid="create-post-content-input"
                 className={cn(
                   'min-h-[70px] resize-none border-none bg-transparent p-0 focus-visible:ring-0 text-base placeholder:text-muted-foreground',
                   isFocused && 'min-h-[100px]',
@@ -563,7 +566,7 @@ export function CreatePost({ onPostCreated, variant, onOpenChange, organizationI
             )}
 
             {moderationError && (
-              <div className="mt-3">
+              <div className="mt-3" data-testid="create-post-moderation-error">
                 <ModerationAlert
                   title="Post not published"
                   message={moderationError}
@@ -574,7 +577,8 @@ export function CreatePost({ onPostCreated, variant, onOpenChange, organizationI
 
             <div className="mt-3 flex items-center justify-between border-t border-border pt-3">
               <div className="flex items-center gap-0.5">
-                <Button type="button" variant="ghost" size="icon" className="h-9 w-9 text-primary hover:bg-primary/10" onClick={openAttachmentPicker} aria-label={label('addImage')} title={label('addImage')}>
+                <Button type="button" variant="ghost" size="icon" className="h-9 w-9 text-primary hover:bg-primary/10" onClick={openAttachmentPicker} aria-label={label('addImage')} title={label('addImage')} data-testid="create-post-add-media">
+                  <span className="sr-only">Create post attachments</span>
                   <Paperclip className="w-[18px] h-[18px]" />
                 </Button>
 
@@ -737,6 +741,7 @@ export function CreatePost({ onPostCreated, variant, onOpenChange, organizationI
                   size="sm"
                   className="gap-1.5 px-4 shadow-soft"
                   onClick={handleSubmit}
+                  data-testid="create-post-submit"
                 >
                   <Send className="w-3.5 h-3.5" />
                   {isSubmitting ? t(language, 'common.publishing') : t(language, 'common.publish')}

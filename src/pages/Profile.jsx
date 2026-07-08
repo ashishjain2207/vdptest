@@ -924,7 +924,7 @@ const Profile = () => {
         post={editingPost}
         onPostUpdated={handlePostUpdated}
       />
-      <div className="w-full px-4 lg:px-6">
+      <div className="w-full px-4 lg:px-6" data-testid="user-profile-page">
         {/* Back Button */}
         <Button 
           variant="ghost" 
@@ -1178,12 +1178,12 @@ const Profile = () => {
                 {isOwnProfile ? (
                   <DropdownMenu>
                     <DropdownMenuTrigger asChild>
-                      <Button variant="outline" size="icon" className="h-11 w-11 rounded-2xl border-border/70 bg-background/90" aria-label={t('common.profile_actions')}>
+                      <Button variant="outline" size="icon" className="h-11 w-11 rounded-2xl border-border/70 bg-background/90" aria-label={t('common.profile_actions')} data-testid="profile-actions-trigger">
                         <MoreHorizontal className="w-4 h-4" />
                       </Button>
                     </DropdownMenuTrigger>
                     <DropdownMenuContent align="end">
-                      <DropdownMenuItem onClick={() => navigate('/settings/profile')}>
+                      <DropdownMenuItem onClick={() => navigate('/settings/profile')} data-testid="profile-edit-action">
                         <Settings className="w-4 h-4 mr-2" />
                         <LangText path="common.edit_profile"  />
                       </DropdownMenuItem>
@@ -1193,7 +1193,7 @@ const Profile = () => {
                   <>
                     <DropdownMenu>
                       <DropdownMenuTrigger asChild>
-                        <Button variant="outline" size="icon" className="h-11 w-11 rounded-2xl border-border/70 bg-background/90" aria-label={t('common.profile_actions')}>
+                        <Button variant="outline" size="icon" className="h-11 w-11 rounded-2xl border-border/70 bg-background/90" aria-label={t('common.profile_actions')} data-testid="profile-actions-trigger">
                           <MoreHorizontal className="w-4 h-4" />
                         </Button>
                       </DropdownMenuTrigger>
@@ -1309,6 +1309,7 @@ const Profile = () => {
                       )}
                       onClick={handleFollowToggle}
                       disabled={followLoading}
+                      data-testid="profile-follow-button"
                     >
                       {followLoading ? '...' : isFollowing ? (t('layout.following')) : (t('people.follow'))}
                     </Button>
@@ -1433,7 +1434,7 @@ const Profile = () => {
         {/* Tabs Section */}
         <Tabs value={activeTab} onValueChange={setActiveTab} className="mt-6">
           <TabsList className="w-full justify-start h-auto p-1 bg-card border border-border rounded-xl flex-wrap gap-1">
-            <TabsTrigger value="posts" className="gap-2 data-[state=active]:shadow-sm flex-1">
+            <TabsTrigger value="posts" className="gap-2 data-[state=active]:shadow-sm flex-1" data-testid="profile-posts-tab">
               <FileText className="w-4 h-4" />
               <LangText path="layout.posts"  />
             </TabsTrigger>

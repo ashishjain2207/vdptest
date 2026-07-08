@@ -1,10 +1,10 @@
 import { test, expect } from '../fixtures/test';
 import { CleanupRegistry } from '../utils/cleanup';
 import { getRoleMissingReason } from '../utils/env';
-import { extractId, getProfileByHandle, unfollowUserViaApi } from '../utils/seed';
+import { extractId, getOwnProfile, getProfileByHandle, unfollowUserViaApi } from '../utils/seed';
 
 test.describe('follow / unfollow', () => {
-  test('toggles the follow button on another user profile', async ({ auth, env, request, userProfilePage }) => {
+  test('User follows and unfollows another user', async ({ auth, env, request, userProfilePage }) => {
     test.skip(!env.user.isConfigured, getRoleMissingReason(env, 'user'));
     test.skip(!env.secondary.isConfigured, getRoleMissingReason(env, 'secondary'));
     test.skip(!env.targetUserHandle, 'Requires E2E_TARGET_USER_HANDLE or E2E_SECONDARY_USER_HANDLE.');
@@ -36,5 +36,18 @@ test.describe('follow / unfollow', () => {
     } finally {
       await cleanup.run(request);
     }
+  });
+
+  test('User cannot follow themselves', async ({ auth, env, request, userProfilePage }) => {
+    test.skip(!env.user.isConfigured, getRoleMissingReason(env, 'user'));
+
+    const ownProfile = await getOwnProfile(request, 'user');
+    const ownProfileKey = extractId(ownProfile, 'profileSlug', 'handle', 'userId', 'UserId');
+
+    await auth.loginAsPrimaryUser('/posts');
+    await userProfilePage.goto(ownProfileKey);
+    await userProfilePage.expectLoaded();
+
+    await expect(userProfilePage.followButton).toHaveCount(0);
   });
 });

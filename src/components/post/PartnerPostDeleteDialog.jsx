@@ -76,6 +76,7 @@ export function PartnerPostDeleteDialog({
         {...(stopPropagationOnContent
           ? { onClick: (e) => e.stopPropagation() }
           : {})}
+        data-testid="delete-post-dialog"
       >
         <form onSubmit={handleSubmit}>
           <AlertDialogHeader>
@@ -140,6 +141,7 @@ export function PartnerPostDeleteDialog({
               type="submit"
               disabled={submitting || !canDelete}
               className="bg-destructive text-destructive-foreground hover:bg-destructive/90"
+              data-testid="delete-post-confirm"
             >
               <LangText path="messages.delete"  />
             </AlertDialogAction>

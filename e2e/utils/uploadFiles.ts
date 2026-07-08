@@ -13,4 +13,6 @@ export const UPLOAD_FIXTURES = {
   avatarValid: resolveUploadFixturePath('avatar-valid.svg'),
   coverValid: resolveUploadFixturePath('cover-valid.svg'),
   invalidText: resolveUploadFixturePath('invalid-upload.txt'),
+  unsupportedMedia: resolveUploadFixturePath('invalid-upload.txt'),
+  invalidProfilePicture: resolveUploadFixturePath('invalid-upload.txt'),
 };

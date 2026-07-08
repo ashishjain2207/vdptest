@@ -265,7 +265,7 @@ export default function AdminContentModeration() {
     && ['resolved', 'dismissed'].includes(String(detail.status).toLowerCase());
 
   return (
-    <div className="max-w-6xl mx-auto space-y-6 pb-12">
+    <div className="max-w-6xl mx-auto space-y-6 pb-12" data-testid="admin-content-moderation-page">
       <div>
         <h1 className="text-2xl font-bold text-foreground flex items-center gap-2">
           <Flag className="h-7 w-7 text-amber-600" aria-hidden />
@@ -348,13 +348,15 @@ export default function AdminContentModeration() {
             <LangText path="moderation.queueEmpty" />
           </p>
         ) : (
-          <ul className="divide-y divide-border">
+          <ul className="divide-y divide-border" data-testid="admin-content-moderation-list">
             {items.map((item) => (
               <li key={item.id}>
                 <button
                   type="button"
                   className="w-full text-left px-4 py-4 hover:bg-muted/50 transition-colors"
                   onClick={() => setDetailId(String(item.id))}
+                  data-testid="admin-content-moderation-item"
+                  data-case-id={String(item.id)}
                 >
                   <div className="flex flex-wrap items-start justify-between gap-2">
                     <div className="min-w-0 flex-1 space-y-1">
@@ -453,6 +455,7 @@ export default function AdminContentModeration() {
                 variant="outline"
                 disabled={busyId === detail.id}
                 onClick={() => void handleStatusUpdate(detail.id, 'Dismissed')}
+                data-testid="admin-content-moderation-dismiss"
               >
                 <LangText path="moderation.dismissCase" />
               </Button>
@@ -460,6 +463,7 @@ export default function AdminContentModeration() {
                 type="button"
                 disabled={busyId === detail.id}
                 onClick={() => void handleStatusUpdate(detail.id, 'Resolved')}
+                data-testid="admin-content-moderation-resolve"
               >
                 {busyId === detail.id ? (
                   <Loader2 className="h-4 w-4 animate-spin mr-2" aria-hidden />

@@ -16,6 +16,9 @@ export interface AuthHelper {
 interface AuthFixtures {
   env: E2EEnv;
   auth: AuthHelper;
+  guestUser: Page;
+  normalUserAuth: Page;
+  adminUserAuth: Page;
 }
 
 const storageStateCache = new Map<string, string>();
@@ -79,6 +82,23 @@ export const test = base.extend<AuthFixtures>({
     };
 
     await use(helper);
+  },
+  guestUser: async ({ page, auth }, use) => {
+    await auth.clear();
+    await page.goto('/login', { waitUntil: 'domcontentloaded' });
+    await use(page);
+  },
+  normalUserAuth: async ({ page, auth, env }, use) => {
+    if (env.user.isConfigured) {
+      await auth.loginAsPrimaryUser('/posts');
+    }
+    await use(page);
+  },
+  adminUserAuth: async ({ page, auth, env }, use) => {
+    if (env.admin.isConfigured) {
+      await auth.loginAsAdminUser('/admin/users');
+    }
+    await use(page);
   },
 });
 

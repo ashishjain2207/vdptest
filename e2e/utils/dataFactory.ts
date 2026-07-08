@@ -7,33 +7,6 @@ import { getEnv } from './env';
 
 type JsonValue = Record<string, unknown>;
 
-interface RegistrationTemplate {
-  displayNamePrefix: string;
-  handlePrefix: string;
-  emailLocalPrefix: string;
-  passwordFallback: string;
-}
-
-interface PostsTemplate {
-  create: { contentPrefix: string };
-  seed: { contentPrefix: string };
-  edit: { updatedContentPrefix: string };
-  delete: { contentPrefix: string };
-  moderation: { blockedContentExample: string };
-}
-
-interface CommentsTemplate {
-  create: { contentPrefix: string };
-  edit: { contentPrefix: string };
-}
-
-interface ProfileTemplate {
-  bioPrefix: string;
-  companyPrefix: string;
-  websiteDomain: string;
-  descriptionPrefix: string;
-}
-
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 const TEST_DATA_DIR = path.resolve(__dirname, '..', 'test-data');
@@ -56,17 +29,25 @@ function slugify(value: string): string {
 }
 
 export function getAccessControlRoutes(): { protectedRoutes: string[]; adminRoutes: string[] } {
-  return loadJson<{ protectedRoutes: string[]; adminRoutes: string[] }>('access-control.json');
+  return {
+    protectedRoutes: ['/posts'],
+    adminRoutes: ['/admin/users', '/admin/content-moderation'],
+  };
 }
 
 export function buildRegistrationUser() {
   const env = getEnv();
-  const template = loadJson<RegistrationTemplate>('registration.json');
+  const template = loadJson<{
+    fullNamePrefix: string;
+    usernamePrefix: string;
+    emailLocalPrefix: string;
+    passwordFallback: string;
+  }>('auth/validUserRegistrationData.json');
   const suffix = uniqueSuffix();
-  const handle = slugify(`${template.handlePrefix}-${suffix}`).slice(0, 30);
+  const handle = slugify(`${template.usernamePrefix}-${suffix}`).slice(0, 30);
 
   return {
-    name: `${template.displayNamePrefix} ${suffix}`,
+    name: `${template.fullNamePrefix} ${suffix}`,
     handle,
     email: `${template.emailLocalPrefix}+${suffix}@${env.registrationEmailDomain}`,
     password: env.registrationPassword || template.passwordFallback,
@@ -74,60 +55,121 @@ export function buildRegistrationUser() {
   };
 }
 
+export function getDuplicateUsernameData() {
+  return loadJson<{
+    fullName: string;
+    username: string;
+    emailLocalPrefix: string;
+    passwordFallback: string;
+  }>('auth/duplicateUsernameData.json');
+}
+
+export function getInvalidLoginData() {
+  return loadJson<{
+    password: string;
+  }>('auth/invalidPasswordData.json');
+}
+
+export function getValidLoginData() {
+  return loadJson<{
+    usernameSource: 'env.primaryUser';
+  }>('auth/validLoginData.json');
+}
+
 export function buildCreatePostData() {
-  const template = loadJson<PostsTemplate>('posts.json');
+  const template = loadJson<{ contentPrefix: string }>('posts/validTextPostData.json');
   return {
-    content: `${template.create.contentPrefix} ${uniqueSuffix()}`,
+    content: `${template.contentPrefix} ${uniqueSuffix()}`,
   };
 }
 
 export function buildSeedPostData() {
-  const template = loadJson<PostsTemplate>('posts.json');
+  const template = loadJson<{ contentPrefix: string }>('posts/validTextPostData.json');
   return {
-    content: `${template.seed.contentPrefix} ${uniqueSuffix()}`,
+    content: `${template.contentPrefix} ${uniqueSuffix()}`,
   };
 }
 
 export function buildEditPostData() {
-  const template = loadJson<PostsTemplate>('posts.json');
+  const template = loadJson<{ originalContentPrefix: string; updatedContentPrefix: string }>('posts/editPostData.json');
   return {
-    content: `${template.edit.updatedContentPrefix} ${uniqueSuffix()}`,
+    originalContent: `${template.originalContentPrefix} ${uniqueSuffix()}`,
+    updatedContent: `${template.updatedContentPrefix} ${uniqueSuffix()}`,
   };
 }
 
 export function buildDeletePostData() {
-  const template = loadJson<PostsTemplate>('posts.json');
+  const template = loadJson<{ contentPrefix: string }>('posts/deletePostData.json');
   return {
-    content: `${template.delete.contentPrefix} ${uniqueSuffix()}`,
+    content: `${template.contentPrefix} ${uniqueSuffix()}`,
   };
 }
 
-export function buildModerationPlaceholder() {
-  const template = loadJson<PostsTemplate>('posts.json');
-  return template.moderation.blockedContentExample;
+export function getEmptyPostData() {
+  return loadJson<{ content: string }>('posts/emptyPostData.json');
+}
+
+export function getUnsupportedMediaFileData() {
+  return loadJson<{ fileName: string; expectedError: string }>('posts/unsupportedMediaFile.json');
 }
 
 export function buildCommentCreateData() {
-  const template = loadJson<CommentsTemplate>('comments.json');
+  const template = loadJson<{ contentPrefix: string }>('comments/validCommentData.json');
   return {
-    content: `${template.create.contentPrefix} ${uniqueSuffix()}`,
+    content: `${template.contentPrefix} ${uniqueSuffix()}`,
   };
 }
 
 export function buildCommentEditData() {
-  const template = loadJson<CommentsTemplate>('comments.json');
+  const template = loadJson<{ contentPrefix: string }>('comments/deleteCommentData.json');
   return {
-    content: `${template.edit.contentPrefix} ${uniqueSuffix()}`,
+    content: `${template.contentPrefix} ${uniqueSuffix()}`,
+  };
+}
+
+export function getEmptyCommentData() {
+  return loadJson<{ content: string }>('comments/emptyCommentData.json');
+}
+
+export function buildDeleteCommentData() {
+  const template = loadJson<{ contentPrefix: string }>('comments/deleteCommentData.json');
+  return {
+    content: `${template.contentPrefix} ${uniqueSuffix()}`,
   };
 }
 
 export function buildProfileUpdateData() {
-  const template = loadJson<ProfileTemplate>('profile.json');
+  const template = loadJson<{
+    displayNamePrefix: string;
+    bioPrefix: string;
+    websiteDomain: string;
+    descriptionPrefix: string;
+  }>('profile/validProfileUpdateData.json');
   const suffix = uniqueSuffix();
   return {
+    displayName: `${template.displayNamePrefix} ${suffix.slice(0, 8)}`,
     bio: `${template.bioPrefix} ${suffix}`,
-    company: `${template.companyPrefix} ${suffix.slice(0, 8)}`,
     description: `${template.descriptionPrefix} ${suffix}`,
     website: `https://${slugify(`playwright-${suffix}`)}.${template.websiteDomain}`,
   };
+}
+
+export function getInvalidWebsiteData() {
+  return loadJson<{ website: string }>('profile/invalidWebsiteData.json');
+}
+
+export function getFollowUserData() {
+  return loadJson<{ targetHandleSource: 'env.targetUserHandle' }>('profile/followUserData.json');
+}
+
+export function getReportedPostData() {
+  return loadJson<{ targetSource: string }>('admin/reportedPostData.json');
+}
+
+export function getAdminUserAccountData() {
+  return loadJson<{ targetSource: string }>('admin/userAccountData.json');
+}
+
+export function getInvalidProfilePicData() {
+  return loadJson<{ fileName: string; expectedError: string }>('onboarding/invalidProfilePicFormat.json');
 }

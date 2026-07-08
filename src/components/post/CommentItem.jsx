@@ -104,10 +104,14 @@ export function CommentItem({ comment, depth = 0, currentUser, onLike, onReply, 
   const fallbackClass = 'bg-sky-100 text-sky-700 dark:bg-sky-900/50 dark:text-sky-300 text-sm font-medium';
 
   return (
-    <div className={cn(
-      'animate-fade-in',
-      visualDepth > 0 && 'ml-12 border-l-2 border-border pl-4',
-    )}>
+    <div
+      className={cn(
+        'animate-fade-in',
+        visualDepth > 0 && 'ml-12 border-l-2 border-border pl-4',
+      )}
+      data-testid="comment-item"
+      data-comment-id={String(comment.id ?? '')}
+    >
       <div className="flex gap-3 py-4">
         <Avatar className={cn('flex-shrink-0', isNested ? 'w-8 h-8' : 'w-10 h-10')}>
           {comment.author?.avatar ? (
@@ -141,6 +145,7 @@ export function CommentItem({ comment, depth = 0, currentUser, onLike, onReply, 
                     onClick={(e) => e.stopPropagation()}
                     aria-label={t('posts.comment_actions')}
                     aria-haspopup="menu"
+                    data-testid="comment-actions"
                   >
                     <MoreHorizontal className="w-3.5 h-3.5" aria-hidden />
                   </Button>
@@ -179,6 +184,7 @@ export function CommentItem({ comment, depth = 0, currentUser, onLike, onReply, 
                           toast.info(t('toasts.editComingSoon'));
                         }
                       }}
+                      data-testid="comment-edit"
                     >
                       <Pencil className="w-3.5 h-3.5 mr-2" />
                       <LangText path="messages.edit"  />
@@ -198,6 +204,7 @@ export function CommentItem({ comment, depth = 0, currentUser, onLike, onReply, 
                         }
                       }}
                       disabled={deleting}
+                      data-testid="comment-delete"
                     >
                       <Trash2 className="w-3.5 h-3.5 mr-2" />
                       <LangText path="messages.delete"  />

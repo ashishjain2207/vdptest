@@ -301,7 +301,7 @@ const Signup = () => {
   }
 
   return (
-    <div className="h-[100dvh] max-h-[100dvh] overflow-hidden bg-background flex relative">
+    <div className="h-[100dvh] max-h-[100dvh] overflow-hidden bg-background flex relative" data-testid="registration-page">
       {/* Language Selector - Top Right */}
       <div className="absolute top-4 right-4 z-50">
         <LanguageSelector />
@@ -413,7 +413,7 @@ const Signup = () => {
             </div>
           </div>
 
-          <form noValidate onSubmit={handleSubmit} className="space-y-3">
+          <form noValidate onSubmit={handleSubmit} className="space-y-3" data-testid="registration-form">
             <div className="space-y-2">
               <Label htmlFor="name" className="text-foreground">
                 <LangText path="auth.name"  />
@@ -484,7 +484,9 @@ const Signup = () => {
                   <XCircle className="absolute right-3 top-1/2 -translate-y-1/2 w-4 h-4 text-destructive" />
                 )}
               </div>
-              <FieldError id="signup-username-err" message={fieldErrors.username} />
+              <div data-testid="registration-username-error">
+                <FieldError id="signup-username-err" message={fieldErrors.username} />
+              </div>
             </div>
 
             <div className="space-y-2">
@@ -587,7 +589,12 @@ const Signup = () => {
               <PasswordRulesChecklist password={password} validation={passwordValidation} className="gap-y-0.5" />
             </div>
 
-            <Button type="submit" className="w-full h-11 shadow-soft mt-1" disabled={submitting || usernameStatus === 'taken' || (password && passwordValidation && !passwordValidation.valid)}>
+            <Button
+              type="submit"
+              className="w-full h-11 shadow-soft mt-1"
+              disabled={submitting || usernameStatus === 'taken' || (password && passwordValidation && !passwordValidation.valid)}
+              data-testid="registration-submit"
+            >
               {submitting ? (
                 <>
                   <Loader2 className="w-4 h-4 mr-2 animate-spin" />

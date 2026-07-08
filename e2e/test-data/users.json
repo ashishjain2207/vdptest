@@ -1,8 +1,0 @@
-{
-  "roles": {
-    "primary": "Authenticated member used for core social flows.",
-    "admin": "Platform administrator used for admin-panel coverage.",
-    "secondary": "Existing second account used as a post, comment, and follow target.",
-    "onboarding": "Dedicated account that should still require the home-country onboarding step."
-  }
-}

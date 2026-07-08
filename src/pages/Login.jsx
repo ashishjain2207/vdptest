@@ -250,7 +250,7 @@ const Login = () => {
   };
 
   return (
-    <div className="min-h-screen bg-background flex relative">
+    <div className="min-h-screen bg-background flex relative" data-testid="login-page">
       {/* Language Selector - Top Right */}
       <div className="absolute top-4 right-4 z-50">
         <LanguageSelector />
@@ -368,7 +368,10 @@ const Login = () => {
 
           {/* Error Message */}
           {error && (
-            <div className="mb-6 p-4 bg-red-50 dark:bg-red-900/20 border border-red-200 dark:border-red-800 rounded-lg">
+            <div
+              className="mb-6 p-4 bg-red-50 dark:bg-red-900/20 border border-red-200 dark:border-red-800 rounded-lg"
+              data-testid="login-error"
+            >
               <p className="text-sm text-red-800 dark:text-red-200">{error}</p>
               {(emailNotVerified || /email.*verif|not been verified|nicht bestätigt/i.test(error)) && (
                 <p className="text-sm mt-2">
@@ -388,6 +391,7 @@ const Login = () => {
               handleLogin();
             }}
             className="space-y-4"
+            data-testid="login-form"
           >
             <div className="space-y-2">
               <Label htmlFor="email" className="text-foreground">
@@ -473,6 +477,7 @@ const Login = () => {
               type="submit" 
               className="w-full h-11 shadow-soft" 
               disabled={isLoading || loadingProvider !== null}
+              data-testid="login-submit"
             >
               {isLoading ? (
                 <>

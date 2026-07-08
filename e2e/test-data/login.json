@@ -1,6 +1,0 @@
-{
-  "invalidCredentials": {
-    "username": "invalid-user@example.test",
-    "password": "not-the-right-password"
-  }
-}
