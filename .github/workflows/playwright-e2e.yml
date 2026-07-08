@@ -1,0 +1,106 @@
+name: Playwright E2E
+
+on:
+  workflow_dispatch:
+  pull_request:
+    paths:
+      - '.github/workflows/playwright-e2e.yml'
+      - 'e2e/**'
+      - 'package.json'
+      - 'package-lock.json'
+  push:
+    branches:
+      - main
+    paths:
+      - '.github/workflows/playwright-e2e.yml'
+      - 'e2e/**'
+      - 'package.json'
+      - 'package-lock.json'
+
+permissions:
+  contents: read
+
+concurrency:
+  group: playwright-e2e-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  playwright:
+    name: Playwright E2E
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    env:
+      CI: 'true'
+      PLAYWRIGHT_SKIP_WEB_SERVER: 'true'
+      PLAYWRIGHT_BASE_URL: ${{ secrets.PLAYWRIGHT_BASE_URL }}
+      E2E_NORMAL_USER_EMAIL: ${{ secrets.E2E_NORMAL_USER_EMAIL }}
+      E2E_NORMAL_USER_PASSWORD: ${{ secrets.E2E_NORMAL_USER_PASSWORD }}
+      E2E_NORMAL_USER_USERNAME: ${{ secrets.E2E_NORMAL_USER_USERNAME }}
+      E2E_NORMAL_USER_ID: ${{ secrets.E2E_NORMAL_USER_ID }}
+      E2E_NORMAL_USER_PROFILE_SLUG: ${{ secrets.E2E_NORMAL_USER_PROFILE_SLUG }}
+      E2E_ADMIN_USER_EMAIL: ${{ secrets.E2E_ADMIN_USER_EMAIL }}
+      E2E_ADMIN_USER_PASSWORD: ${{ secrets.E2E_ADMIN_USER_PASSWORD }}
+      E2E_ADMIN_USER_USERNAME: ${{ secrets.E2E_ADMIN_USER_USERNAME }}
+      E2E_ADMIN_USER_ID: ${{ secrets.E2E_ADMIN_USER_ID }}
+      E2E_ADMIN_USER_PROFILE_SLUG: ${{ secrets.E2E_ADMIN_USER_PROFILE_SLUG }}
+      E2E_TARGET_USER_PROFILE_SLUG: ${{ secrets.E2E_TARGET_USER_PROFILE_SLUG }}
+      E2E_TARGET_USER_USERNAME: ${{ secrets.E2E_TARGET_USER_USERNAME }}
+      E2E_TARGET_USER_ID: ${{ secrets.E2E_TARGET_USER_ID }}
+      E2E_DUPLICATE_USERNAME: ${{ secrets.E2E_DUPLICATE_USERNAME }}
+      E2E_COMMENT_TARGET_POST_ID: ${{ secrets.E2E_COMMENT_TARGET_POST_ID }}
+      E2E_OTHER_USER_POST_TEXT: ${{ secrets.E2E_OTHER_USER_POST_TEXT }}
+      E2E_OTHER_USER_COMMENT_TEXT: ${{ secrets.E2E_OTHER_USER_COMMENT_TEXT }}
+      E2E_REPORTED_POST_PREVIEW: ${{ secrets.E2E_REPORTED_POST_PREVIEW }}
+      E2E_REPORTED_POST_CASE_ID: ${{ secrets.E2E_REPORTED_POST_CASE_ID }}
+      E2E_ADMIN_TARGET_USER_EMAIL: ${{ secrets.E2E_ADMIN_TARGET_USER_EMAIL }}
+      E2E_API_BASE_URL: ${{ secrets.E2E_API_BASE_URL }}
+      E2E_API_TOKEN: ${{ secrets.E2E_API_TOKEN }}
+      NODE_AUTH_TOKEN: ${{ secrets.NODE_AUTH_TOKEN }}
+      CLICKUP_API_TOKEN: ${{ secrets.CLICKUP_API_TOKEN }}
+      CLICKUP_TASK_ID: '869e1b3r8'
+      CLICKUP_RUN_ID: ${{ github.run_id }}
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - name: Configure GitHub Packages auth
+        if: ${{ env.NODE_AUTH_TOKEN != '' }}
+        run: |
+          echo "@imriva:registry=https://npm.pkg.github.com" >> ~/.npmrc
+          echo "//npm.pkg.github.com/:_authToken=${NODE_AUTH_TOKEN}" >> ~/.npmrc
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Install Playwright browsers
+        run: npx playwright install --with-deps
+
+      - name: Run Playwright E2E suite
+        run: npm run test:e2e:ci
+
+      - name: Upload Playwright artifacts
+        if: ${{ always() }}
+        uses: actions/upload-artifact@v4
+        with:
+          name: playwright-e2e-${{ github.run_id }}-${{ github.run_attempt }}
+          if-no-files-found: warn
+          retention-days: 14
+          path: |
+            e2e/playwright-report/
+            e2e/test-results/results.json
+            e2e/test-results/**/*.png
+            e2e/test-results/**/*.jpg
+            e2e/test-results/**/*.jpeg
+            e2e/test-results/**/*.webm
+            e2e/test-results/**/*.zip
+
+      - name: Upload Playwright results to ClickUp
+        if: ${{ always() }}
+        run: node e2e/upload-clickup-results.mjs

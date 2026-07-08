@@ -17,7 +17,11 @@ export default defineConfig({
     timeout: 10_000,
   },
   reporter: isCI
-    ? [['github'], ['html', { outputFolder: 'e2e/playwright-report', open: 'never' }]]
+    ? [
+        ['github'],
+        ['html', { outputFolder: 'e2e/playwright-report', open: 'never' }],
+        ['json', { outputFile: 'e2e/test-results/results.json' }],
+      ]
     : [['list'], ['html', { outputFolder: 'e2e/playwright-report', open: 'never' }]],
   outputDir: 'e2e/test-results',
   use: {
