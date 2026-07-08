@@ -1,0 +1,6 @@
+{
+  "searchEnv": "E2E_ADMIN_TARGET_USER_EMAIL",
+  "searchFallback": "target.user@example.com",
+  "expectedSuspendedStatus": "Suspended",
+  "expectedActiveStatus": "Active"
+}

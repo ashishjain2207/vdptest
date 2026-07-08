@@ -1,0 +1,4 @@
+{
+  "text": "",
+  "expectedErrorPattern": "empty|required|content|media"
+}

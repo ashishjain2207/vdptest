@@ -1,0 +1,5 @@
+{
+  "postIdEnv": "E2E_COMMENT_TARGET_POST_ID",
+  "text": "",
+  "expectedErrorPattern": "comment|required|empty"
+}

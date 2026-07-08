@@ -1,0 +1,5 @@
+{
+  "contentPreviewEnv": "E2E_REPORTED_POST_PREVIEW",
+  "contentPreview": "Seeded reported post preview",
+  "caseIdEnv": "E2E_REPORTED_POST_CASE_ID"
+}

@@ -1,0 +1,10 @@
+{
+  "fullName": "E2E Test User",
+  "usernamePrefix": "e2euser",
+  "emailPrefix": "e2e.user",
+  "emailDomain": "example.com",
+  "password": "E2E-StrongPassword-123!",
+  "dateOfBirth": "1990-01-01",
+  "homeCountry": "US",
+  "acceptTerms": true
+}
