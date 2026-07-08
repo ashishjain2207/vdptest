@@ -1,0 +1,7 @@
+{
+  "displayName": "E2E Duplicate Username",
+  "emailPrefix": "e2e-duplicate",
+  "emailDomain": "example.test",
+  "password": "E2ePassword!234",
+  "country": "Germany"
+}

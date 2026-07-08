@@ -1,0 +1,8 @@
+{
+  "displayName": "E2E Valid User",
+  "usernamePrefix": "e2evalid",
+  "emailPrefix": "e2e-valid",
+  "emailDomain": "example.test",
+  "password": "E2ePassword!234",
+  "country": "Germany"
+}
