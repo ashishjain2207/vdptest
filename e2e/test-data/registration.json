@@ -1,0 +1,6 @@
+{
+  "displayNamePrefix": "Playwright Registration User",
+  "handlePrefix": "pw-register",
+  "emailLocalPrefix": "playwright-register",
+  "passwordFallback": "ChangeMe123!"
+}

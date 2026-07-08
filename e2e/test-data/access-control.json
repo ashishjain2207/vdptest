@@ -1,0 +1,11 @@
+{
+  "protectedRoutes": [
+    "/posts",
+    "/settings/profile",
+    "/profile/example-user"
+  ],
+  "adminRoutes": [
+    "/admin/users",
+    "/admin/content-moderation"
+  ]
+}

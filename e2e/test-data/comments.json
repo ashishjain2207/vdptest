@@ -1,0 +1,8 @@
+{
+  "create": {
+    "contentPrefix": "Playwright comment create"
+  },
+  "edit": {
+    "contentPrefix": "Playwright comment edit"
+  }
+}

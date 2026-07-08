@@ -1,0 +1,8 @@
+{
+  "returnPath": "/posts",
+  "unsupportedLegacyFields": [
+    "dateOfBirth",
+    "confirmPassword",
+    "termsAgreement"
+  ]
+}
