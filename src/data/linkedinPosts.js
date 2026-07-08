@@ -1,0 +1,45 @@
+export const linkedinPosts = [
+  {
+    id: 'li-1',
+    source: 'vdpResearch',
+    author: {
+      name: 'vdpResearch GmbH',
+      role: 'Marktforschung für Immobilien- und Pfandbriefmärkte',
+      avatar: 'https://images.unsplash.com/photo-1560179707-f14e90ef3623?w=150&h=150&fit=crop',
+    },
+    content: '📈 Der vdp-Immobilienpreisindex für Q4 2024 ist veröffentlicht!\n\nDie wichtigsten Ergebnisse:\n\n✅ Wohnimmobilien: Erste Stabilisierungstendenzen erkennbar\n✅ Gewerbeimmobilien: Weiterhin differenzierte Entwicklung\n✅ Regionale Analysen: Deutliche Unterschiede zwischen Ballungsräumen und ländlichen Gebieten\n\nDer vollständige Bericht steht unseren Mitgliedern ab sofort zur Verfügung.\n\n#Immobilienmarkt #Marktanalyse #vdpResearch #Immobilienbewertung',
+    image: 'https://images.unsplash.com/photo-1560520653-9e0e4c89eb11?w=800&h=400&fit=crop',
+    likes: 847,
+    comments: 124,
+    reposts: 256,
+    timestamp: 'vor 3 Stunden',
+  },
+  {
+    id: 'li-2',
+    source: 'HypZert',
+    author: {
+      name: 'HypZert GmbH',
+      role: 'Zertifizierung von Immobiliengutachtern',
+      avatar: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=150&h=150&fit=crop',
+    },
+    content: '🎓 Herzlichen Glückwunsch an die 45 Teilnehmer, die heute erfolgreich ihre HypZert-Prüfung bestanden haben!\n\nDie Zertifizierung nach HypZert-Standard ist ein Qualitätsmerkmal, das von Banken, Versicherungen und Finanzdienstleistern anerkannt wird.\n\nUnser nächster Prüfungstermin:\n📅 15. Februar 2025 in Frankfurt am Main\n\nAnmeldung unter: hypzert.de/pruefungen\n\n#HypZert #Immobilienbewertung #Zertifizierung #Qualitätssicherung #Weiterbildung',
+    likes: 523,
+    comments: 89,
+    reposts: 134,
+    timestamp: 'vor 6 Stunden',
+  },
+  {
+    id: 'li-3',
+    source: 'vdpResearch',
+    author: {
+      name: 'vdpResearch GmbH',
+      role: 'Marktforschung für Immobilien- und Pfandbriefmärkte',
+      avatar: 'https://images.unsplash.com/photo-1560179707-f14e90ef3623?w=150&h=150&fit=crop',
+    },
+    content: '🏢 Neue Studie: "ESG-Faktoren in der Immobilienbewertung"\n\nUnsere aktuelle Analyse zeigt:\n\n• Energieeffizienz wird zunehmend wertrelevant\n• EU-Taxonomie beeinflusst Finanzierungsentscheidungen\n• Nachhaltigkeitszertifikate gewinnen an Bedeutung für den Beleihungswert\n\nDie vollständige Studie ist ab sofort verfügbar.\n\n#ESG #Nachhaltigkeit #Immobilienbewertung #Taxonomie',
+    likes: 634,
+    comments: 98,
+    reposts: 187,
+    timestamp: 'vor 1 Tag',
+  },
+];

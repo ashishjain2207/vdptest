@@ -1,0 +1,45 @@
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+node_modules
+dist
+dist-ssr
+*.local
+
+# npm auth (do not commit .npmrc with token)
+.npmrc
+.nprc
+
+# env (client_id, client_secret – do not commit)
+.env
+.env.local
+.env.*.local
+
+# Editor directories and files
+.vscode/*
+!.vscode/extensions.json
+.idea
+.DS_Store
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+*.code-workspace
+
+# Test coverage
+coverage
+.nyc_output
+
+# Temporary markdown files (exclude from git)
+# Ignore temporary status/deployment files, but keep documentation
+/DEPLOYMENT-STATUS.md
+/BUILD-STATUS.md
+/TEMP*.md
+/TODO*.md

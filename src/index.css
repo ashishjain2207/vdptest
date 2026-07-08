@@ -1,0 +1,423 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* vdpConnect Color System - Clean Enterprise Real Estate UI */
+    /* Primary: #C71748 (Fuchsia) | Secondary: #861D48 (Bordeaux) | Text: #4B4A4A (Anthracite) | Border: #D6D6D6 */
+    
+    /* Main backgrounds - Pure white for clean look */
+    --background: 0 0% 100%;
+    --foreground: 0 1% 29%;
+
+    /* Cards & containers - White */
+    --card: 0 0% 100%;
+    --card-foreground: 0 1% 29%;
+
+    /* Popovers & dropdowns - White with proper z-index */
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 1% 29%;
+
+    /* Primary: #C71748 - ACCENT ONLY (buttons, active states, links, icons) */
+    --primary: 343 80% 44%;
+    --primary-foreground: 0 0% 100%;
+
+    /* Secondary: #861D48 - Hover states, section headers */
+    --secondary: 340 64% 32%;
+    --secondary-foreground: 0 0% 100%;
+
+    /* Muted backgrounds - Very light neutral, NOT brand colored */
+    --muted: 0 0% 97%;
+    --muted-foreground: 0 1% 45%;
+
+    /* Accent - Very light tint (5-10% opacity feel) for subtle highlights */
+    --accent: 343 80% 97%;
+    --accent-foreground: 0 1% 29%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    /* Border: #D6D6D6 - Consistent neutral borders */
+    --border: 0 0% 84%;
+    --input: 0 0% 84%;
+    --ring: 343 80% 44%;
+
+    --radius: 0.75rem;
+
+    /* Status colors */
+    --success: 142 76% 36%;
+    --success-foreground: 0 0% 100%;
+    --warning: 38 92% 50%;
+    --warning-foreground: 0 0% 100%;
+
+    /* Sidebar - White background, clean look */
+    --sidebar-background: 0 0% 100%;
+    --sidebar-foreground: 0 1% 29%;
+    --sidebar-primary: 343 80% 44%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 343 80% 97%;
+    --sidebar-accent-foreground: 0 1% 29%;
+    --sidebar-border: 0 0% 84%;
+    --sidebar-ring: 343 80% 44%;
+
+    /* vdpConnect specific tokens */
+    --heading: 340 64% 32%;
+    --link: 343 80% 44%;
+    --link-hover: 340 64% 32%;
+    --icon: 343 80% 44%;
+    --icon-hover: 340 64% 32%;
+    
+    /* Light tint for chips/tags/subtle fills - rgba(199, 23, 72, 0.08) equivalent */
+    --primary-tint: 343 80% 96%;
+  }
+
+  .dark {
+    --background: 0 0% 8%;
+    --foreground: 0 0% 95%;
+
+    --card: 0 0% 12%;
+    --card-foreground: 0 0% 95%;
+
+    --popover: 0 0% 12%;
+    --popover-foreground: 0 0% 95%;
+
+    --primary: 343 80% 50%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 340 64% 40%;
+    --secondary-foreground: 0 0% 100%;
+
+    --muted: 0 0% 18%;
+    --muted-foreground: 0 0% 65%;
+
+    --accent: 343 50% 20%;
+    --accent-foreground: 343 80% 70%;
+
+    --destructive: 0 63% 40%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 0 0% 25%;
+    --input: 0 0% 25%;
+    --ring: 343 80% 50%;
+
+    --sidebar-background: 0 0% 12%;
+    --sidebar-foreground: 0 0% 95%;
+    --sidebar-primary: 343 80% 50%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 343 50% 20%;
+    --sidebar-accent-foreground: 343 80% 70%;
+    --sidebar-border: 0 0% 25%;
+    --sidebar-ring: 343 80% 50%;
+
+    --heading: 343 80% 60%;
+    --link: 343 80% 55%;
+    --link-hover: 343 80% 65%;
+    --icon: 343 80% 55%;
+    --icon-hover: 343 80% 65%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    height: 100%;
+    overflow: hidden;
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+    height: 100%;
+    overflow: hidden;
+    overscroll-behavior: none;
+  }
+
+  #root {
+    height: 100%;
+    overflow: hidden;
+  }
+
+  /* Auth pages (signup/login) manage their own vertical scroll inside the panel */
+  .auth-scroll-panel {
+    overflow-y: auto;
+    overflow-x: hidden;
+    overscroll-behavior-y: contain;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-gutter: stable;
+  }
+
+  /* vdpConnect Typography */
+  h1, h2, h3, h4, h5, h6 {
+    @apply text-heading;
+  }
+
+  a {
+    @apply text-link hover:text-link-hover transition-colors;
+  }
+}
+
+@layer utilities {
+  .scrollbar-thin {
+    scrollbar-width: thin;
+  }
+  
+  .scrollbar-thin::-webkit-scrollbar {
+    width: 6px;
+  }
+  
+  .scrollbar-thin::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  
+  .scrollbar-thin::-webkit-scrollbar-thumb {
+    background: hsl(var(--muted-foreground) / 0.3);
+    border-radius: 3px;
+  }
+
+  /* vdpConnect utility classes */
+  .text-heading {
+    color: hsl(var(--heading));
+  }
+
+  .text-link {
+    color: hsl(var(--link));
+  }
+
+  .text-link-hover {
+    color: hsl(var(--link-hover));
+  }
+
+  .text-icon {
+    color: hsl(var(--icon));
+  }
+
+  .bg-icon {
+    background-color: hsl(var(--icon));
+  }
+
+  /* Sonner Toast/Snackbar Theme Styles */
+  [data-sonner-toaster] {
+    --success-bg: hsl(var(--success) / 0.1);
+    --success-border: hsl(var(--success) / 0.2);
+    --success-text: hsl(var(--success));
+    --error-bg: hsl(var(--destructive) / 0.1);
+    --error-border: hsl(var(--destructive) / 0.2);
+    --error-text: hsl(var(--destructive));
+    --warning-bg: hsl(var(--warning) / 0.1);
+    --warning-border: hsl(var(--warning) / 0.2);
+    --warning-text: hsl(var(--warning));
+    --info-bg: hsl(var(--primary) / 0.1);
+    --info-border: hsl(var(--primary) / 0.2);
+    --info-text: hsl(var(--primary));
+  }
+
+  [data-sonner-toast][data-type="success"] {
+    background: var(--success-bg) !important;
+    border-color: var(--success-border) !important;
+    color: var(--success-text) !important;
+  }
+
+  [data-sonner-toast][data-type="error"] {
+    background: var(--error-bg) !important;
+    border-color: var(--error-border) !important;
+    color: var(--error-text) !important;
+  }
+
+  [data-sonner-toast][data-type="warning"] {
+    background: var(--warning-bg) !important;
+    border-color: var(--warning-border) !important;
+    color: var(--warning-text) !important;
+  }
+
+  [data-sonner-toast][data-type="info"] {
+    background: var(--info-bg) !important;
+    border-color: var(--info-border) !important;
+    color: var(--info-text) !important;
+  }
+
+  /* Loader animations */
+  @keyframes spin {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+
+  .animate-spin {
+    animation: spin 1s linear infinite;
+  }
+
+  @keyframes pulse {
+    0%, 100% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0.5;
+    }
+  }
+
+  .animate-pulse {
+    animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  }
+
+  /* Professional loader animations */
+  @keyframes spin-slow {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+
+  @keyframes pulse-smooth {
+    0%, 100% {
+      opacity: 1;
+      transform: scale(1);
+    }
+    50% {
+      opacity: 0.5;
+      transform: scale(0.95);
+    }
+  }
+
+  .loader-ring-slow {
+    animation: spin-slow 3s linear infinite;
+  }
+
+  .loader-pulse-smooth {
+    animation: pulse-smooth 1.5s ease-in-out infinite;
+  }
+
+  /* Typing indicator: bouncing dots */
+  @keyframes typing-bounce {
+    0%, 60%, 100% {
+      transform: translateY(0);
+    }
+    30% {
+      transform: translateY(-6px);
+    }
+  }
+
+  .typing-dot {
+    animation: typing-bounce 1.4s ease-in-out infinite;
+  }
+
+  .typing-dot:nth-child(1) { animation-delay: 0s; }
+  .typing-dot:nth-child(2) { animation-delay: 0.2s; }
+  .typing-dot:nth-child(3) { animation-delay: 0.4s; }
+
+  /* Mobile / PWA: safe area insets for notched devices and home indicator */
+  .safe-top {
+    padding-top: env(safe-area-inset-top, 0px);
+  }
+  .safe-bottom {
+    padding-bottom: env(safe-area-inset-bottom, 0px);
+  }
+  .safe-left {
+    padding-left: env(safe-area-inset-left, 0px);
+  }
+  .safe-right {
+    padding-right: env(safe-area-inset-right, 0px);
+  }
+  .safe-inset-x {
+    padding-left: env(safe-area-inset-left, 0px);
+    padding-right: env(safe-area-inset-right, 0px);
+  }
+  .min-h-screen-safe {
+    min-height: 100vh;
+    min-height: 100dvh; /* dynamic viewport height for mobile browsers */
+  }
+
+  /* App header: force fully opaque background so scrolling content never shows through */
+  .app-header {
+    background-color: #ffffff !important;
+    isolation: isolate;
+    transform: translateZ(0); /* create compositing layer */
+  }
+  .app-header::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: #ffffff;
+    z-index: -1;
+  }
+  .dark .app-header {
+    background-color: #18181b !important;
+  }
+  .dark .app-header::before {
+    background: #18181b;
+  }
+}
+
+/* Partner module: admin burgundy headings + gold premium accents (mock alignment) */
+@layer components {
+  .partner-admin-heading {
+    @apply text-2xl font-bold tracking-tight;
+    color: hsl(var(--heading));
+  }
+  .partner-admin-subheading {
+    @apply text-sm text-muted-foreground;
+  }
+  .partner-premium-badge {
+    @apply inline-flex items-center gap-1 rounded-full border px-2 py-0.5 text-xs font-medium;
+    border-color: hsl(43 74% 49% / 0.45);
+    background: hsl(48 100% 96%);
+    color: hsl(32 81% 28%);
+  }
+  .dark .partner-premium-badge {
+    background: hsl(32 30% 18%);
+    color: hsl(48 90% 75%);
+    border-color: hsl(43 50% 40%);
+  }
+  .partner-standard-badge {
+    @apply inline-flex items-center rounded-full border border-border px-2 py-0.5 text-xs font-medium text-muted-foreground;
+  }
+
+  /* Shared image cropper: resizable frame overlay on the full image */
+  .image-cropper-workspace .ReactCrop {
+    max-width: 100%;
+  }
+
+  .image-cropper-workspace .ReactCrop__child-wrapper {
+    display: block;
+    line-height: 0;
+  }
+
+  .image-cropper-workspace .ReactCrop__crop-selection {
+    border: 2px solid hsl(var(--primary));
+    box-shadow: 0 0 0 9999px rgb(0 0 0 / 0.25);
+    color: hsl(var(--primary));
+  }
+
+  .image-cropper-workspace .ReactCrop__drag-handle {
+    width: 12px;
+    height: 12px;
+    background: hsl(var(--background));
+    border: 2px solid hsl(var(--primary));
+    border-radius: 2px;
+  }
+
+  .image-cropper-workspace .ReactCrop__drag-handle.ord-n,
+  .image-cropper-workspace .ReactCrop__drag-handle.ord-s {
+    width: 20px;
+    height: 8px;
+    margin-left: -10px;
+  }
+
+  .image-cropper-workspace .ReactCrop__drag-handle.ord-e,
+  .image-cropper-workspace .ReactCrop__drag-handle.ord-w {
+    width: 8px;
+    height: 20px;
+    margin-top: -10px;
+  }
+}

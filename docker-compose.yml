@@ -1,0 +1,32 @@
+services:
+  vdpconnect:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        BUILD_MODE: ${BUILD_MODE:-production}
+        # NPM authentication token for GitHub Packages (@imriva/framework)
+        NPM_TOKEN: ${NPM_TOKEN:-}
+        # Vite environment variables (must be passed as build args)
+        VITE_OIDC_ISSUER: ${VITE_OIDC_ISSUER:-https://dev.auth.vdpconnect.idxd.de}
+        VITE_OIDC_CLIENT_ID: ${VITE_OIDC_CLIENT_ID:-imriva-frontend}
+        VITE_OIDC_REDIRECT_URI: ${VITE_OIDC_REDIRECT_URI:-https://dev.app.vdpconnect.idxd.de/callback}
+        VITE_OIDC_SCOPE: ${VITE_OIDC_SCOPE:-openid profile api}
+        VITE_API_BASE_URL: ${VITE_API_BASE_URL:-https://dev.api.vdpconnect.idxd.de}
+        VITE_APPINSIGHTS_CONNECTION_STRING: ${VITE_APPINSIGHTS_CONNECTION_STRING:-}
+        VITE_APPINSIGHTS_CLOUD_ROLE: ${VITE_APPINSIGHTS_CLOUD_ROLE:-}
+    container_name: vdpconnect-dev
+    ports:
+      - "8080:80"
+    restart: unless-stopped
+    volumes:
+      - nginx-logs:/var/log/nginx
+    healthcheck:
+      test: ["CMD", "wget", "--quiet", "--tries=1", "--spider", "http://localhost/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 10s
+
+volumes:
+  nginx-logs:
