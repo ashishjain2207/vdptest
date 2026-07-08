@@ -16,6 +16,8 @@
     "lint:fix": "eslint . --fix",
     "preview": "vite preview",
     "test": "vitest",
+    "test:e2e": "playwright test -c e2e/playwright.config.ts",
+    "test:e2e:ci": "playwright test -c e2e/playwright.config.ts",
     "test:ui": "vitest --ui",
     "test:coverage": "vitest --coverage"
   },

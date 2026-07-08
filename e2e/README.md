@@ -48,6 +48,7 @@ Configure these as repository or organization secrets. Values below are placehol
 | `E2E_API_BASE_URL` | no | Optional API cleanup helpers | `https://api.staging.example.com` |
 | `E2E_API_TOKEN` | no | Optional bearer token for cleanup helpers if API cleanup is enabled | `api-token-placeholder` |
 | `NODE_AUTH_TOKEN` | yes if CI installs private GitHub Packages | Package registry token for `@imriva/framework` install | `github-packages-token-placeholder` |
+| `CLICKUP_API_TOKEN` | yes in CI | ClickUp API token used to attach test results and failure screenshots to the linked task | `clickup-token-placeholder` |
 
 ## Local environment variables
 
@@ -71,6 +72,15 @@ Create a gitignored `.env.e2e` file at the repository root with matching keys.
 | `PLAYWRIGHT_SKIP_WEB_SERVER` | no | Set to `true` when targeting an already-running environment | `true` |
 | `NODE_AUTH_TOKEN` | yes if installing private packages locally | Token for GitHub Packages dependency install | `github-packages-token-placeholder` |
 
+## CI upload environment variables
+
+The GitHub Actions workflow sets these non-secret values for ClickUp grouping:
+
+| Variable | Required | Description | Example (placeholder only) |
+|----------|----------|-------------|----------------------------|
+| `CLICKUP_TASK_ID` | yes in CI | ClickUp task receiving JSON results and failure screenshots | `869e1b3r8` |
+| `CLICKUP_RUN_ID` | yes in CI | Shared run tag used in ClickUp attachment filenames | `${{ github.run_id }}` |
+
 ## CI vs local notes
 
 - CI secrets map directly to the local variable names above.
@@ -78,6 +88,8 @@ Create a gitignored `.env.e2e` file at the repository root with matching keys.
 - No `.env.example` is included in this task; use the tables above as the source for placeholder keys.
 - `PLAYWRIGHT_BASE_URL` takes precedence over `E2E_BASE_URL`.
 - Set `PLAYWRIGHT_SKIP_WEB_SERVER=true` in CI when `PLAYWRIGHT_BASE_URL` points to a deployed staging environment.
+- CI writes Playwright JSON results to `e2e/test-results/results.json`.
+- ClickUp uploads attach the JSON results and failure screenshots to `CLICKUP_TASK_ID`, prefixing each attachment filename with `CLICKUP_RUN_ID` so one workflow run stays grouped.
 
 ## Troubleshooting
 
