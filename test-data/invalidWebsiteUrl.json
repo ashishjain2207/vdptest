@@ -1,0 +1,4 @@
+{
+  "invalidUrl": "not-a-valid-url",
+  "expectedError": "Enter a valid website URL"
+}

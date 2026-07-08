@@ -1,0 +1,5 @@
+{
+  "email": "invalid.user@example.test",
+  "password": "WrongPassword123!",
+  "expectedError": "Invalid username or password"
+}

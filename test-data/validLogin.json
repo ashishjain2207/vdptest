@@ -1,0 +1,4 @@
+{
+  "description": "Credentials are loaded from E2E_NORMAL_USER_EMAIL and E2E_NORMAL_USER_PASSWORD.",
+  "expectedLandingPath": "/posts"
+}

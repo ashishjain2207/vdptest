@@ -1,0 +1,7 @@
+{
+  "name": "Existing E2E User",
+  "username": "existing-e2e-user",
+  "email": "existing.e2e@example.test",
+  "password": "Password123!",
+  "country": "United States"
+}
