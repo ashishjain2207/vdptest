@@ -1,0 +1,5 @@
+{
+  "emailEnv": "E2E_NORMAL_USER_EMAIL",
+  "passwordEnv": "E2E_NORMAL_USER_PASSWORD",
+  "expectedRedirect": "/posts"
+}

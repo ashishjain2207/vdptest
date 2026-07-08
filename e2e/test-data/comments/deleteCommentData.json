@@ -1,0 +1,6 @@
+{
+  "postIdEnv": "E2E_COMMENT_TARGET_POST_ID",
+  "textTemplate": "Automated E2E comment to delete",
+  "otherCommentTextEnv": "E2E_OTHER_USER_COMMENT_TEXT",
+  "otherCommentText": "Seeded comment owned by another user"
+}

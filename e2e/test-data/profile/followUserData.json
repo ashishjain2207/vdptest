@@ -1,0 +1,5 @@
+{
+  "targetProfileEnv": "E2E_TARGET_USER_PROFILE_SLUG",
+  "targetProfileFallback": "target-user",
+  "targetUsernameEnv": "E2E_TARGET_USER_USERNAME"
+}

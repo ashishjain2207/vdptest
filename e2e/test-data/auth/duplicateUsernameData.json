@@ -1,0 +1,12 @@
+{
+  "fullName": "E2E Duplicate Username User",
+  "username": "testuser",
+  "duplicateUsernameEnv": "E2E_DUPLICATE_USERNAME",
+  "emailPrefix": "e2e.duplicate",
+  "emailDomain": "example.com",
+  "password": "E2E-StrongPassword-123!",
+  "dateOfBirth": "1990-01-01",
+  "homeCountry": "US",
+  "acceptTerms": true,
+  "expectedErrorPattern": "username|taken|already|duplicate|exists"
+}

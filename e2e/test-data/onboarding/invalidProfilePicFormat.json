@@ -1,0 +1,5 @@
+{
+  "filePathKey": "invalidProfilePicture",
+  "fileName": "invalid-profile-picture.exe",
+  "expectedErrorPattern": "unsupported|file type|format|image"
+}
