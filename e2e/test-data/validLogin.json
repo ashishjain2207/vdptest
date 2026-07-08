@@ -1,0 +1,6 @@
+{
+  "identifierEnv": "E2E_NORMAL_USER_EMAIL",
+  "passwordEnv": "E2E_NORMAL_USER_PASSWORD",
+  "fallbackIdentifier": "e2e.normal@example.com",
+  "fallbackPassword": "E2eNormalPass!234"
+}

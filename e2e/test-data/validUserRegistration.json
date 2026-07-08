@@ -1,0 +1,10 @@
+{
+  "fullName": "E2E Valid User",
+  "usernamePrefix": "e2evalid",
+  "emailPrefix": "e2e.valid",
+  "emailDomain": "example.com",
+  "password": "E2eValidPass!234",
+  "dateOfBirth": "1990-01-15",
+  "homeCountry": "Germany",
+  "acceptTerms": true
+}

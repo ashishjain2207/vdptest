@@ -16,6 +16,8 @@
     "lint:fix": "eslint . --fix",
     "preview": "vite preview",
     "test": "vitest",
+    "e2e": "playwright test -c e2e/playwright.config.ts",
+    "e2e:ui": "playwright test -c e2e/playwright.config.ts --ui",
     "test:ui": "vitest --ui",
     "test:coverage": "vitest --coverage"
   },
@@ -79,6 +81,7 @@
   },
   "devDependencies": {
     "@eslint/js": "^9.32.0",
+    "@playwright/test": "^1.61.1",
     "@tailwindcss/typography": "^0.5.16",
     "@testing-library/jest-dom": "^6.1.5",
     "@testing-library/react": "^14.1.2",

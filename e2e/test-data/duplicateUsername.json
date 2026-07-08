@@ -1,0 +1,10 @@
+{
+  "fullName": "Duplicate Username Candidate",
+  "username": "existinguser",
+  "emailPrefix": "e2e.duplicate",
+  "emailDomain": "example.com",
+  "password": "E2eDuplicatePass!234",
+  "dateOfBirth": "1990-02-20",
+  "homeCountry": "Germany",
+  "acceptTerms": true
+}
