@@ -1,0 +1,4 @@
+{
+  "filePath": "e2e/test-data/uploads/unsupported-media.exe",
+  "expectedErrorPattern": "unsupported file type"
+}

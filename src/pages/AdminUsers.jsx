@@ -224,7 +224,7 @@ const AdminUsers = () => {
   };
 
   return (
-    <div className="max-w-7xl mx-auto space-y-6 pb-12">
+    <div className="max-w-7xl mx-auto space-y-6 pb-12" data-testid="admin-users-page">
       <div className="flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between">
         <div className="space-y-1">
           <Button variant="ghost" size="sm" className="gap-2 -ml-2 w-fit text-muted-foreground" asChild>
@@ -300,7 +300,7 @@ const AdminUsers = () => {
                   const busy = actionBusyId === userId;
 
                   return (
-                    <tr key={userId || handle} className="border-b border-border/80 last:border-0 hover:bg-muted/20 transition-colors">
+                    <tr key={userId || handle} className="border-b border-border/80 last:border-0 hover:bg-muted/20 transition-colors" data-testid="admin-user-row" data-user-id={userId}>
                       <td className="p-4">
                         <div className="flex items-center gap-3 min-w-[200px]">
                           <Avatar className="h-10 w-10 rounded-full border border-border">
@@ -326,7 +326,7 @@ const AdminUsers = () => {
                       <td className="p-4 text-right">
                         <DropdownMenu>
                           <DropdownMenuTrigger asChild>
-                            <Button variant="ghost" size="icon" className="h-8 w-8" disabled={busy} aria-label={t('admin.actions')}>
+                            <Button variant="ghost" size="icon" data-testid="admin-user-actions-trigger" className="h-8 w-8" disabled={busy} aria-label={t('admin.actions')}>
                               {busy ? <Loader2 className="h-4 w-4 animate-spin" /> : <MoreHorizontal className="h-4 w-4" />}
                             </Button>
                           </DropdownMenuTrigger>
@@ -348,10 +348,11 @@ const AdminUsers = () => {
                             {isPlatformAdmin ? (
                               <>
                                 <DropdownMenuSeparator />
-                                <DropdownMenuItem onClick={() => openRoleDialog(row)}>
+                                <DropdownMenuItem data-testid="admin-change-role-action" onClick={() => openRoleDialog(row)}>
                                   <LangText path="admin.change_role"  />
                                 </DropdownMenuItem>
                                 <DropdownMenuItem
+                                  data-testid="admin-toggle-suspension-action"
                                   onClick={() => void handleSuspendToggle(row)}
                                   className={status !== 'Suspended' ? 'text-destructive focus:text-destructive' : undefined}
                                 >

@@ -1097,6 +1097,7 @@ const ProfileSettings = () => {
           ref={avatarFileInputRef}
           type="file"
           accept="image/*"
+          data-testid="profile-settings-avatar-input"
           aria-label={t('profileSettings.uploadProfilePicture')}
           onChange={onAvatarFileChange}
           style={{ display: 'none' }}
@@ -1105,6 +1106,7 @@ const ProfileSettings = () => {
           ref={coverFileInputRef}
           type="file"
           accept="image/*"
+          data-testid="profile-settings-cover-input"
           aria-label={t('profileSettings.changeCoverImage')}
           onChange={onCoverFileChange}
           style={{ display: 'none' }}
@@ -1265,6 +1267,7 @@ const ProfileSettings = () => {
               <CountryMarketCombobox
                 id="home-country-settings"
                 source="supported"
+                data-testid="profile-settings-home-country-input"
                 language={language === 'DE' ? 'DE' : 'EN'}
                 value={homeCountryInput}
                 onChange={(code) => setHomeCountryInput(code)}
@@ -1286,6 +1289,7 @@ const ProfileSettings = () => {
             <Label htmlFor="name"><LangText path="settings.display_name"  /></Label>
             <Input
               id="name"
+              data-testid="profile-settings-name-input"
               value={formData.name}
               onChange={handleChange}
               placeholder={t('settings.your_display_name')}
@@ -1301,6 +1305,7 @@ const ProfileSettings = () => {
               </span>
               <Input
                 id="handle"
+                data-testid="profile-settings-handle-input"
                 value={formData.handle}
                 onChange={handleChange}
                 className="pl-8"
@@ -1314,6 +1319,7 @@ const ProfileSettings = () => {
             <Label htmlFor="bio"><LangText path="profileSettings.shortBio"  /></Label>
             <Textarea
               id="bio"
+              data-testid="profile-settings-bio-input"
               value={formData.bio}
               onChange={handleChange}
               rows={4}
@@ -1331,6 +1337,7 @@ const ProfileSettings = () => {
                 <Input
                   id="company"
                   name="company"
+                  data-testid="profile-settings-company-input"
                   className={cn((formData.company || '').trim() && 'pr-10')}
                   value={formData.company}
                   onChange={handleChange}
@@ -1367,6 +1374,7 @@ const ProfileSettings = () => {
                   <div className="relative">
                     <Input
                       id="designation-input"
+                      data-testid="profile-settings-designation-input"
                       value={designationInput}
                       onChange={(e) => {
                         designationFieldDirtyRef.current = true;
@@ -1500,6 +1508,7 @@ const ProfileSettings = () => {
             <Label htmlFor="location"><LangText path="partners.location"  /></Label>
             <LocationPicker
               value={formData.location}
+              data-testid="profile-settings-location-input"
               onChange={(value) => setFormData((prev) => ({ ...prev, location: value }))}
               placeholder={t('profileSettings.locationPlaceholder')}
               disabled={loading}
@@ -1512,6 +1521,7 @@ const ProfileSettings = () => {
             <Input
               id="contactEmail"
               type="email"
+              data-testid="profile-settings-contact-email-input"
               value={formData.contactEmail}
               onChange={handleChange}
               placeholder="you@example.com"
@@ -1524,6 +1534,7 @@ const ProfileSettings = () => {
             <Input
               id="linkedInProfileUrl"
               type="url"
+              data-testid="profile-settings-linkedin-input"
               value={formData.linkedInProfileUrl}
               onChange={handleChange}
               placeholder="https://linkedin.com/in/yourprofile"
@@ -1535,6 +1546,7 @@ const ProfileSettings = () => {
             <Label htmlFor="description"><LangText path="profileSettings.aboutMe"  /></Label>
             <Textarea
               id="description"
+              data-testid="profile-settings-description-input"
               value={formData.description}
               onChange={handleChange}
               rows={6}
@@ -1548,6 +1560,7 @@ const ProfileSettings = () => {
             <Input
               id="website"
               type="url"
+              data-testid="profile-settings-website-input"
               value={formData.website}
               onChange={handleChange}
               placeholder="https://yourwebsite.com"
@@ -1562,7 +1575,7 @@ const ProfileSettings = () => {
           <Button variant="outline" disabled={saving || loading} onClick={handleCancel}>
             <LangText path="common.cancel"  />
           </Button>
-          <Button onClick={handleSave} disabled={saving || loading}>
+          <Button data-testid="profile-settings-save-button" onClick={handleSave} disabled={saving || loading}>
             {saving ? (t('common.saving')) : (t('common.saveChanges'))}
           </Button>
         </div>

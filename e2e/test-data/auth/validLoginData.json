@@ -1,0 +1,5 @@
+{
+  "identifier": "{{normalUserHandle}}",
+  "passwordSource": "E2E_NORMAL_USER_PASSWORD",
+  "expectedRedirectPath": "/posts"
+}

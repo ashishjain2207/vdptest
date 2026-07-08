@@ -27,6 +27,7 @@ import { useCountryPickerCatalog } from '@/hooks/useCountryPickerCatalog.js';
  *   className?: string,
  *   inputClassName?: string,
  *   placeholder?: string,
+ *   'data-testid'?: string,
  *   'aria-label'?: string,
  *   'aria-invalid'?: boolean,
  *   'aria-describedby'?: string,
@@ -44,6 +45,7 @@ export function CountryMarketCombobox({
   className,
   inputClassName,
   placeholder,
+  'data-testid': dataTestId,
   'aria-label': ariaLabel,
   'aria-invalid': ariaInvalid,
   'aria-describedby': ariaDescribedBy,
@@ -167,6 +169,7 @@ export function CountryMarketCombobox({
         aria-expanded={open}
         aria-controls={listboxId}
         aria-autocomplete="list"
+        data-testid={dataTestId}
         aria-label={ariaLabel}
         aria-invalid={ariaInvalid}
         aria-describedby={combinedAriaDescribedBy}

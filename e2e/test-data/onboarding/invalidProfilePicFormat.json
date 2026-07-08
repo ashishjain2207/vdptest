@@ -1,0 +1,4 @@
+{
+  "filePath": "e2e/test-data/uploads/invalid-profile-picture.exe",
+  "expectedErrorPattern": "unsupported file format"
+}

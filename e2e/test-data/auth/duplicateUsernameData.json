@@ -1,0 +1,7 @@
+{
+  "fullName": "Duplicate Username Candidate",
+  "username": "{{existingUsername}}",
+  "email": "{{uniqueEmail}}",
+  "password": "Password123!",
+  "homeCountry": "United States (US)"
+}

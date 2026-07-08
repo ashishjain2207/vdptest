@@ -273,6 +273,8 @@ export function PostCard({
   return (
     <>
       <article 
+        data-testid="post-card"
+        data-post-id={String(post.id ?? post.Id ?? '')}
         className={cn(
           'bg-card rounded-xl border p-4 hover:shadow-card transition-all duration-200 animate-fade-in cursor-pointer',
           post.isRepost ? 'border-l-4 border-l-primary border-border' : 'border-border',
@@ -369,19 +371,20 @@ export function PostCard({
                 <>
                   <DropdownMenu>
                     <DropdownMenuTrigger asChild>
-                      <Button variant="ghost" size="icon" className="h-8 w-8 -mr-2 -mt-1 text-muted-foreground hover:text-foreground focus:outline-none focus:ring-0" onClick={(e) => e.stopPropagation()} aria-label={t('posts.post_actions')}>
+                      <Button variant="ghost" size="icon" data-testid="post-actions-trigger" className="h-8 w-8 -mr-2 -mt-1 text-muted-foreground hover:text-foreground focus:outline-none focus:ring-0" onClick={(e) => e.stopPropagation()} aria-label={t('posts.post_actions')}>
                         <MoreHorizontal className="w-4 h-4" />
                       </Button>
                     </DropdownMenuTrigger>
                     <DropdownMenuContent align="end" onClick={(e) => e.stopPropagation()}>
                       {isAuthor ? (
-                        <DropdownMenuItem onClick={(e) => { e.stopPropagation(); onEdit?.(post); }}>
+                        <DropdownMenuItem data-testid="post-edit-action" onClick={(e) => { e.stopPropagation(); onEdit?.(post); }}>
                           <Pencil className="w-4 h-4 mr-2" />
                           <LangText path="messages.edit"  />
                         </DropdownMenuItem>
                       ) : null}
                       {(isAuthor || canModeratePartnerPost) ? (
                         <DropdownMenuItem
+                          data-testid="post-delete-action"
                           className="text-destructive focus:text-destructive"
                           onClick={(e) => {
                             e.stopPropagation();
@@ -601,6 +604,7 @@ export function PostCard({
                 type="button"
                 variant="ghost"
                 size="sm"
+                data-testid="post-comment-toggle"
                 aria-label={actionLabels.comment}
                 aria-expanded={commentsExpanded}
                 className={cn(
@@ -623,6 +627,7 @@ export function PostCard({
                 type="button"
                 variant="ghost" 
                 size="sm" 
+                data-testid="post-repost-button"
                 aria-label={actionLabels.repost}
                 aria-pressed={isReposted}
                 className={cn(
@@ -641,6 +646,7 @@ export function PostCard({
                 type="button"
                 variant="ghost" 
                 size="sm" 
+                data-testid="post-like-button"
                 aria-label={actionLabels.like}
                 aria-pressed={isLiked}
                 className={cn(
@@ -659,6 +665,7 @@ export function PostCard({
                 type="button"
                 variant="ghost" 
                 size="sm" 
+                data-testid="post-share-button"
                 aria-label={actionLabels.share}
                 className="text-muted-foreground hover:text-primary hover:bg-primary/10 h-8 px-2"
                 onClick={handleShare}
@@ -670,6 +677,7 @@ export function PostCard({
                 type="button"
                 variant="ghost" 
                 size="sm" 
+                data-testid="post-bookmark-button"
                 aria-label={actionLabels.bookmark}
                 aria-pressed={isBookmarked}
                 className={cn(

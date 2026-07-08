@@ -32,7 +32,7 @@ export default function Onboarding() {
   };
 
   return (
-    <div className="min-h-screen bg-background flex items-center justify-center p-6 relative">
+    <div className="min-h-screen bg-background flex items-center justify-center p-6 relative" data-testid="onboarding-page">
       <div className="absolute top-4 right-4 z-50">
         <LanguageSelector />
       </div>

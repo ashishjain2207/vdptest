@@ -585,7 +585,7 @@ const PostDetail = () => {
 
   return (
     <MainLayout>
-      <div className="w-full max-w-7xl 2xl:max-w-screen-2xl mx-auto">
+      <div className="w-full max-w-7xl 2xl:max-w-screen-2xl mx-auto" data-testid="post-detail-page">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-6">
           {/* Full-width column so post uses complete UI (no half-half layout) */}
           <div className="lg:col-span-12 space-y-4">
@@ -672,18 +672,19 @@ const PostDetail = () => {
                     <>
                       <DropdownMenu>
                         <DropdownMenuTrigger asChild>
-                          <Button variant="ghost" size="icon" className="h-8 w-8 text-muted-foreground hover:text-foreground focus:outline-none focus:ring-0" aria-label={t('posts.post_actions')}>
+                          <Button variant="ghost" size="icon" data-testid="post-detail-actions-trigger" className="h-8 w-8 text-muted-foreground hover:text-foreground focus:outline-none focus:ring-0" aria-label={t('posts.post_actions')}>
                             <MoreHorizontal className="w-4 h-4" />
                           </Button>
                         </DropdownMenuTrigger>
                         <DropdownMenuContent align="end">
                           {isPostAuthor ? (
-                            <DropdownMenuItem onClick={() => setEditingPost(post)}>
+                            <DropdownMenuItem data-testid="post-detail-edit-action" onClick={() => setEditingPost(post)}>
                               <Pencil className="w-4 h-4 mr-2" />
                               <LangText path="messages.edit"  />
                             </DropdownMenuItem>
                           ) : null}
                           <DropdownMenuItem
+                            data-testid="post-detail-delete-action"
                             className="text-destructive focus:text-destructive"
                             onClick={() => setDeleteDialogOpen(true)}
                           >
@@ -1039,6 +1040,7 @@ const PostDetail = () => {
                           <Textarea
                             ref={replyTextareaRef}
                             placeholder={t('posts.write_a_comment')}
+                            data-testid="post-detail-comment-input"
                             className="min-h-[100px] resize-y bg-card w-full"
                             value={replyContent}
                             onChange={handleMentionChange}
@@ -1057,6 +1059,7 @@ const PostDetail = () => {
                       <div className="mt-3 flex justify-end">
                         <Button
                           disabled={!replyContent.trim() || submittingComment}
+                          data-testid="post-detail-comment-submit-button"
                           className="gap-2 shadow-soft"
                           onClick={handleAddComment}
                         >

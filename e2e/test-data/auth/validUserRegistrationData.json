@@ -1,0 +1,7 @@
+{
+  "fullName": "{{uniqueDisplayName}}",
+  "username": "{{uniqueUsername}}",
+  "email": "{{uniqueEmail}}",
+  "password": "Password123!",
+  "homeCountry": "United States (US)"
+}

@@ -1,0 +1,7 @@
+{
+  "targetHandle": "{{secondaryUserHandle}}",
+  "expectedStatuses": {
+    "suspended": "Suspended",
+    "active": "Active"
+  }
+}

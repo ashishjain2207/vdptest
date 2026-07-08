@@ -301,7 +301,7 @@ const Signup = () => {
   }
 
   return (
-    <div className="h-[100dvh] max-h-[100dvh] overflow-hidden bg-background flex relative">
+    <div className="h-[100dvh] max-h-[100dvh] overflow-hidden bg-background flex relative" data-testid="registration-page">
       {/* Language Selector - Top Right */}
       <div className="absolute top-4 right-4 z-50">
         <LanguageSelector />
@@ -424,6 +424,7 @@ const Signup = () => {
                 <Input
                   id="name"
                   type="text"
+                  data-testid="registration-name-input"
                   placeholder={t('auth.e_g_john_smith')}
                   className={cn(
                     'pl-10 h-11',
@@ -457,6 +458,7 @@ const Signup = () => {
                 <Input
                   id="username"
                   type="text"
+                  data-testid="registration-username-input"
                   placeholder={t('auth.e_g_johndoe')}
                   className={cn(
                     'pl-10 h-11 pr-10',
@@ -495,6 +497,7 @@ const Signup = () => {
               </Label>
               <CountryMarketCombobox
                 id="signup-home-country"
+                data-testid="registration-country-input"
                 source="supported"
                 language={language === 'DE' ? 'DE' : 'EN'}
                 value={homeCountry}
@@ -522,6 +525,7 @@ const Signup = () => {
                 <Input
                   id="email"
                   type="email"
+                  data-testid="registration-email-input"
                   placeholder={t('auth.you_company_com')}
                   className={cn(
                     'pl-10 h-11',
@@ -553,6 +557,7 @@ const Signup = () => {
                 <Input
                   id="password"
                   type={showPassword ? 'text' : 'password'}
+                  data-testid="registration-password-input"
                   placeholder={t('auth.passwordPlaceholder')}
                   className={cn(
                     'pl-10 pr-12 h-11',
@@ -587,7 +592,7 @@ const Signup = () => {
               <PasswordRulesChecklist password={password} validation={passwordValidation} className="gap-y-0.5" />
             </div>
 
-            <Button type="submit" className="w-full h-11 shadow-soft mt-1" disabled={submitting || usernameStatus === 'taken' || (password && passwordValidation && !passwordValidation.valid)}>
+            <Button type="submit" data-testid="registration-submit-button" className="w-full h-11 shadow-soft mt-1" disabled={submitting || usernameStatus === 'taken' || (password && passwordValidation && !passwordValidation.valid)}>
               {submitting ? (
                 <>
                   <Loader2 className="w-4 h-4 mr-2 animate-spin" />

@@ -107,7 +107,7 @@ export function CommentItem({ comment, depth = 0, currentUser, onLike, onReply, 
     <div className={cn(
       'animate-fade-in',
       visualDepth > 0 && 'ml-12 border-l-2 border-border pl-4',
-    )}>
+    )} data-testid="comment-item" data-comment-id={String(comment.id ?? '')}>
       <div className="flex gap-3 py-4">
         <Avatar className={cn('flex-shrink-0', isNested ? 'w-8 h-8' : 'w-10 h-10')}>
           {comment.author?.avatar ? (
@@ -137,6 +137,7 @@ export function CommentItem({ comment, depth = 0, currentUser, onLike, onReply, 
                   <Button
                     variant="ghost"
                     size="icon"
+                    data-testid="comment-actions-trigger"
                     className="h-6 w-6 shrink-0 text-muted-foreground hover:text-foreground"
                     onClick={(e) => e.stopPropagation()}
                     aria-label={t('posts.comment_actions')}
@@ -186,6 +187,7 @@ export function CommentItem({ comment, depth = 0, currentUser, onLike, onReply, 
                   )}
                   {canDelete && onDelete && (
                     <DropdownMenuItem
+                      data-testid="comment-delete-action"
                       className="text-destructive focus:text-destructive"
                       onClick={async (e) => {
                         e.stopPropagation();
@@ -289,6 +291,7 @@ export function CommentItem({ comment, depth = 0, currentUser, onLike, onReply, 
               <Button
                 variant="ghost"
                 size="sm"
+                data-testid="comment-reply-toggle"
                 className="h-7 px-2 gap-1.5 text-xs text-muted-foreground hover:text-primary hover:bg-primary/10"
                 onClick={() => setShowReplyInput(!showReplyInput)}
               >
@@ -313,6 +316,7 @@ export function CommentItem({ comment, depth = 0, currentUser, onLike, onReply, 
                     <Textarea
                       ref={replyTextareaRef}
                       placeholder={tr('time.replyTo', { name: comment.author.name })}
+                      data-testid="comment-reply-input"
                       className="min-h-[60px] text-sm resize-y w-full"
                       value={replyContent}
                       onChange={replyMention.handleChange}
@@ -337,6 +341,7 @@ export function CommentItem({ comment, depth = 0, currentUser, onLike, onReply, 
                   <Button
                     size="sm"
                     disabled={!replyContent.trim() || submitting}
+                    data-testid="comment-reply-submit-button"
                     className="gap-1"
                     onClick={handleReplySubmit}
                   >

@@ -265,7 +265,7 @@ export default function AdminContentModeration() {
     && ['resolved', 'dismissed'].includes(String(detail.status).toLowerCase());
 
   return (
-    <div className="max-w-6xl mx-auto space-y-6 pb-12">
+    <div className="max-w-6xl mx-auto space-y-6 pb-12" data-testid="admin-content-moderation-page">
       <div>
         <h1 className="text-2xl font-bold text-foreground flex items-center gap-2">
           <Flag className="h-7 w-7 text-amber-600" aria-hidden />
@@ -354,6 +354,8 @@ export default function AdminContentModeration() {
                 <button
                   type="button"
                   className="w-full text-left px-4 py-4 hover:bg-muted/50 transition-colors"
+                  data-testid="admin-moderation-case-row"
+                  data-case-id={String(item.id)}
                   onClick={() => setDetailId(String(item.id))}
                 >
                   <div className="flex flex-wrap items-start justify-between gap-2">
@@ -451,6 +453,7 @@ export default function AdminContentModeration() {
               <Button
                 type="button"
                 variant="outline"
+                data-testid="admin-dismiss-case-button"
                 disabled={busyId === detail.id}
                 onClick={() => void handleStatusUpdate(detail.id, 'Dismissed')}
               >
@@ -458,6 +461,7 @@ export default function AdminContentModeration() {
               </Button>
               <Button
                 type="button"
+                data-testid="admin-resolve-case-button"
                 disabled={busyId === detail.id}
                 onClick={() => void handleStatusUpdate(detail.id, 'Resolved')}
               >

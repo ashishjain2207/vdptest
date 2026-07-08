@@ -392,6 +392,7 @@ export function CreatePost({ onPostCreated, variant, onOpenChange, organizationI
 
   return (
     <form
+      data-testid="create-post-composer"
       className={cn(
         'rounded-xl p-4 transition-shadow block',
         isModal ? 'border-0 bg-transparent shadow-none' : 'bg-card border border-border',
@@ -406,6 +407,7 @@ export function CreatePost({ onPostCreated, variant, onOpenChange, organizationI
           accept={uploadAccept}
           multiple
           className="hidden"
+          data-testid="create-post-file-input"
           aria-label={label('addImage')}
           onChange={handleFileChange}
         />
@@ -431,6 +433,7 @@ export function CreatePost({ onPostCreated, variant, onOpenChange, organizationI
                 ref={textareaRef}
                 placeholder={label('sharePrompt')}
                 aria-label={toastT('posts.post_content')}
+                data-testid="create-post-content-input"
                 className={cn(
                   'min-h-[70px] resize-none border-none bg-transparent p-0 focus-visible:ring-0 text-base placeholder:text-muted-foreground',
                   isFocused && 'min-h-[100px]',
@@ -458,6 +461,7 @@ export function CreatePost({ onPostCreated, variant, onOpenChange, organizationI
             {/* Media previews */}
             {selectedFiles.length > 0 && (
               <div className="mt-2 flex flex-wrap gap-2">
+                <div data-testid="create-post-media-preview-list" className="contents">
                 {selectedFiles.map((file, i) => (
                   <LocalPostMediaFileThumb
                     key={`${file.name}-${file.size}-${i}`}
@@ -466,6 +470,7 @@ export function CreatePost({ onPostCreated, variant, onOpenChange, organizationI
                     removeAriaLabel={toastT('posts.remove')}
                   />
                 ))}
+                </div>
               </div>
             )}
 
@@ -475,6 +480,7 @@ export function CreatePost({ onPostCreated, variant, onOpenChange, organizationI
                 <Input
                   placeholder={toastT('posts.ask_a_question')}
                   aria-label={toastT('posts.poll_question')}
+                  data-testid="create-post-poll-question-input"
                   value={poll?.question ?? ''}
                   onChange={(e) => setPollQuestion(e.target.value)}
                   className="bg-background"
@@ -484,6 +490,7 @@ export function CreatePost({ onPostCreated, variant, onOpenChange, organizationI
                     <Input
                       placeholder={tr('time.pollOption', { n: i + 1 })}
                       aria-label={tr('time.pollOptionAria', { n: i + 1 })}
+                      data-testid={`create-post-poll-option-${i + 1}`}
                       value={opt}
                       onChange={(e) => setPollOption(i, e.target.value)}
                       className="bg-background"
@@ -574,13 +581,13 @@ export function CreatePost({ onPostCreated, variant, onOpenChange, organizationI
 
             <div className="mt-3 flex items-center justify-between border-t border-border pt-3">
               <div className="flex items-center gap-0.5">
-                <Button type="button" variant="ghost" size="icon" className="h-9 w-9 text-primary hover:bg-primary/10" onClick={openAttachmentPicker} aria-label={label('addImage')} title={label('addImage')}>
+                <Button type="button" variant="ghost" size="icon" data-testid="create-post-attach-button" className="h-9 w-9 text-primary hover:bg-primary/10" onClick={openAttachmentPicker} aria-label={label('addImage')} title={label('addImage')}>
                   <Paperclip className="w-[18px] h-[18px]" />
                 </Button>
 
                 <Popover open={showLinkOpen} onOpenChange={setShowLinkOpen}>
                   <PopoverTrigger asChild>
-                    <Button type="button" variant="ghost" size="icon" className="h-9 w-9 text-primary hover:bg-primary/10" aria-label={label('addLink')} title={label('addLink')}>
+                    <Button type="button" variant="ghost" size="icon" data-testid="create-post-link-button" className="h-9 w-9 text-primary hover:bg-primary/10" aria-label={label('addLink')} title={label('addLink')}>
                       <Link2 className="w-[18px] h-[18px]" />
                     </Button>
                   </PopoverTrigger>
@@ -600,6 +607,7 @@ export function CreatePost({ onPostCreated, variant, onOpenChange, organizationI
                     <Input
                       placeholder={toastT('posts.paste_or_type_url')}
                       aria-label={toastT('posts.link_url')}
+                      data-testid="create-post-link-input"
                       value={linkDraft}
                       onChange={(e) => setLinkDraft(e.target.value)}
                       onKeyDown={(e) => {
@@ -613,6 +621,7 @@ export function CreatePost({ onPostCreated, variant, onOpenChange, organizationI
                     <Button
                       type="button"
                       size="sm"
+                      data-testid="create-post-save-link-button"
                       className="mt-3 w-full rounded-lg"
                       onClick={() => {
                         setLinkUrl(linkDraft.trim());
@@ -625,14 +634,14 @@ export function CreatePost({ onPostCreated, variant, onOpenChange, organizationI
                 </Popover>
 
                 {!showPollEditor ? (
-                  <Button type="button" variant="ghost" size="icon" className="h-9 w-9 text-primary hover:bg-primary/10" onClick={addPoll} aria-label={label('createPoll')} title={label('createPoll')}>
+                  <Button type="button" variant="ghost" size="icon" data-testid="create-post-poll-button" className="h-9 w-9 text-primary hover:bg-primary/10" onClick={addPoll} aria-label={label('createPoll')} title={label('createPoll')}>
                     <BarChart3 className="w-[18px] h-[18px]" />
                   </Button>
                 ) : null}
 
                 <Popover open={showLocationOpen} onOpenChange={handleLocationPopoverOpenChange}>
                   <PopoverTrigger asChild>
-                    <Button type="button" variant="ghost" size="icon" className="h-9 w-9 text-primary hover:bg-primary/10" aria-label={label('addLocation')} title={label('addLocation')}>
+                    <Button type="button" variant="ghost" size="icon" data-testid="create-post-location-button" className="h-9 w-9 text-primary hover:bg-primary/10" aria-label={label('addLocation')} title={label('addLocation')}>
                       <MapPin className="w-[18px] h-[18px]" />
                     </Button>
                   </PopoverTrigger>
@@ -670,6 +679,7 @@ export function CreatePost({ onPostCreated, variant, onOpenChange, organizationI
                       onChange={(v) => setLocationDraft(v)}
                       onSelect={handleLocationSelect}
                       placeholder={toastT('posts.city_address_or_place_name')}
+                      data-testid="create-post-location-input"
                       showMapsButton
                       showCurrentLocation={false}
                       suggestionsInPortal
@@ -735,6 +745,7 @@ export function CreatePost({ onPostCreated, variant, onOpenChange, organizationI
                   type="button"
                   disabled={!canSubmit}
                   size="sm"
+                  data-testid="create-post-submit-button"
                   className="gap-1.5 px-4 shadow-soft"
                   onClick={handleSubmit}
                 >

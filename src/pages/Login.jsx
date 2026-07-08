@@ -250,7 +250,7 @@ const Login = () => {
   };
 
   return (
-    <div className="min-h-screen bg-background flex relative">
+    <div className="min-h-screen bg-background flex relative" data-testid="login-page">
       {/* Language Selector - Top Right */}
       <div className="absolute top-4 right-4 z-50">
         <LanguageSelector />
@@ -398,6 +398,7 @@ const Login = () => {
                 <Input
                   id="email"
                   type="email"
+                  data-testid="login-email-input"
                   placeholder={t('auth.name_company_com')}
                   className={cn(
                     'pl-10 h-11',
@@ -438,6 +439,7 @@ const Login = () => {
                 <Input
                   id="password"
                   type={showPassword ? 'text' : 'password'}
+                  data-testid="login-password-input"
                   placeholder={t('auth.enter_your_password')}
                   className={cn(
                     'pl-10 pr-12 h-11',
@@ -471,6 +473,7 @@ const Login = () => {
 
             <Button 
               type="submit" 
+              data-testid="login-submit-button"
               className="w-full h-11 shadow-soft" 
               disabled={isLoading || loadingProvider !== null}
             >

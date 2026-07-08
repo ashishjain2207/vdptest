@@ -924,7 +924,7 @@ const Profile = () => {
         post={editingPost}
         onPostUpdated={handlePostUpdated}
       />
-      <div className="w-full px-4 lg:px-6">
+      <div className="w-full px-4 lg:px-6" data-testid="user-profile-page">
         {/* Back Button */}
         <Button 
           variant="ghost" 
@@ -1145,6 +1145,7 @@ const Profile = () => {
                       <Button
                         variant={isFollowing ? 'outline' : 'default'}
                         size="sm"
+                        data-testid="profile-follow-button"
                         className={cn(
                           'h-11 rounded-2xl px-5 text-sm font-semibold',
                           isFollowing
@@ -1301,6 +1302,7 @@ const Profile = () => {
                     <Button
                       variant={isFollowing ? 'outline' : 'default'}
                       size="sm"
+                      data-testid="profile-follow-button"
                       className={cn(
                         'h-11 rounded-2xl px-5 text-sm font-semibold',
                         isFollowing
@@ -1431,7 +1433,7 @@ const Profile = () => {
         </div>
 
         {/* Tabs Section */}
-        <Tabs value={activeTab} onValueChange={setActiveTab} className="mt-6">
+          <Tabs value={activeTab} onValueChange={setActiveTab} className="mt-6" data-testid="user-profile-tabs">
           <TabsList className="w-full justify-start h-auto p-1 bg-card border border-border rounded-xl flex-wrap gap-1">
             <TabsTrigger value="posts" className="gap-2 data-[state=active]:shadow-sm flex-1">
               <FileText className="w-4 h-4" />
