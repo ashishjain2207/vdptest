@@ -1,0 +1,25 @@
+# Keep application source readable for selectors and routes.
+# Do not block src/ or root package/config files.
+
+# Dependency and lockfile noise
+node_modules/
+package-lock.json
+
+# Build and cache output
+dist/
+build/
+coverage/
+.next/
+.cache/
+
+# Test and report artifacts
+test-results/
+playwright-report/
+blob-report/
+vitest-result.txt
+vitest-full-output.txt
+**/*vitest*.txt
+**/vitest.txt
+
+# General logs
+*.log
