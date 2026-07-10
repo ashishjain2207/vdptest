@@ -1,5 +1,0 @@
-{
-  "filePathKey": "unsupportedPostMedia",
-  "fileName": "unsupported-media.exe",
-  "expectedErrorPattern": "unsupported|file type|format|media"
-}

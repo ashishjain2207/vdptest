@@ -1,7 +1,0 @@
-{
-  "displayNameTemplate": "E2E Updated User",
-  "bioTemplate": "Profile updated by automated E2E coverage.",
-  "website": "https://example.com/e2e-profile",
-  "profilePicturePathKey": "supportedProfilePicture",
-  "coverPhotoPathKey": "supportedCoverPhoto"
-}

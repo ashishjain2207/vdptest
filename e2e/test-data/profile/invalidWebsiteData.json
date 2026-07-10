@@ -1,4 +1,0 @@
-{
-  "website": "htp://invalid-url",
-  "expectedErrorPattern": "website|url|invalid"
-}

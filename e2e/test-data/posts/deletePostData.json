@@ -1,6 +1,0 @@
-{
-  "textTemplate": "Automated E2E deletable post",
-  "otherUserProfileEnv": "E2E_TARGET_USER_PROFILE_SLUG",
-  "otherUserPostTextEnv": "E2E_OTHER_USER_POST_TEXT",
-  "otherUserPostText": "Seeded visible post owned by another user"
-}
