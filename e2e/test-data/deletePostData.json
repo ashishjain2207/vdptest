@@ -1,0 +1,5 @@
+{
+  "postText": "E2E post text to be deleted",
+  "foreignUserId": "another-user-id",
+  "foreignPostText": "Foreign post that should not be deletable"
+}

@@ -1,0 +1,9 @@
+{
+  "fullName": "Test User",
+  "usernamePrefix": "e2euser",
+  "emailPrefix": "e2e.user",
+  "emailDomain": "example.com",
+  "password": "Password123!",
+  "confirmPassword": "Password123!",
+  "dateOfBirth": "1996-05-15"
+}

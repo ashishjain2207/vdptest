@@ -1,0 +1,6 @@
+{
+  "originalText": "Original E2E post text before editing",
+  "updatedText": "Updated E2E post text after editing",
+  "foreignUserId": "another-user-id",
+  "foreignPostText": "This post belongs to another user"
+}

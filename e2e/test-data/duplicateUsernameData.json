@@ -1,0 +1,9 @@
+{
+  "fullName": "Duplicate Username User",
+  "username": "testuser",
+  "emailPrefix": "duplicate.user",
+  "emailDomain": "example.com",
+  "password": "Password123!",
+  "confirmPassword": "Password123!",
+  "dateOfBirth": "1994-09-10"
+}

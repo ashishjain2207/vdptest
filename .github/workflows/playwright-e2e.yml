@@ -1,0 +1,106 @@
+name: Playwright E2E
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  playwright:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    env:
+      PLAYWRIGHT_BASE_URL: ${{ secrets.PLAYWRIGHT_BASE_URL }}
+      E2E_USER_EMAIL: ${{ secrets.E2E_USER_EMAIL }}
+      E2E_USER_PASSWORD: ${{ secrets.E2E_USER_PASSWORD }}
+      CLICKUP_API_TOKEN: ${{ secrets.CLICKUP_API_TOKEN }}
+      CLICKUP_TASK_ID: 869e1b3r8
+      RUN_GROUP: gh-${{ github.run_id }}
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Install Playwright browsers
+        run: npx playwright install --with-deps
+
+      - name: Run Playwright suite
+        id: playwright
+        run: |
+          set +e
+          mkdir -p test-results
+          PLAYWRIGHT_JSON_OUTPUT_NAME=test-results/results.json npx playwright test -c e2e/playwright.config.ts --reporter=line,json
+          exit_code=$?
+          echo "exit_code=$exit_code" >> "$GITHUB_OUTPUT"
+          exit 0
+
+      - name: Upload Playwright artifacts to GitHub
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: playwright-${{ github.run_id }}
+          path: |
+            test-results/**
+            playwright-report/**
+          if-no-files-found: ignore
+
+      - name: Upload JSON report to ClickUp task
+        if: always() && env.CLICKUP_API_TOKEN != ''
+        run: |
+          if [ -f test-results/results.json ]; then
+            grouped_report="test-results/${RUN_GROUP}-playwright-results.json"
+            cp test-results/results.json "$grouped_report"
+
+            curl --silent --show-error --fail-with-body \
+              -X POST \
+              "https://api.clickup.com/api/v2/task/${CLICKUP_TASK_ID}/attachment" \
+              -H "Authorization: ${CLICKUP_API_TOKEN}" \
+              -F "attachment=@${grouped_report};type=application/json" || true
+          fi
+
+      - name: Upload failure screenshots to ClickUp task
+        if: always() && env.CLICKUP_API_TOKEN != '' && steps.playwright.outputs.exit_code != '0'
+        run: |
+          while IFS= read -r screenshot; do
+            base_name="$(basename "$screenshot")"
+            curl --silent --show-error --fail-with-body \
+              -X POST \
+              "https://api.clickup.com/api/v2/task/${CLICKUP_TASK_ID}/attachment" \
+              -H "Authorization: ${CLICKUP_API_TOKEN}" \
+              -F "attachment=@${screenshot};filename=${RUN_GROUP}-${base_name}" || true
+          done < <(find test-results -type f -name '*.png')
+
+      - name: Post run summary comment to ClickUp task
+        if: always() && env.CLICKUP_API_TOKEN != ''
+        run: |
+          if [ "${{ steps.playwright.outputs.exit_code }}" = "0" ]; then
+            run_status="passed"
+          else
+            run_status="failed"
+          fi
+
+          comment_text="Playwright run ${RUN_GROUP} ${run_status}. JSON report and failure screenshots (if any) uploaded from GitHub Actions run ${GITHUB_RUN_ID}."
+
+          curl --silent --show-error --fail-with-body \
+            -X POST \
+            "https://api.clickup.com/api/v2/task/${CLICKUP_TASK_ID}/comment" \
+            -H "Authorization: ${CLICKUP_API_TOKEN}" \
+            -H "Content-Type: application/json" \
+            -d "{\"comment_text\":\"${comment_text}\"}" || true
+
+      - name: Mark workflow failed when tests fail
+        if: always()
+        run: |
+          if [ "${{ steps.playwright.outputs.exit_code }}" != "0" ]; then
+            echo "Playwright tests failed."
+            exit 1
+          fi

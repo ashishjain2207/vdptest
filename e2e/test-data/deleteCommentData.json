@@ -1,0 +1,4 @@
+{
+  "commentText": "Comment created then deleted by E2E",
+  "foreignCommentText": "Another user's comment should not be deletable"
+}
