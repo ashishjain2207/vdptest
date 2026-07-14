@@ -1,0 +1,42 @@
+{
+  "clickup_task_id": "869e1b3r8",
+  "task_name": "vdpconnect",
+  "update_type": "e2e_execution_result",
+  "standard_payload_version": "1.0",
+  "test_status": "passed",
+  "execution_summary": {
+    "workflow": "Playwright E2E",
+    "run_number": "14",
+    "run_id": "29312665811",
+    "run_attempt": "1",
+    "branch": "main",
+    "scenario_source": "test-results/scenarios.json",
+    "scenario_count_in_source": 0,
+    "failed_test_count": 0,
+    "matched_failed_test_count": 0,
+    "extra_failed_test_count": 0,
+    "failure_type_counts": {},
+    "summary": "Run 14 passed with no failed tests."
+  },
+  "links": {
+    "report_link": "https://github.com/ashishjain2207/vdptest/tree/testresults/testrun/14/playwright-report",
+    "ci_cd_build_link": "https://github.com/ashishjain2207/vdptest/actions/runs/29312665811",
+    "artifact_root": "https://github.com/ashishjain2207/vdptest/tree/testresults/testrun/14",
+    "github_artifact_branch": "testresults"
+  },
+  "artifact_references": {
+    "playwright_report": "testrun/14/playwright-report/",
+    "test_results": "testrun/14/test-results/",
+    "metadata": "testrun/14/metadata.json",
+    "clickup_payload": "testrun/14/test-results/clickup_e2e_payload.json",
+    "markdown_report": "testrun/14/test-results/e2e_failure_analysis.md"
+  },
+  "failed_scenarios": [],
+  "extra_failed_scenarios_not_in_source": [],
+  "source_scenarios_without_failures_in_run": [],
+  "rerun_status": {
+    "recommended": false,
+    "scope": "not required",
+    "reason": "No failed scenarios were detected."
+  }
+}
