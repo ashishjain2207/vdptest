@@ -1,0 +1,102 @@
+{
+  "clickup_task_id": "869e1b3r8",
+  "task_name": "vdpconnect",
+  "update_type": "e2e_execution_result",
+  "standard_payload_version": "1.0",
+  "test_status": "failed",
+  "execution_summary": {
+    "workflow": "Playwright E2E",
+    "run_number": "17",
+    "run_id": "29318717203",
+    "run_attempt": "1",
+    "branch": "main",
+    "playwright_exit_code": 1,
+    "playwright_results_json_found": false,
+    "analysis_source": "deterministic",
+    "azure_openai_configured": false,
+    "azure_openai_deployment": "",
+    "azure_openai_api_version": "2024-12-01-preview",
+    "scenario_source": "testresults-run/testrun/17/test-results/scenarios.json",
+    "scenario_count_in_source": 0,
+    "executed_test_count": 0,
+    "passed_test_count": 0,
+    "failed_test_count": 1,
+    "matched_failed_test_count": 0,
+    "extra_failed_test_count": 1,
+    "extra_executed_test_count": 1,
+    "uncovered_source_scenario_count": 0,
+    "failure_type_counts": {
+      "reporting_or_execution_error": 1
+    },
+    "summary": "Run 17 failed with 1 failed tests."
+  },
+  "links": {
+    "report_link": "https://github.com/ashishjain2207/vdptest/tree/testresults/testrun/17/playwright-report",
+    "ci_cd_build_link": "https://github.com/ashishjain2207/vdptest/actions/runs/29318717203",
+    "artifact_root": "https://github.com/ashishjain2207/vdptest/tree/testresults/testrun/17",
+    "github_artifact_branch": "testresults"
+  },
+  "artifact_references": {
+    "playwright_report": "testrun/17/playwright-report/",
+    "test_results": "testrun/17/test-results/",
+    "metadata": "testrun/17/metadata.json",
+    "clickup_payload": "testrun/17/test-results/clickup_e2e_payload.json",
+    "markdown_report": "testrun/17/test-results/e2e_failure_analysis.md"
+  },
+  "failed_scenarios": [
+    {
+      "test_name": "Playwright execution failed before failures were parsed",
+      "location": "/home/runner/work/vdptest/vdptest/testresults-run/testrun/17/test-results/results.json",
+      "spec": "playwright-results",
+      "scenario_match": [],
+      "is_in_attachment": false,
+      "failure_type": "reporting_or_execution_error",
+      "error_summary": "Playwright exited with code 1, and results.json was not found.",
+      "likely_reason": "The Playwright command failed before writing the JSON report, so CI could not extract individual failed scenarios.",
+      "recommended_action": "Inspect the GitHub Actions log and raw Playwright artifacts, then rerun after fixing the execution/reporting failure.",
+      "analysis_source": "deterministic",
+      "artifact_context": "",
+      "attachments": []
+    }
+  ],
+  "passed_scenarios": [],
+  "extra_executed_scenarios_not_in_source": [
+    {
+      "test_name": "Playwright execution failed before failures were parsed",
+      "location": "/home/runner/work/vdptest/vdptest/testresults-run/testrun/17/test-results/results.json",
+      "spec": "playwright-results",
+      "scenario_match": [],
+      "is_in_attachment": false,
+      "failure_type": "reporting_or_execution_error",
+      "error_summary": "Playwright exited with code 1, and results.json was not found.",
+      "likely_reason": "The Playwright command failed before writing the JSON report, so CI could not extract individual failed scenarios.",
+      "recommended_action": "Inspect the GitHub Actions log and raw Playwright artifacts, then rerun after fixing the execution/reporting failure.",
+      "analysis_source": "deterministic",
+      "artifact_context": "",
+      "attachments": []
+    }
+  ],
+  "extra_failed_scenarios_not_in_source": [
+    {
+      "test_name": "Playwright execution failed before failures were parsed",
+      "location": "/home/runner/work/vdptest/vdptest/testresults-run/testrun/17/test-results/results.json",
+      "spec": "playwright-results",
+      "scenario_match": [],
+      "is_in_attachment": false,
+      "failure_type": "reporting_or_execution_error",
+      "error_summary": "Playwright exited with code 1, and results.json was not found.",
+      "likely_reason": "The Playwright command failed before writing the JSON report, so CI could not extract individual failed scenarios.",
+      "recommended_action": "Inspect the GitHub Actions log and raw Playwright artifacts, then rerun after fixing the execution/reporting failure.",
+      "analysis_source": "deterministic",
+      "artifact_context": "",
+      "attachments": []
+    }
+  ],
+  "source_scenarios_without_coverage_in_run": [],
+  "source_scenarios_without_failures_in_run": [],
+  "rerun_status": {
+    "recommended": true,
+    "scope": "failed scenarios first",
+    "reason": "Rerun after selector, readiness, access, or environment fixes are applied."
+  }
+}
