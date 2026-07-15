@@ -82,8 +82,8 @@ npx playwright test -c e2e/playwright.config.ts e2e/tests/authentication.spec.ts
 
 - Workflow publishes results to branch `testresults`.
 - Per-run path: `testrun/{run_number}/`
-- Published run data includes `metadata.json` and `test-results/results.json`.
-- Published artifact copy excludes `.webm`, `.zip`, `trace.zip`, and Playwright report blob data.
+- Published run data includes `metadata.json`, `test-results/results.json`, scenario summaries, and `playwright-report/` when Playwright completes report generation.
+- Report outputs are written at the repository root under `test-results/` and `playwright-report/`.
 - Manual execution: **Actions → Playwright E2E** and choose:
   - `environment`
   - `git_ref`

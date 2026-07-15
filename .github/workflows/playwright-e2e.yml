@@ -92,6 +92,9 @@ jobs:
       - name: Generate scenario report
         if: always()
         run: |
+          if [ ! -f test-results/results.json ] && [ -f e2e/test-results/results.json ]; then
+            cp e2e/test-results/results.json test-results/results.json
+          fi
           if [ -f test-results/results.json ]; then
             node scripts/generate-e2e-scenario-report.mjs
           fi
@@ -104,9 +107,14 @@ jobs:
           if [ -d test-results ]; then
             mkdir -p "${TESTRESULTS_RUN_DIR}/test-results"
             cp -R test-results/. "${TESTRESULTS_RUN_DIR}/test-results/" 2>/dev/null || true
+          elif [ -d e2e/test-results ]; then
+            mkdir -p "${TESTRESULTS_RUN_DIR}/test-results"
+            cp -R e2e/test-results/. "${TESTRESULTS_RUN_DIR}/test-results/" 2>/dev/null || true
           fi
           if [ -d playwright-report ]; then
             cp -R playwright-report "${TESTRESULTS_RUN_DIR}/playwright-report"
+          elif [ -d e2e/playwright-report ]; then
+            cp -R e2e/playwright-report "${TESTRESULTS_RUN_DIR}/playwright-report"
           fi
           cat > "${TESTRESULTS_RUN_DIR}/metadata.json" <<EOF
           {
