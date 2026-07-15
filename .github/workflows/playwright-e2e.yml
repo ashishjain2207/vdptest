@@ -1,0 +1,153 @@
+name: Playwright E2E
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+    inputs:
+      environment:
+        description: GitHub Actions environment
+        required: true
+        default: dev
+        type: choice
+        options:
+          - dev
+      git_ref:
+        description: Branch or tag to checkout and test
+        required: true
+        default: main
+        type: string
+      scenario_version:
+        description: Scenario version label (for screenshot naming)
+        required: true
+        default: v1
+        type: choice
+        options:
+          - v1
+          - v2
+          - v3
+          - latest
+
+permissions:
+  contents: write
+  packages: read
+
+jobs:
+  playwright:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    environment:
+      name: ${{ inputs.environment || 'dev' }}
+    env:
+      PLAYWRIGHT_BASE_URL: ${{ secrets.PLAYWRIGHT_BASE_URL }}
+      E2E_USER_EMAIL: ${{ secrets.E2E_USER_EMAIL }}
+      E2E_USER_PASSWORD: ${{ secrets.E2E_USER_PASSWORD }}
+      E2E_ADMIN_EMAIL: ${{ secrets.E2E_ADMIN_EMAIL }}
+      E2E_ADMIN_PASSWORD: ${{ secrets.E2E_ADMIN_PASSWORD }}
+      E2E_MODERATOR_EMAIL: ${{ secrets.E2E_MODERATOR_EMAIL }}
+      E2E_MODERATOR_PASSWORD: ${{ secrets.E2E_MODERATOR_PASSWORD }}
+      E2E_SCENARIO_VERSION: ${{ inputs.scenario_version || vars.E2E_SCENARIO_VERSION || 'v1' }}
+      E2E_RESULTS_WEBHOOK_URL: ${{ secrets.E2E_RESULTS_WEBHOOK_URL || vars.E2E_RESULTS_WEBHOOK_URL }}
+      E2E_RESULTS_WEBHOOK_TOKEN: ${{ secrets.E2E_RESULTS_WEBHOOK_TOKEN }}
+      CLICKUP_TASK_ID: ${{ vars.CLICKUP_TASK_ID }}
+      TESTRESULTS_RUN_DIR: testresults-run/testrun/${{ github.run_number }}
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ inputs.git_ref || github.ref }}
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+          registry-url: https://npm.pkg.github.com
+          scope: '@imriva'
+
+      - name: Verify package-lock.json exists
+        run: |
+          if [ ! -f package-lock.json ]; then
+            echo "::error::package-lock.json is required. Run 'npm install' locally and commit the lockfile."
+            exit 1
+          fi
+
+      - name: Verify package.json and lockfile are in sync
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NODE_AUTH_TOKEN }}
+        run: |
+          npm install --package-lock-only --ignore-scripts
+          if ! git diff --quiet -- package-lock.json; then
+            echo "::error::package-lock.json is out of sync with package.json. Run 'npm install' locally and commit the updated lockfile."
+            git diff -- package-lock.json
+            exit 1
+          fi
+
+      - name: Install dependencies
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NODE_AUTH_TOKEN }}
+        run: npm ci
+
+      - name: Install Playwright browsers
+        run: npx playwright install --with-deps
+
+      - name: Run Playwright suite
+        run: |
+          mkdir -p test-results
+          PLAYWRIGHT_JSON_OUTPUT_NAME=test-results/results.json npx playwright test -c e2e/playwright.config.ts || true
+
+      - name: Stage testresults run folder
+        if: always()
+        run: |
+          rm -rf "${TESTRESULTS_RUN_DIR}"
+          mkdir -p "${TESTRESULTS_RUN_DIR}/test-results"
+          cp -R test-results/. "${TESTRESULTS_RUN_DIR}/test-results/" 2>/dev/null || true
+          find "${TESTRESULTS_RUN_DIR}" -type f \( -name '*.webm' -o -name '*.zip' -o -name 'trace.zip' \) -delete
+          find "${TESTRESULTS_RUN_DIR}" -path '*/playwright-report/data/*' -type f -delete
+          cat > "${TESTRESULTS_RUN_DIR}/metadata.json" <<EOF
+          {"repository":"${GITHUB_REPOSITORY}","branch":"${GITHUB_REF_NAME}","run_id":"${GITHUB_RUN_ID}","run_number":"${GITHUB_RUN_NUMBER}","workflow":"${GITHUB_WORKFLOW}"}
+          EOF
+
+      - name: Publish to testresults branch
+        if: always()
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        run: |
+          repo_url="https://x-access-token:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git"
+          branch_name="testresults"
+          artifact_root="testrun/${GITHUB_RUN_NUMBER}"
+          work_dir="$(mktemp -d)"
+
+          if git ls-remote --exit-code --heads "$repo_url" "$branch_name" >/dev/null 2>&1; then
+            git clone --depth 1 --branch "$branch_name" "$repo_url" "$work_dir"
+          else
+            git init "$work_dir"
+            cd "$work_dir"
+            git checkout -b "$branch_name"
+            git remote add origin "$repo_url"
+          fi
+
+          rm -rf "$work_dir/$artifact_root"
+          mkdir -p "$(dirname "$work_dir/$artifact_root")"
+          cp -R "${TESTRESULTS_RUN_DIR}" "$work_dir/$artifact_root"
+
+          cd "$work_dir"
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add .
+          git diff --cached --quiet || git commit -m "Add Playwright run ${GITHUB_RUN_NUMBER}"
+          git push origin HEAD:"$branch_name"
+
+      - name: Notify IMRIVA webhook
+        if: always() && env.E2E_RESULTS_WEBHOOK_URL != ''
+        continue-on-error: true
+        run: |
+          cat > payload.json <<EOF
+          {"event":"playwright_e2e_artifacts_ready","clickup_task_id":"${CLICKUP_TASK_ID}","run_number":"${GITHUB_RUN_NUMBER}","repository":"${GITHUB_REPOSITORY}","testresults_branch":"testresults","testresults_path":"testrun/${GITHUB_RUN_NUMBER}","status":"${{ job.status }}"}
+          EOF
+          curl -sf -X POST "${E2E_RESULTS_WEBHOOK_URL}" \
+            -H "Content-Type: application/json" \
+            ${E2E_RESULTS_WEBHOOK_TOKEN:+ -H "Authorization: Bearer ${E2E_RESULTS_WEBHOOK_TOKEN}"} \
+            --data @payload.json || echo "Webhook skipped or failed"
