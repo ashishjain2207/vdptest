@@ -85,18 +85,40 @@ jobs:
       - name: Run Playwright suite
         run: |
           mkdir -p test-results
-          PLAYWRIGHT_JSON_OUTPUT_NAME=test-results/results.json npx playwright test -c e2e/playwright.config.ts || true
+          playwright_exit_code=0
+          PLAYWRIGHT_JSON_OUTPUT_NAME=test-results/results.json npx playwright test -c e2e/playwright.config.ts || playwright_exit_code=$?
+          echo "PLAYWRIGHT_EXIT_CODE=${playwright_exit_code}" >> "$GITHUB_ENV"
+
+      - name: Generate scenario report
+        if: always()
+        run: |
+          if [ -f test-results/results.json ]; then
+            node scripts/generate-e2e-scenario-report.mjs
+          fi
 
       - name: Stage testresults run folder
         if: always()
         run: |
           rm -rf "${TESTRESULTS_RUN_DIR}"
-          mkdir -p "${TESTRESULTS_RUN_DIR}/test-results"
-          cp -R test-results/. "${TESTRESULTS_RUN_DIR}/test-results/" 2>/dev/null || true
-          find "${TESTRESULTS_RUN_DIR}" -type f \( -name '*.webm' -o -name '*.zip' -o -name 'trace.zip' \) -delete
-          find "${TESTRESULTS_RUN_DIR}" -path '*/playwright-report/data/*' -type f -delete
+          mkdir -p "${TESTRESULTS_RUN_DIR}"
+          if [ -d test-results ]; then
+            mkdir -p "${TESTRESULTS_RUN_DIR}/test-results"
+            cp -R test-results/. "${TESTRESULTS_RUN_DIR}/test-results/" 2>/dev/null || true
+          fi
+          if [ -d playwright-report ]; then
+            cp -R playwright-report "${TESTRESULTS_RUN_DIR}/playwright-report"
+          fi
           cat > "${TESTRESULTS_RUN_DIR}/metadata.json" <<EOF
-          {"repository":"${GITHUB_REPOSITORY}","branch":"${GITHUB_REF_NAME}","run_id":"${GITHUB_RUN_ID}","run_number":"${GITHUB_RUN_NUMBER}","workflow":"${GITHUB_WORKFLOW}"}
+          {
+            "repository":"${GITHUB_REPOSITORY}",
+            "branch":"${GITHUB_REF_NAME}",
+            "run_id":"${GITHUB_RUN_ID}",
+            "run_number":"${GITHUB_RUN_NUMBER}",
+            "run_attempt":"${GITHUB_RUN_ATTEMPT}",
+            "workflow":"${GITHUB_WORKFLOW}",
+            "scenario_version":"${E2E_SCENARIO_VERSION}",
+            "playwright_exit_code":"${PLAYWRIGHT_EXIT_CODE}"
+          }
           EOF
 
       - name: Publish to testresults branch
