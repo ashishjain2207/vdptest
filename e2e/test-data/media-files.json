@@ -1,6 +1,0 @@
-{
-  "supportedImagePath": "e2e/test-data/assets/sample-image.png",
-  "supportedVideoPath": "e2e/test-data/assets/sample-video.mp4",
-  "unsupportedFilePath": "e2e/test-data/assets/sample-unsupported.txt",
-  "oversizedImagePath": "e2e/test-data/assets/sample-oversized.png"
-}

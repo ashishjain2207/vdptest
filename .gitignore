@@ -37,12 +37,6 @@ dist-ssr
 coverage
 .nyc_output
 
-# Playwright generated output and local runner
-/playwright-report/
-/test-results/
-/testresults-run/
-/scripts/run-e2e-local.mjs
-
 # Temporary markdown files (exclude from git)
 # Ignore temporary status/deployment files, but keep documentation
 /DEPLOYMENT-STATUS.md
