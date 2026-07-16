@@ -1,0 +1,2424 @@
+{
+  "config": {
+    "argv": [
+      "/opt/hostedtoolcache/node/20.20.2/x64/bin/node",
+      "/home/runner/work/vdptest/vdptest/node_modules/.bin/playwright",
+      "test",
+      "-c",
+      "e2e/playwright.config.ts"
+    ],
+    "configFile": "/home/runner/work/vdptest/vdptest/e2e/playwright.config.ts",
+    "rootDir": "/home/runner/work/vdptest/vdptest/e2e/tests",
+    "failOnFlakyTests": false,
+    "forbidOnly": false,
+    "fullyParallel": false,
+    "globalSetup": null,
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 0,
+    "metadata": {
+      "ci": {
+        "commitHref": "https://github.com/ashishjain2207/vdptest/commit/79804535d38357bd0a29180a99213dddbc2a826d",
+        "commitHash": "79804535d38357bd0a29180a99213dddbc2a826d",
+        "buildHref": "https://github.com/ashishjain2207/vdptest/actions/runs/29481389603"
+      },
+      "gitCommit": {
+        "shortHash": "7980453",
+        "hash": "79804535d38357bd0a29180a99213dddbc2a826d",
+        "subject": "Improve VDP Connect end-to-end test coverage",
+        "body": "Improve VDP Connect end-to-end test coverage\n\nCo-authored-by: Cursor <cursoragent@cursor.com>\n",
+        "author": {
+          "name": "Ashish Jain",
+          "email": "ashish.jain@imriva.de",
+          "time": 1784184320000
+        },
+        "committer": {
+          "name": "Ashish Jain",
+          "email": "ashish.jain@imriva.de",
+          "time": 1784184320000
+        },
+        "branch": "main"
+      },
+      "actualWorkers": 1
+    },
+    "preserveOutput": "always",
+    "projects": [
+      {
+        "outputDir": "/home/runner/work/vdptest/vdptest/test-results/artifacts",
+        "repeatEach": 1,
+        "retries": 1,
+        "metadata": {
+          "ci": {
+            "commitHref": "https://github.com/ashishjain2207/vdptest/commit/79804535d38357bd0a29180a99213dddbc2a826d",
+            "commitHash": "79804535d38357bd0a29180a99213dddbc2a826d",
+            "buildHref": "https://github.com/ashishjain2207/vdptest/actions/runs/29481389603"
+          },
+          "gitCommit": {
+            "shortHash": "7980453",
+            "hash": "79804535d38357bd0a29180a99213dddbc2a826d",
+            "subject": "Improve VDP Connect end-to-end test coverage",
+            "body": "Improve VDP Connect end-to-end test coverage\n\nCo-authored-by: Cursor <cursoragent@cursor.com>\n",
+            "author": {
+              "name": "Ashish Jain",
+              "email": "ashish.jain@imriva.de",
+              "time": 1784184320000
+            },
+            "committer": {
+              "name": "Ashish Jain",
+              "email": "ashish.jain@imriva.de",
+              "time": 1784184320000
+            },
+            "branch": "main"
+          },
+          "actualWorkers": 1
+        },
+        "id": "",
+        "name": "",
+        "testDir": "/home/runner/work/vdptest/vdptest/e2e/tests",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 60000
+      }
+    ],
+    "quiet": false,
+    "reporter": [
+      [
+        "line",
+        null
+      ],
+      [
+        "json",
+        {
+          "outputFile": "/home/runner/work/vdptest/vdptest/test-results/results.json"
+        }
+      ],
+      [
+        "html",
+        {
+          "outputFolder": "/home/runner/work/vdptest/vdptest/playwright-report",
+          "open": "never"
+        }
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 300000
+    },
+    "shard": null,
+    "tags": [],
+    "updateSnapshots": "missing",
+    "updateSourceMethod": "patch",
+    "version": "1.61.1",
+    "workers": 1,
+    "webServer": null
+  },
+  "suites": [
+    {
+      "title": "account-settings.spec.ts",
+      "file": "account-settings.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "User accesses account and privacy settings and logs out @high",
+          "ok": true,
+          "tags": [
+            "high"
+          ],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 7288,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-07-16T07:53:23.817Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "5c01cc71bc571b99a628-302c5b57a4081bc2a0f4",
+          "file": "account-settings.spec.ts",
+          "line": 5,
+          "column": 1
+        }
+      ]
+    },
+    {
+      "title": "admin-moderation.spec.ts",
+      "file": "admin-moderation.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "Admin moderation is available to admins and denied to normal users @medium",
+          "ok": true,
+          "tags": [
+            "medium"
+          ],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [
+                {
+                  "type": "skip",
+                  "description": "Skipped: E2E_ADMIN_EMAIL/E2E_ADMIN_PASSWORD not configured — admin moderation scenario requires admin credentials",
+                  "location": {
+                    "file": "/home/runner/work/vdptest/vdptest/e2e/fixtures/test.ts",
+                    "line": 44,
+                    "column": 10
+                  }
+                }
+              ],
+              "expectedStatus": "skipped",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "skipped",
+                  "duration": 3,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-07-16T07:53:31.424Z",
+                  "annotations": [
+                    {
+                      "type": "skip",
+                      "description": "Skipped: E2E_ADMIN_EMAIL/E2E_ADMIN_PASSWORD not configured — admin moderation scenario requires admin credentials",
+                      "location": {
+                        "file": "/home/runner/work/vdptest/vdptest/e2e/fixtures/test.ts",
+                        "line": 44,
+                        "column": 10
+                      }
+                    }
+                  ],
+                  "attachments": []
+                }
+              ],
+              "status": "skipped"
+            }
+          ],
+          "id": "02633a290dcda3e57ba8-5cea8aa9e8b18fb572db",
+          "file": "admin-moderation.spec.ts",
+          "line": 3,
+          "column": 1
+        }
+      ]
+    },
+    {
+      "title": "authentication.spec.ts",
+      "file": "authentication.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "Registered user logs in and reaches the home feed @high",
+          "ok": true,
+          "tags": [
+            "high"
+          ],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 4457,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-07-16T07:53:31.447Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "70f6afe7e350c931056e-b7580839f11c4bf0851c",
+          "file": "authentication.spec.ts",
+          "line": 5,
+          "column": 1
+        },
+        {
+          "title": "Login rejects empty fields and invalid credentials @high",
+          "ok": true,
+          "tags": [
+            "high"
+          ],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 2116,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-07-16T07:53:35.925Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "70f6afe7e350c931056e-334d55caf352fe6513ca",
+          "file": "authentication.spec.ts",
+          "line": 14,
+          "column": 1
+        }
+      ]
+    },
+    {
+      "title": "comments.spec.ts",
+      "file": "comments.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "User adds a comment, replies, and deletes their own comment @high",
+          "ok": true,
+          "tags": [
+            "high"
+          ],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [
+                {
+                  "type": "skip",
+                  "description": "Missing selector in src/: stable comment-id selectors required for scoped reply/delete assertions are not present in scoped sources",
+                  "location": {
+                    "file": "/home/runner/work/vdptest/vdptest/e2e/tests/comments.spec.ts",
+                    "line": 4,
+                    "column": 8
+                  }
+                }
+              ],
+              "expectedStatus": "skipped",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "skipped",
+                  "duration": 1,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-07-16T07:53:38.075Z",
+                  "annotations": [
+                    {
+                      "type": "skip",
+                      "description": "Missing selector in src/: stable comment-id selectors required for scoped reply/delete assertions are not present in scoped sources",
+                      "location": {
+                        "file": "/home/runner/work/vdptest/vdptest/e2e/tests/comments.spec.ts",
+                        "line": 4,
+                        "column": 8
+                      }
+                    }
+                  ],
+                  "attachments": []
+                }
+              ],
+              "status": "skipped"
+            }
+          ],
+          "id": "0dd0b076f0868dfee4c3-377a25e21140bcb4416e",
+          "file": "comments.spec.ts",
+          "line": 3,
+          "column": 1
+        },
+        {
+          "title": "Comment form rejects empty and over-limit text @high",
+          "ok": true,
+          "tags": [
+            "high"
+          ],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [
+                {
+                  "type": "skip",
+                  "description": "Missing selector in src/: explicit comment-validation selectors for over-limit states are not included in scoped source files",
+                  "location": {
+                    "file": "/home/runner/work/vdptest/vdptest/e2e/tests/comments.spec.ts",
+                    "line": 11,
+                    "column": 8
+                  }
+                }
+              ],
+              "expectedStatus": "skipped",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "skipped",
+                  "duration": 1,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-07-16T07:53:38.085Z",
+                  "annotations": [
+                    {
+                      "type": "skip",
+                      "description": "Missing selector in src/: explicit comment-validation selectors for over-limit states are not included in scoped source files",
+                      "location": {
+                        "file": "/home/runner/work/vdptest/vdptest/e2e/tests/comments.spec.ts",
+                        "line": 11,
+                        "column": 8
+                      }
+                    }
+                  ],
+                  "attachments": []
+                }
+              ],
+              "status": "skipped"
+            }
+          ],
+          "id": "0dd0b076f0868dfee4c3-86488c3733b6450814e9",
+          "file": "comments.spec.ts",
+          "line": 10,
+          "column": 1
+        },
+        {
+          "title": "Non-admin user cannot delete another user's comment @high",
+          "ok": true,
+          "tags": [
+            "high"
+          ],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [
+                {
+                  "type": "skip",
+                  "description": "Missing selector in src/: stable other-user comment selectors for permission assertions are not available in scoped sources",
+                  "location": {
+                    "file": "/home/runner/work/vdptest/vdptest/e2e/tests/comments.spec.ts",
+                    "line": 18,
+                    "column": 8
+                  }
+                }
+              ],
+              "expectedStatus": "skipped",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "skipped",
+                  "duration": 1,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-07-16T07:53:38.096Z",
+                  "annotations": [
+                    {
+                      "type": "skip",
+                      "description": "Missing selector in src/: stable other-user comment selectors for permission assertions are not available in scoped sources",
+                      "location": {
+                        "file": "/home/runner/work/vdptest/vdptest/e2e/tests/comments.spec.ts",
+                        "line": 18,
+                        "column": 8
+                      }
+                    }
+                  ],
+                  "attachments": []
+                }
+              ],
+              "status": "skipped"
+            }
+          ],
+          "id": "0dd0b076f0868dfee4c3-bb5d94a95f9a046a9616",
+          "file": "comments.spec.ts",
+          "line": 17,
+          "column": 1
+        }
+      ]
+    },
+    {
+      "title": "edit-profile.spec.ts",
+      "file": "edit-profile.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "User updates profile information and cancels an unsaved edit @medium",
+          "ok": false,
+          "tags": [
+            "medium"
+          ],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "timedOut",
+                  "duration": 60043,
+                  "error": {
+                    "message": "\u001b[31mTest timeout of 60000ms exceeded.\u001b[39m",
+                    "stack": "\u001b[31mTest timeout of 60000ms exceeded.\u001b[39m"
+                  },
+                  "errors": [
+                    {
+                      "message": "\u001b[31mTest timeout of 60000ms exceeded.\u001b[39m"
+                    },
+                    {
+                      "location": {
+                        "file": "/home/runner/work/vdptest/vdptest/e2e/tests/edit-profile.spec.ts",
+                        "column": 39,
+                        "line": 20
+                      },
+                      "message": "Error: locator.fill: Test timeout of 60000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('#location')\u001b[22m\n\n\n  18 |   await editProfilePage.nameInput.fill(updatedName);\n  19 |   await editProfilePage.bioInput.fill(updatedBio);\n> 20 |   await editProfilePage.locationInput.fill(updatedLocation);\n     |                                       ^\n  21 |   await page.locator('#website').fill(updatedWebsite);\n  22 |\n  23 |   const actionButtons = page.locator('div.flex.justify-end.gap-3 button');\n    at /home/runner/work/vdptest/vdptest/e2e/tests/edit-profile.spec.ts:20:39"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-07-16T07:53:38.115Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "/home/runner/work/vdptest/vdptest/test-results/artifacts/edit-profile-User-updates--3a0a9-cels-an-unsaved-edit-medium/error-context.md"
+                    }
+                  ]
+                },
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "timedOut",
+                  "duration": 60040,
+                  "error": {
+                    "message": "\u001b[31mTest timeout of 60000ms exceeded.\u001b[39m",
+                    "stack": "\u001b[31mTest timeout of 60000ms exceeded.\u001b[39m"
+                  },
+                  "errors": [
+                    {
+                      "message": "\u001b[31mTest timeout of 60000ms exceeded.\u001b[39m"
+                    },
+                    {
+                      "location": {
+                        "file": "/home/runner/work/vdptest/vdptest/e2e/tests/edit-profile.spec.ts",
+                        "column": 39,
+                        "line": 20
+                      },
+                      "message": "Error: locator.fill: Test timeout of 60000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('#location')\u001b[22m\n\n\n  18 |   await editProfilePage.nameInput.fill(updatedName);\n  19 |   await editProfilePage.bioInput.fill(updatedBio);\n> 20 |   await editProfilePage.locationInput.fill(updatedLocation);\n     |                                       ^\n  21 |   await page.locator('#website').fill(updatedWebsite);\n  22 |\n  23 |   const actionButtons = page.locator('div.flex.justify-end.gap-3 button');\n    at /home/runner/work/vdptest/vdptest/e2e/tests/edit-profile.spec.ts:20:39"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 1,
+                  "startTime": "2026-07-16T07:54:39.018Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "/home/runner/work/vdptest/vdptest/test-results/artifacts/edit-profile-User-updates--3a0a9-cels-an-unsaved-edit-medium-retry1/error-context.md"
+                    }
+                  ]
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "6a804417cb621c6b1591-b58e2351b92fe98be2cb",
+          "file": "edit-profile.spec.ts",
+          "line": 5,
+          "column": 1
+        },
+        {
+          "title": "Edit Profile rejects invalid required, URL, length, and image values @medium",
+          "ok": true,
+          "tags": [
+            "medium"
+          ],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [
+                {
+                  "type": "skip",
+                  "description": "Missing selector in src/: explicit field-level validation selectors for invalid URL/length/image errors are not provided in scoped selector sources",
+                  "location": {
+                    "file": "/home/runner/work/vdptest/vdptest/e2e/tests/edit-profile.spec.ts",
+                    "line": 44,
+                    "column": 8
+                  }
+                }
+              ],
+              "expectedStatus": "skipped",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "parallelIndex": 0,
+                  "status": "skipped",
+                  "duration": 166,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-07-16T07:55:40.158Z",
+                  "annotations": [
+                    {
+                      "type": "skip",
+                      "description": "Missing selector in src/: explicit field-level validation selectors for invalid URL/length/image errors are not provided in scoped selector sources",
+                      "location": {
+                        "file": "/home/runner/work/vdptest/vdptest/e2e/tests/edit-profile.spec.ts",
+                        "line": 44,
+                        "column": 8
+                      }
+                    }
+                  ],
+                  "attachments": []
+                }
+              ],
+              "status": "skipped"
+            }
+          ],
+          "id": "6a804417cb621c6b1591-3585217221f216efbd84",
+          "file": "edit-profile.spec.ts",
+          "line": 43,
+          "column": 1
+        }
+      ]
+    },
+    {
+      "title": "follow.spec.ts",
+      "file": "follow.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "User follows and unfollows another user @high",
+          "ok": true,
+          "tags": [
+            "high"
+          ],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [
+                {
+                  "type": "skip",
+                  "description": "Missing selector in src/: stable target-user fixture identifiers for follower-count/list assertions are not available in scoped selectors",
+                  "location": {
+                    "file": "/home/runner/work/vdptest/vdptest/e2e/tests/follow.spec.ts",
+                    "line": 4,
+                    "column": 8
+                  }
+                }
+              ],
+              "expectedStatus": "skipped",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "parallelIndex": 0,
+                  "status": "skipped",
+                  "duration": 12,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-07-16T07:55:40.507Z",
+                  "annotations": [
+                    {
+                      "type": "skip",
+                      "description": "Missing selector in src/: stable target-user fixture identifiers for follower-count/list assertions are not available in scoped selectors",
+                      "location": {
+                        "file": "/home/runner/work/vdptest/vdptest/e2e/tests/follow.spec.ts",
+                        "line": 4,
+                        "column": 8
+                      }
+                    }
+                  ],
+                  "attachments": []
+                }
+              ],
+              "status": "skipped"
+            }
+          ],
+          "id": "1e2bdb6f6fbc3d67c557-02e48052c43516abea6a",
+          "file": "follow.spec.ts",
+          "line": 3,
+          "column": 1
+        }
+      ]
+    },
+    {
+      "title": "guest-navigation.spec.ts",
+      "file": "guest-navigation.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "Guest navigates the landing page and public information pages @medium",
+          "ok": false,
+          "tags": [
+            "medium"
+          ],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 12317,
+                  "error": {
+                    "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: locator('a[aria-label=\"VDPConnect home\"]')\nExpected: visible\nTimeout: 10000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 10000ms\u001b[22m\n\u001b[2m  - waiting for locator('a[aria-label=\"VDPConnect home\"]')\u001b[22m\n",
+                    "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: locator('a[aria-label=\"VDPConnect home\"]')\nExpected: visible\nTimeout: 10000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 10000ms\u001b[22m\n\u001b[2m  - waiting for locator('a[aria-label=\"VDPConnect home\"]')\u001b[22m\n\n    at PublicInformationPage.open (/home/runner/work/vdptest/vdptest/e2e/pages/PublicInformationPage.ts:22:33)\n    at /home/runner/work/vdptest/vdptest/e2e/tests/guest-navigation.spec.ts:27:5",
+                    "location": {
+                      "file": "/home/runner/work/vdptest/vdptest/e2e/pages/PublicInformationPage.ts",
+                      "column": 33,
+                      "line": 22
+                    },
+                    "snippet": "   at ../pages/PublicInformationPage.ts:22\n\n\u001b[0m \u001b[90m 20 |\u001b[39m     \u001b[36mawait\u001b[39m expect(\u001b[36mthis\u001b[39m\u001b[33m.\u001b[39mmainLandmark)\u001b[33m.\u001b[39mtoBeVisible()\u001b[33m;\u001b[39m\n \u001b[90m 21 |\u001b[39m     \u001b[36mawait\u001b[39m expect(\u001b[36mthis\u001b[39m\u001b[33m.\u001b[39mheading)\u001b[33m.\u001b[39mtoBeVisible()\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 22 |\u001b[39m     \u001b[36mawait\u001b[39m expect(\u001b[36mthis\u001b[39m\u001b[33m.\u001b[39mhomeLink)\u001b[33m.\u001b[39mtoBeVisible()\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                                 \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 23 |\u001b[39m   }\n \u001b[90m 24 |\u001b[39m\n \u001b[90m 25 |\u001b[39m   \u001b[36masync\u001b[39m expectBackLinkTarget(href\u001b[33m:\u001b[39m string)\u001b[33m:\u001b[39m \u001b[33mPromise\u001b[39m\u001b[33m<\u001b[39m\u001b[36mvoid\u001b[39m\u001b[33m>\u001b[39m {\u001b[0m"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "/home/runner/work/vdptest/vdptest/e2e/pages/PublicInformationPage.ts",
+                        "column": 33,
+                        "line": 22
+                      },
+                      "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: locator('a[aria-label=\"VDPConnect home\"]')\nExpected: visible\nTimeout: 10000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 10000ms\u001b[22m\n\u001b[2m  - waiting for locator('a[aria-label=\"VDPConnect home\"]')\u001b[22m\n\n\n   at ../pages/PublicInformationPage.ts:22\n\n  20 |     await expect(this.mainLandmark).toBeVisible();\n  21 |     await expect(this.heading).toBeVisible();\n> 22 |     await expect(this.homeLink).toBeVisible();\n     |                                 ^\n  23 |   }\n  24 |\n  25 |   async expectBackLinkTarget(href: string): Promise<void> {\n    at PublicInformationPage.open (/home/runner/work/vdptest/vdptest/e2e/pages/PublicInformationPage.ts:22:33)\n    at /home/runner/work/vdptest/vdptest/e2e/tests/guest-navigation.spec.ts:27:5"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-07-16T07:55:40.558Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "/home/runner/work/vdptest/vdptest/test-results/artifacts/guest-navigation-Guest-nav-0c6e5-ic-information-pages-medium/error-context.md"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "/home/runner/work/vdptest/vdptest/e2e/pages/PublicInformationPage.ts",
+                    "column": 33,
+                    "line": 22
+                  }
+                },
+                {
+                  "workerIndex": 3,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 12545,
+                  "error": {
+                    "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: locator('a[aria-label=\"VDPConnect home\"]')\nExpected: visible\nTimeout: 10000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 10000ms\u001b[22m\n\u001b[2m  - waiting for locator('a[aria-label=\"VDPConnect home\"]')\u001b[22m\n",
+                    "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: locator('a[aria-label=\"VDPConnect home\"]')\nExpected: visible\nTimeout: 10000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 10000ms\u001b[22m\n\u001b[2m  - waiting for locator('a[aria-label=\"VDPConnect home\"]')\u001b[22m\n\n    at PublicInformationPage.open (/home/runner/work/vdptest/vdptest/e2e/pages/PublicInformationPage.ts:22:33)\n    at /home/runner/work/vdptest/vdptest/e2e/tests/guest-navigation.spec.ts:27:5",
+                    "location": {
+                      "file": "/home/runner/work/vdptest/vdptest/e2e/pages/PublicInformationPage.ts",
+                      "column": 33,
+                      "line": 22
+                    },
+                    "snippet": "   at ../pages/PublicInformationPage.ts:22\n\n\u001b[0m \u001b[90m 20 |\u001b[39m     \u001b[36mawait\u001b[39m expect(\u001b[36mthis\u001b[39m\u001b[33m.\u001b[39mmainLandmark)\u001b[33m.\u001b[39mtoBeVisible()\u001b[33m;\u001b[39m\n \u001b[90m 21 |\u001b[39m     \u001b[36mawait\u001b[39m expect(\u001b[36mthis\u001b[39m\u001b[33m.\u001b[39mheading)\u001b[33m.\u001b[39mtoBeVisible()\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 22 |\u001b[39m     \u001b[36mawait\u001b[39m expect(\u001b[36mthis\u001b[39m\u001b[33m.\u001b[39mhomeLink)\u001b[33m.\u001b[39mtoBeVisible()\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                                 \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 23 |\u001b[39m   }\n \u001b[90m 24 |\u001b[39m\n \u001b[90m 25 |\u001b[39m   \u001b[36masync\u001b[39m expectBackLinkTarget(href\u001b[33m:\u001b[39m string)\u001b[33m:\u001b[39m \u001b[33mPromise\u001b[39m\u001b[33m<\u001b[39m\u001b[36mvoid\u001b[39m\u001b[33m>\u001b[39m {\u001b[0m"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "/home/runner/work/vdptest/vdptest/e2e/pages/PublicInformationPage.ts",
+                        "column": 33,
+                        "line": 22
+                      },
+                      "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: locator('a[aria-label=\"VDPConnect home\"]')\nExpected: visible\nTimeout: 10000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 10000ms\u001b[22m\n\u001b[2m  - waiting for locator('a[aria-label=\"VDPConnect home\"]')\u001b[22m\n\n\n   at ../pages/PublicInformationPage.ts:22\n\n  20 |     await expect(this.mainLandmark).toBeVisible();\n  21 |     await expect(this.heading).toBeVisible();\n> 22 |     await expect(this.homeLink).toBeVisible();\n     |                                 ^\n  23 |   }\n  24 |\n  25 |   async expectBackLinkTarget(href: string): Promise<void> {\n    at PublicInformationPage.open (/home/runner/work/vdptest/vdptest/e2e/pages/PublicInformationPage.ts:22:33)\n    at /home/runner/work/vdptest/vdptest/e2e/tests/guest-navigation.spec.ts:27:5"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 1,
+                  "startTime": "2026-07-16T07:55:53.782Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "/home/runner/work/vdptest/vdptest/test-results/artifacts/guest-navigation-Guest-nav-0c6e5-ic-information-pages-medium-retry1/error-context.md"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "/home/runner/work/vdptest/vdptest/e2e/pages/PublicInformationPage.ts",
+                    "column": 33,
+                    "line": 22
+                  }
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "8ed1e2a64dc6d8ee2d17-4f0a56a0b541892e04fb",
+          "file": "guest-navigation.spec.ts",
+          "line": 7,
+          "column": 1
+        }
+      ]
+    },
+    {
+      "title": "home-feed.spec.ts",
+      "file": "home-feed.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "Authenticated user views and incrementally loads the personalized feed @high",
+          "ok": false,
+          "tags": [
+            "high"
+          ],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 4,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 14931,
+                  "error": {
+                    "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator:  getByLabel(/create post/i)\nExpected: visible\nReceived: hidden\nTimeout:  10000ms\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 10000ms\u001b[22m\n\u001b[2m  - waiting for getByLabel(/create post/i)\u001b[22m\n\u001b[2m    23 × locator resolved to <button aria-label=\"Create post\" class=\"inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 bg-primary text-primary-foreground hover:bg-secondary h-10 w-10 sm:hidden shadow-soft\">…</button>\u001b[22m\n\u001b[2m       - unexpected value \"hidden\"\u001b[22m\n",
+                    "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator:  getByLabel(/create post/i)\nExpected: visible\nReceived: hidden\nTimeout:  10000ms\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 10000ms\u001b[22m\n\u001b[2m  - waiting for getByLabel(/create post/i)\u001b[22m\n\u001b[2m    23 × locator resolved to <button aria-label=\"Create post\" class=\"inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 bg-primary text-primary-foreground hover:bg-secondary h-10 w-10 sm:hidden shadow-soft\">…</button>\u001b[22m\n\u001b[2m       - unexpected value \"hidden\"\u001b[22m\n\n    at /home/runner/work/vdptest/vdptest/e2e/tests/home-feed.spec.ts:12:49",
+                    "location": {
+                      "file": "/home/runner/work/vdptest/vdptest/e2e/tests/home-feed.spec.ts",
+                      "column": 49,
+                      "line": 12
+                    },
+                    "snippet": "\u001b[0m \u001b[90m 10 |\u001b[39m   \u001b[36mawait\u001b[39m homeFeedPage\u001b[33m.\u001b[39mexpectShellVisible()\u001b[33m;\u001b[39m\n \u001b[90m 11 |\u001b[39m   \u001b[36mawait\u001b[39m expect(page\u001b[33m.\u001b[39mgetByTestId(\u001b[32m'header-global-search'\u001b[39m))\u001b[33m.\u001b[39mtoBeVisible()\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 12 |\u001b[39m   \u001b[36mawait\u001b[39m expect(page\u001b[33m.\u001b[39mgetByLabel(\u001b[35m/create post/i\u001b[39m))\u001b[33m.\u001b[39mtoBeVisible()\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                                                 \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 13 |\u001b[39m\n \u001b[90m 14 |\u001b[39m   \u001b[36mconst\u001b[39m feedArticles \u001b[33m=\u001b[39m page\u001b[33m.\u001b[39mlocator(\u001b[32m'main article'\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 15 |\u001b[39m   \u001b[36mconst\u001b[39m emptyFeedState \u001b[33m=\u001b[39m page\u001b[33m.\u001b[39mgetByText(\u001b[35m/no posts yet\\. create your first post above\\./i\u001b[39m)\u001b[33m;\u001b[39m\u001b[0m"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "/home/runner/work/vdptest/vdptest/e2e/tests/home-feed.spec.ts",
+                        "column": 49,
+                        "line": 12
+                      },
+                      "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator:  getByLabel(/create post/i)\nExpected: visible\nReceived: hidden\nTimeout:  10000ms\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 10000ms\u001b[22m\n\u001b[2m  - waiting for getByLabel(/create post/i)\u001b[22m\n\u001b[2m    23 × locator resolved to <button aria-label=\"Create post\" class=\"inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 bg-primary text-primary-foreground hover:bg-secondary h-10 w-10 sm:hidden shadow-soft\">…</button>\u001b[22m\n\u001b[2m       - unexpected value \"hidden\"\u001b[22m\n\n\n  10 |   await homeFeedPage.expectShellVisible();\n  11 |   await expect(page.getByTestId('header-global-search')).toBeVisible();\n> 12 |   await expect(page.getByLabel(/create post/i)).toBeVisible();\n     |                                                 ^\n  13 |\n  14 |   const feedArticles = page.locator('main article');\n  15 |   const emptyFeedState = page.getByText(/no posts yet\\. create your first post above\\./i);\n    at /home/runner/work/vdptest/vdptest/e2e/tests/home-feed.spec.ts:12:49"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-07-16T07:56:07.339Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "/home/runner/work/vdptest/vdptest/test-results/artifacts/home-feed-Authenticated-us-655b8--the-personalized-feed-high/error-context.md"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "/home/runner/work/vdptest/vdptest/e2e/tests/home-feed.spec.ts",
+                    "column": 49,
+                    "line": 12
+                  }
+                },
+                {
+                  "workerIndex": 5,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 15582,
+                  "error": {
+                    "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator:  getByLabel(/create post/i)\nExpected: visible\nReceived: hidden\nTimeout:  10000ms\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 10000ms\u001b[22m\n\u001b[2m  - waiting for getByLabel(/create post/i)\u001b[22m\n\u001b[2m    23 × locator resolved to <button aria-label=\"Create post\" class=\"inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 bg-primary text-primary-foreground hover:bg-secondary h-10 w-10 sm:hidden shadow-soft\">…</button>\u001b[22m\n\u001b[2m       - unexpected value \"hidden\"\u001b[22m\n",
+                    "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator:  getByLabel(/create post/i)\nExpected: visible\nReceived: hidden\nTimeout:  10000ms\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 10000ms\u001b[22m\n\u001b[2m  - waiting for getByLabel(/create post/i)\u001b[22m\n\u001b[2m    23 × locator resolved to <button aria-label=\"Create post\" class=\"inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 bg-primary text-primary-foreground hover:bg-secondary h-10 w-10 sm:hidden shadow-soft\">…</button>\u001b[22m\n\u001b[2m       - unexpected value \"hidden\"\u001b[22m\n\n    at /home/runner/work/vdptest/vdptest/e2e/tests/home-feed.spec.ts:12:49",
+                    "location": {
+                      "file": "/home/runner/work/vdptest/vdptest/e2e/tests/home-feed.spec.ts",
+                      "column": 49,
+                      "line": 12
+                    },
+                    "snippet": "\u001b[0m \u001b[90m 10 |\u001b[39m   \u001b[36mawait\u001b[39m homeFeedPage\u001b[33m.\u001b[39mexpectShellVisible()\u001b[33m;\u001b[39m\n \u001b[90m 11 |\u001b[39m   \u001b[36mawait\u001b[39m expect(page\u001b[33m.\u001b[39mgetByTestId(\u001b[32m'header-global-search'\u001b[39m))\u001b[33m.\u001b[39mtoBeVisible()\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 12 |\u001b[39m   \u001b[36mawait\u001b[39m expect(page\u001b[33m.\u001b[39mgetByLabel(\u001b[35m/create post/i\u001b[39m))\u001b[33m.\u001b[39mtoBeVisible()\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                                                 \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 13 |\u001b[39m\n \u001b[90m 14 |\u001b[39m   \u001b[36mconst\u001b[39m feedArticles \u001b[33m=\u001b[39m page\u001b[33m.\u001b[39mlocator(\u001b[32m'main article'\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 15 |\u001b[39m   \u001b[36mconst\u001b[39m emptyFeedState \u001b[33m=\u001b[39m page\u001b[33m.\u001b[39mgetByText(\u001b[35m/no posts yet\\. create your first post above\\./i\u001b[39m)\u001b[33m;\u001b[39m\u001b[0m"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "/home/runner/work/vdptest/vdptest/e2e/tests/home-feed.spec.ts",
+                        "column": 49,
+                        "line": 12
+                      },
+                      "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator:  getByLabel(/create post/i)\nExpected: visible\nReceived: hidden\nTimeout:  10000ms\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 10000ms\u001b[22m\n\u001b[2m  - waiting for getByLabel(/create post/i)\u001b[22m\n\u001b[2m    23 × locator resolved to <button aria-label=\"Create post\" class=\"inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 bg-primary text-primary-foreground hover:bg-secondary h-10 w-10 sm:hidden shadow-soft\">…</button>\u001b[22m\n\u001b[2m       - unexpected value \"hidden\"\u001b[22m\n\n\n  10 |   await homeFeedPage.expectShellVisible();\n  11 |   await expect(page.getByTestId('header-global-search')).toBeVisible();\n> 12 |   await expect(page.getByLabel(/create post/i)).toBeVisible();\n     |                                                 ^\n  13 |\n  14 |   const feedArticles = page.locator('main article');\n  15 |   const emptyFeedState = page.getByText(/no posts yet\\. create your first post above\\./i);\n    at /home/runner/work/vdptest/vdptest/e2e/tests/home-feed.spec.ts:12:49"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 1,
+                  "startTime": "2026-07-16T07:56:23.321Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "/home/runner/work/vdptest/vdptest/test-results/artifacts/home-feed-Authenticated-us-655b8--the-personalized-feed-high-retry1/error-context.md"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "/home/runner/work/vdptest/vdptest/e2e/tests/home-feed.spec.ts",
+                    "column": 49,
+                    "line": 12
+                  }
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "d92bd64ae7eecefe34fa-9033b4c452ce1d26c4d0",
+          "file": "home-feed.spec.ts",
+          "line": 5,
+          "column": 1
+        },
+        {
+          "title": "Guest is denied access to the home feed @high",
+          "ok": true,
+          "tags": [
+            "high"
+          ],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 6,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 2054,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-07-16T07:56:39.918Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "d92bd64ae7eecefe34fa-118312d89ff3ddefce8a",
+          "file": "home-feed.spec.ts",
+          "line": 21,
+          "column": 1
+        }
+      ]
+    },
+    {
+      "title": "messaging.spec.ts",
+      "file": "messaging.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "Registered users exchange a private message @medium",
+          "ok": true,
+          "tags": [
+            "medium"
+          ],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [
+                {
+                  "type": "skip",
+                  "description": "Missing selector in src/: messaging selectors are outside E2E_SCOPE.md selector source list",
+                  "location": {
+                    "file": "/home/runner/work/vdptest/vdptest/e2e/tests/messaging.spec.ts",
+                    "line": 4,
+                    "column": 8
+                  }
+                }
+              ],
+              "expectedStatus": "skipped",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 6,
+                  "parallelIndex": 0,
+                  "status": "skipped",
+                  "duration": 9,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-07-16T07:56:42.150Z",
+                  "annotations": [
+                    {
+                      "type": "skip",
+                      "description": "Missing selector in src/: messaging selectors are outside E2E_SCOPE.md selector source list",
+                      "location": {
+                        "file": "/home/runner/work/vdptest/vdptest/e2e/tests/messaging.spec.ts",
+                        "line": 4,
+                        "column": 8
+                      }
+                    }
+                  ],
+                  "attachments": []
+                }
+              ],
+              "status": "skipped"
+            }
+          ],
+          "id": "107d361b6fc8beba4b6c-bd662fcfcf45d1b5e23e",
+          "file": "messaging.spec.ts",
+          "line": 3,
+          "column": 1
+        }
+      ]
+    },
+    {
+      "title": "notifications.spec.ts",
+      "file": "notifications.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "User views a notification produced by an in-scope social action @medium",
+          "ok": true,
+          "tags": [
+            "medium"
+          ],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [
+                {
+                  "type": "skip",
+                  "description": "Missing selector in src/: notification list selectors and notification-id attributes are outside scoped source files",
+                  "location": {
+                    "file": "/home/runner/work/vdptest/vdptest/e2e/tests/notifications.spec.ts",
+                    "line": 4,
+                    "column": 8
+                  }
+                }
+              ],
+              "expectedStatus": "skipped",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 6,
+                  "parallelIndex": 0,
+                  "status": "skipped",
+                  "duration": 2,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-07-16T07:56:42.189Z",
+                  "annotations": [
+                    {
+                      "type": "skip",
+                      "description": "Missing selector in src/: notification list selectors and notification-id attributes are outside scoped source files",
+                      "location": {
+                        "file": "/home/runner/work/vdptest/vdptest/e2e/tests/notifications.spec.ts",
+                        "line": 4,
+                        "column": 8
+                      }
+                    }
+                  ],
+                  "attachments": []
+                }
+              ],
+              "status": "skipped"
+            }
+          ],
+          "id": "be7d0958780d1a4666e5-5f500c2994a4dbbe4374",
+          "file": "notifications.spec.ts",
+          "line": 3,
+          "column": 1
+        }
+      ]
+    },
+    {
+      "title": "onboarding.spec.ts",
+      "file": "onboarding.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "New user completes onboarding and reaches the feed @medium",
+          "ok": true,
+          "tags": [
+            "medium"
+          ],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [
+                {
+                  "type": "skip",
+                  "description": "Missing selector in src/: onboarding image-upload, interests, and suggested-user selectors are not present in scoped selector sources",
+                  "location": {
+                    "file": "/home/runner/work/vdptest/vdptest/e2e/tests/onboarding.spec.ts",
+                    "line": 4,
+                    "column": 8
+                  }
+                }
+              ],
+              "expectedStatus": "skipped",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 6,
+                  "parallelIndex": 0,
+                  "status": "skipped",
+                  "duration": 1,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-07-16T07:56:42.224Z",
+                  "annotations": [
+                    {
+                      "type": "skip",
+                      "description": "Missing selector in src/: onboarding image-upload, interests, and suggested-user selectors are not present in scoped selector sources",
+                      "location": {
+                        "file": "/home/runner/work/vdptest/vdptest/e2e/tests/onboarding.spec.ts",
+                        "line": 4,
+                        "column": 8
+                      }
+                    }
+                  ],
+                  "attachments": []
+                }
+              ],
+              "status": "skipped"
+            }
+          ],
+          "id": "fe534f0825407f213faa-8a41077621a05226a911",
+          "file": "onboarding.spec.ts",
+          "line": 3,
+          "column": 1
+        },
+        {
+          "title": "User skips optional onboarding steps @low",
+          "ok": true,
+          "tags": [
+            "low"
+          ],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [
+                {
+                  "type": "skip",
+                  "description": "Missing selector in src/: skip controls and optional onboarding-step selectors are not documented in scoped source files",
+                  "location": {
+                    "file": "/home/runner/work/vdptest/vdptest/e2e/tests/onboarding.spec.ts",
+                    "line": 11,
+                    "column": 8
+                  }
+                }
+              ],
+              "expectedStatus": "skipped",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 6,
+                  "parallelIndex": 0,
+                  "status": "skipped",
+                  "duration": 2,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-07-16T07:56:42.235Z",
+                  "annotations": [
+                    {
+                      "type": "skip",
+                      "description": "Missing selector in src/: skip controls and optional onboarding-step selectors are not documented in scoped source files",
+                      "location": {
+                        "file": "/home/runner/work/vdptest/vdptest/e2e/tests/onboarding.spec.ts",
+                        "line": 11,
+                        "column": 8
+                      }
+                    }
+                  ],
+                  "attachments": []
+                }
+              ],
+              "status": "skipped"
+            }
+          ],
+          "id": "fe534f0825407f213faa-154fe7a31e55ecaebdbb",
+          "file": "onboarding.spec.ts",
+          "line": 10,
+          "column": 1
+        },
+        {
+          "title": "Onboarding rejects a non-image profile-picture upload @medium",
+          "ok": true,
+          "tags": [
+            "medium"
+          ],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [
+                {
+                  "type": "skip",
+                  "description": "Missing selector in src/: onboarding file-upload and upload-error selectors are not available in scoped selector sources",
+                  "location": {
+                    "file": "/home/runner/work/vdptest/vdptest/e2e/tests/onboarding.spec.ts",
+                    "line": 18,
+                    "column": 8
+                  }
+                }
+              ],
+              "expectedStatus": "skipped",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 6,
+                  "parallelIndex": 0,
+                  "status": "skipped",
+                  "duration": 1,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-07-16T07:56:42.257Z",
+                  "annotations": [
+                    {
+                      "type": "skip",
+                      "description": "Missing selector in src/: onboarding file-upload and upload-error selectors are not available in scoped selector sources",
+                      "location": {
+                        "file": "/home/runner/work/vdptest/vdptest/e2e/tests/onboarding.spec.ts",
+                        "line": 18,
+                        "column": 8
+                      }
+                    }
+                  ],
+                  "attachments": []
+                }
+              ],
+              "status": "skipped"
+            }
+          ],
+          "id": "fe534f0825407f213faa-89bfb14317f421243a14",
+          "file": "onboarding.spec.ts",
+          "line": 17,
+          "column": 1
+        }
+      ]
+    },
+    {
+      "title": "password-reset.spec.ts",
+      "file": "password-reset.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "Password reset gives a security-safe response for existing and unknown email addresses @medium",
+          "ok": true,
+          "tags": [
+            "medium"
+          ],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 6,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 4187,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-07-16T07:56:42.274Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "4e9f88fefb1813ba7d98-5e7e6edd1c050f1e0104",
+          "file": "password-reset.spec.ts",
+          "line": 10,
+          "column": 1
+        }
+      ]
+    },
+    {
+      "title": "post-creation.spec.ts",
+      "file": "post-creation.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "User creates a valid text post with selected visibility @high",
+          "ok": true,
+          "tags": [
+            "high"
+          ],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [
+                {
+                  "type": "skip",
+                  "description": "Missing selector in src/: scenario requires stable composer data-testid selectors that are not present in scoped source files",
+                  "location": {
+                    "file": "/home/runner/work/vdptest/vdptest/e2e/tests/post-creation.spec.ts",
+                    "line": 4,
+                    "column": 8
+                  }
+                }
+              ],
+              "expectedStatus": "skipped",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 6,
+                  "parallelIndex": 0,
+                  "status": "skipped",
+                  "duration": 1,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-07-16T07:56:46.490Z",
+                  "annotations": [
+                    {
+                      "type": "skip",
+                      "description": "Missing selector in src/: scenario requires stable composer data-testid selectors that are not present in scoped source files",
+                      "location": {
+                        "file": "/home/runner/work/vdptest/vdptest/e2e/tests/post-creation.spec.ts",
+                        "line": 4,
+                        "column": 8
+                      }
+                    }
+                  ],
+                  "attachments": []
+                }
+              ],
+              "status": "skipped"
+            }
+          ],
+          "id": "306082a93151ad965269-6f705b51c3a1cea12e42",
+          "file": "post-creation.spec.ts",
+          "line": 3,
+          "column": 1
+        },
+        {
+          "title": "User creates supported image, video, and link posts @high",
+          "ok": true,
+          "tags": [
+            "high"
+          ],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [
+                {
+                  "type": "skip",
+                  "description": "Missing selector in src/: stable created-post verification selectors for media/link assertions are not documented in E2E scope",
+                  "location": {
+                    "file": "/home/runner/work/vdptest/vdptest/e2e/tests/post-creation.spec.ts",
+                    "line": 11,
+                    "column": 8
+                  }
+                }
+              ],
+              "expectedStatus": "skipped",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 6,
+                  "parallelIndex": 0,
+                  "status": "skipped",
+                  "duration": 1,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-07-16T07:56:46.503Z",
+                  "annotations": [
+                    {
+                      "type": "skip",
+                      "description": "Missing selector in src/: stable created-post verification selectors for media/link assertions are not documented in E2E scope",
+                      "location": {
+                        "file": "/home/runner/work/vdptest/vdptest/e2e/tests/post-creation.spec.ts",
+                        "line": 11,
+                        "column": 8
+                      }
+                    }
+                  ],
+                  "attachments": []
+                }
+              ],
+              "status": "skipped"
+            }
+          ],
+          "id": "306082a93151ad965269-c5f1a836ffb9a3337b1c",
+          "file": "post-creation.spec.ts",
+          "line": 10,
+          "column": 1
+        },
+        {
+          "title": "Post composer rejects empty, oversized, and unsupported submissions @high",
+          "ok": true,
+          "tags": [
+            "high"
+          ],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [
+                {
+                  "type": "skip",
+                  "description": "Missing selector in src/: stable validation selectors for over-limit and unsupported-media errors are not provided in scoped sources",
+                  "location": {
+                    "file": "/home/runner/work/vdptest/vdptest/e2e/tests/post-creation.spec.ts",
+                    "line": 18,
+                    "column": 8
+                  }
+                }
+              ],
+              "expectedStatus": "skipped",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 6,
+                  "parallelIndex": 0,
+                  "status": "skipped",
+                  "duration": 1,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-07-16T07:56:46.512Z",
+                  "annotations": [
+                    {
+                      "type": "skip",
+                      "description": "Missing selector in src/: stable validation selectors for over-limit and unsupported-media errors are not provided in scoped sources",
+                      "location": {
+                        "file": "/home/runner/work/vdptest/vdptest/e2e/tests/post-creation.spec.ts",
+                        "line": 18,
+                        "column": 8
+                      }
+                    }
+                  ],
+                  "attachments": []
+                }
+              ],
+              "status": "skipped"
+            }
+          ],
+          "id": "306082a93151ad965269-23faa874b3bdabb421f8",
+          "file": "post-creation.spec.ts",
+          "line": 17,
+          "column": 1
+        },
+        {
+          "title": "User cancels post creation without publishing the draft @medium",
+          "ok": true,
+          "tags": [
+            "medium"
+          ],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [
+                {
+                  "type": "skip",
+                  "description": "Missing selector in src/: discard-confirmation selectors are not defined in scoped source files",
+                  "location": {
+                    "file": "/home/runner/work/vdptest/vdptest/e2e/tests/post-creation.spec.ts",
+                    "line": 25,
+                    "column": 8
+                  }
+                }
+              ],
+              "expectedStatus": "skipped",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 6,
+                  "parallelIndex": 0,
+                  "status": "skipped",
+                  "duration": 1,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-07-16T07:56:46.522Z",
+                  "annotations": [
+                    {
+                      "type": "skip",
+                      "description": "Missing selector in src/: discard-confirmation selectors are not defined in scoped source files",
+                      "location": {
+                        "file": "/home/runner/work/vdptest/vdptest/e2e/tests/post-creation.spec.ts",
+                        "line": 25,
+                        "column": 8
+                      }
+                    }
+                  ],
+                  "attachments": []
+                }
+              ],
+              "status": "skipped"
+            }
+          ],
+          "id": "306082a93151ad965269-2266d50384a407d32fcb",
+          "file": "post-creation.spec.ts",
+          "line": 24,
+          "column": 1
+        }
+      ]
+    },
+    {
+      "title": "post-interactions.spec.ts",
+      "file": "post-interactions.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "User likes, saves, opens comments, and opens an author profile from a feed post @high",
+          "ok": true,
+          "tags": [
+            "high"
+          ],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [
+                {
+                  "type": "skip",
+                  "description": "Missing selector in src/: stable seeded-post identifiers required for safe post-level scoping are not available in scoped sources",
+                  "location": {
+                    "file": "/home/runner/work/vdptest/vdptest/e2e/tests/post-interactions.spec.ts",
+                    "line": 4,
+                    "column": 8
+                  }
+                }
+              ],
+              "expectedStatus": "skipped",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 6,
+                  "parallelIndex": 0,
+                  "status": "skipped",
+                  "duration": 1,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-07-16T07:56:46.537Z",
+                  "annotations": [
+                    {
+                      "type": "skip",
+                      "description": "Missing selector in src/: stable seeded-post identifiers required for safe post-level scoping are not available in scoped sources",
+                      "location": {
+                        "file": "/home/runner/work/vdptest/vdptest/e2e/tests/post-interactions.spec.ts",
+                        "line": 4,
+                        "column": 8
+                      }
+                    }
+                  ],
+                  "attachments": []
+                }
+              ],
+              "status": "skipped"
+            }
+          ],
+          "id": "dee49b58fa627d779acb-bf5da087da3eebcf5c3e",
+          "file": "post-interactions.spec.ts",
+          "line": 3,
+          "column": 1
+        },
+        {
+          "title": "User shares and reports a feed post @medium",
+          "ok": true,
+          "tags": [
+            "medium"
+          ],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [
+                {
+                  "type": "skip",
+                  "description": "Missing selector in src/: share/report dialog selectors for this scenario are outside E2E_SCOPE.md selector sources",
+                  "location": {
+                    "file": "/home/runner/work/vdptest/vdptest/e2e/tests/post-interactions.spec.ts",
+                    "line": 11,
+                    "column": 8
+                  }
+                }
+              ],
+              "expectedStatus": "skipped",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 6,
+                  "parallelIndex": 0,
+                  "status": "skipped",
+                  "duration": 1,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-07-16T07:56:46.549Z",
+                  "annotations": [
+                    {
+                      "type": "skip",
+                      "description": "Missing selector in src/: share/report dialog selectors for this scenario are outside E2E_SCOPE.md selector sources",
+                      "location": {
+                        "file": "/home/runner/work/vdptest/vdptest/e2e/tests/post-interactions.spec.ts",
+                        "line": 11,
+                        "column": 8
+                      }
+                    }
+                  ],
+                  "attachments": []
+                }
+              ],
+              "status": "skipped"
+            }
+          ],
+          "id": "dee49b58fa627d779acb-9def7335e94cb79c98ea",
+          "file": "post-interactions.spec.ts",
+          "line": 10,
+          "column": 1
+        }
+      ]
+    },
+    {
+      "title": "post-management.spec.ts",
+      "file": "post-management.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "Post owner edits and then deletes a post with confirmation @high",
+          "ok": true,
+          "tags": [
+            "high"
+          ],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [
+                {
+                  "type": "skip",
+                  "description": "Missing selector in src/: stable owned-post identifiers needed to scope edit/delete actions are not in scoped selector sources",
+                  "location": {
+                    "file": "/home/runner/work/vdptest/vdptest/e2e/tests/post-management.spec.ts",
+                    "line": 4,
+                    "column": 8
+                  }
+                }
+              ],
+              "expectedStatus": "skipped",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 6,
+                  "parallelIndex": 0,
+                  "status": "skipped",
+                  "duration": 1,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-07-16T07:56:46.568Z",
+                  "annotations": [
+                    {
+                      "type": "skip",
+                      "description": "Missing selector in src/: stable owned-post identifiers needed to scope edit/delete actions are not in scoped selector sources",
+                      "location": {
+                        "file": "/home/runner/work/vdptest/vdptest/e2e/tests/post-management.spec.ts",
+                        "line": 4,
+                        "column": 8
+                      }
+                    }
+                  ],
+                  "attachments": []
+                }
+              ],
+              "status": "skipped"
+            }
+          ],
+          "id": "56b1b273d3530f1d5f98-7818129240a66a8753e4",
+          "file": "post-management.spec.ts",
+          "line": 3,
+          "column": 1
+        },
+        {
+          "title": "Non-owner cannot edit or delete another user's post @high",
+          "ok": true,
+          "tags": [
+            "high"
+          ],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [
+                {
+                  "type": "skip",
+                  "description": "Missing selector in src/: non-owner seeded-post selectors for permission assertions are not available in scoped source files",
+                  "location": {
+                    "file": "/home/runner/work/vdptest/vdptest/e2e/tests/post-management.spec.ts",
+                    "line": 11,
+                    "column": 8
+                  }
+                }
+              ],
+              "expectedStatus": "skipped",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 6,
+                  "parallelIndex": 0,
+                  "status": "skipped",
+                  "duration": 1,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-07-16T07:56:46.578Z",
+                  "annotations": [
+                    {
+                      "type": "skip",
+                      "description": "Missing selector in src/: non-owner seeded-post selectors for permission assertions are not available in scoped source files",
+                      "location": {
+                        "file": "/home/runner/work/vdptest/vdptest/e2e/tests/post-management.spec.ts",
+                        "line": 11,
+                        "column": 8
+                      }
+                    }
+                  ],
+                  "attachments": []
+                }
+              ],
+              "status": "skipped"
+            }
+          ],
+          "id": "56b1b273d3530f1d5f98-f98836c032a8408a26b4",
+          "file": "post-management.spec.ts",
+          "line": 10,
+          "column": 1
+        }
+      ]
+    },
+    {
+      "title": "post-visibility.spec.ts",
+      "file": "post-visibility.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "Post visibility restricts followers-only and private content @high",
+          "ok": true,
+          "tags": [
+            "high"
+          ],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [
+                {
+                  "type": "skip",
+                  "description": "Missing selector in src/: stable post-level visibility markers and deterministic multi-user fixtures are not present in scoped assets",
+                  "location": {
+                    "file": "/home/runner/work/vdptest/vdptest/e2e/tests/post-visibility.spec.ts",
+                    "line": 4,
+                    "column": 8
+                  }
+                }
+              ],
+              "expectedStatus": "skipped",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 6,
+                  "parallelIndex": 0,
+                  "status": "skipped",
+                  "duration": 1,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-07-16T07:56:46.592Z",
+                  "annotations": [
+                    {
+                      "type": "skip",
+                      "description": "Missing selector in src/: stable post-level visibility markers and deterministic multi-user fixtures are not present in scoped assets",
+                      "location": {
+                        "file": "/home/runner/work/vdptest/vdptest/e2e/tests/post-visibility.spec.ts",
+                        "line": 4,
+                        "column": 8
+                      }
+                    }
+                  ],
+                  "attachments": []
+                }
+              ],
+              "status": "skipped"
+            }
+          ],
+          "id": "ee6f2040eab33a6c1698-ea00ad82723051f1c4dd",
+          "file": "post-visibility.spec.ts",
+          "line": 3,
+          "column": 1
+        }
+      ]
+    },
+    {
+      "title": "profile-privacy.spec.ts",
+      "file": "profile-privacy.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "Private profile content is restricted from unauthorized viewers @high",
+          "ok": true,
+          "tags": [
+            "high"
+          ],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [
+                {
+                  "type": "skip",
+                  "description": "Missing selector in src/: dedicated private-profile status selector and deterministic private-profile fixtures are not present in scoped sources",
+                  "location": {
+                    "file": "/home/runner/work/vdptest/vdptest/e2e/tests/profile-privacy.spec.ts",
+                    "line": 4,
+                    "column": 8
+                  }
+                }
+              ],
+              "expectedStatus": "skipped",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 6,
+                  "parallelIndex": 0,
+                  "status": "skipped",
+                  "duration": 1,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-07-16T07:56:46.605Z",
+                  "annotations": [
+                    {
+                      "type": "skip",
+                      "description": "Missing selector in src/: dedicated private-profile status selector and deterministic private-profile fixtures are not present in scoped sources",
+                      "location": {
+                        "file": "/home/runner/work/vdptest/vdptest/e2e/tests/profile-privacy.spec.ts",
+                        "line": 4,
+                        "column": 8
+                      }
+                    }
+                  ],
+                  "attachments": []
+                }
+              ],
+              "status": "skipped"
+            }
+          ],
+          "id": "0898d7a5aee24b0e61b2-7099b9761ce85277c08d",
+          "file": "profile-privacy.spec.ts",
+          "line": 3,
+          "column": 1
+        }
+      ]
+    },
+    {
+      "title": "profile.spec.ts",
+      "file": "profile.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "User views own profile, public profiles, lists, and individual posts @medium",
+          "ok": true,
+          "tags": [
+            "medium"
+          ],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [
+                {
+                  "type": "skip",
+                  "description": "Missing selector in src/: stable profile-owner/list-item identifiers required by this scenario are not provided in scoped selectors",
+                  "location": {
+                    "file": "/home/runner/work/vdptest/vdptest/e2e/tests/profile.spec.ts",
+                    "line": 4,
+                    "column": 8
+                  }
+                }
+              ],
+              "expectedStatus": "skipped",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 6,
+                  "parallelIndex": 0,
+                  "status": "skipped",
+                  "duration": 1,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-07-16T07:56:46.623Z",
+                  "annotations": [
+                    {
+                      "type": "skip",
+                      "description": "Missing selector in src/: stable profile-owner/list-item identifiers required by this scenario are not provided in scoped selectors",
+                      "location": {
+                        "file": "/home/runner/work/vdptest/vdptest/e2e/tests/profile.spec.ts",
+                        "line": 4,
+                        "column": 8
+                      }
+                    }
+                  ],
+                  "attachments": []
+                }
+              ],
+              "status": "skipped"
+            }
+          ],
+          "id": "e8b79b4ee550a37632f1-601b2c5180b450f9bf7c",
+          "file": "profile.spec.ts",
+          "line": 3,
+          "column": 1
+        }
+      ]
+    },
+    {
+      "title": "registration.spec.ts",
+      "file": "registration.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "New user registers with valid required information @high",
+          "ok": true,
+          "tags": [
+            "high"
+          ],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 6,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 3626,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-07-16T07:56:46.644Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "1e5aa7b6f95ae669165d-6462acd9463028c1a151",
+          "file": "registration.spec.ts",
+          "line": 22,
+          "column": 1
+        },
+        {
+          "title": "Registration rejects missing and malformed required values @high",
+          "ok": false,
+          "tags": [
+            "high"
+          ],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 6,
+                  "parallelIndex": 0,
+                  "status": "timedOut",
+                  "duration": 60050,
+                  "error": {
+                    "message": "\u001b[31mTest timeout of 60000ms exceeded.\u001b[39m",
+                    "stack": "\u001b[31mTest timeout of 60000ms exceeded.\u001b[39m"
+                  },
+                  "errors": [
+                    {
+                      "message": "\u001b[31mTest timeout of 60000ms exceeded.\u001b[39m"
+                    },
+                    {
+                      "location": {
+                        "file": "/home/runner/work/vdptest/vdptest/e2e/pages/RegistrationPage.ts",
+                        "column": 29,
+                        "line": 75
+                      },
+                      "message": "Error: locator.click: Test timeout of 60000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('form button[type=\"submit\"]')\u001b[22m\n\u001b[2m    - locator resolved to <button disabled type=\"submit\" class=\"inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 bg-primary text-primary-foreground hover:bg-secondary px-4 py-2 w-full h-11 shadow-soft mt-1\">…</button>\u001b[22m\n\u001b[2m  - attempting click action\u001b[22m\n\u001b[2m    2 × waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m      - element is not enabled\u001b[22m\n\u001b[2m    - retrying click action\u001b[22m\n\u001b[2m    - waiting 20ms\u001b[22m\n\u001b[2m    2 × waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m      - element is not enabled\u001b[22m\n\u001b[2m    - retrying click action\u001b[22m\n\u001b[2m      - waiting 100ms\u001b[22m\n\u001b[2m    112 × waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m        - element is not enabled\u001b[22m\n\u001b[2m      - retrying click action\u001b[22m\n\u001b[2m        - waiting 500ms\u001b[22m\n\n\n   at ../pages/RegistrationPage.ts:75\n\n  73 |\n  74 |   async submit(): Promise<void> {\n> 75 |     await this.submitButton.click();\n     |                             ^\n  76 |   }\n  77 | }\n  78 |\n    at RegistrationPage.submit (/home/runner/work/vdptest/vdptest/e2e/pages/RegistrationPage.ts:75:29)\n    at /home/runner/work/vdptest/vdptest/e2e/tests/registration.spec.ts:59:26"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-07-16T07:56:50.285Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "/home/runner/work/vdptest/vdptest/test-results/artifacts/registration-Registration--619f6-formed-required-values-high/error-context.md"
+                    }
+                  ]
+                },
+                {
+                  "workerIndex": 7,
+                  "parallelIndex": 0,
+                  "status": "timedOut",
+                  "duration": 60175,
+                  "error": {
+                    "message": "\u001b[31mTest timeout of 60000ms exceeded.\u001b[39m",
+                    "stack": "\u001b[31mTest timeout of 60000ms exceeded.\u001b[39m"
+                  },
+                  "errors": [
+                    {
+                      "message": "\u001b[31mTest timeout of 60000ms exceeded.\u001b[39m"
+                    },
+                    {
+                      "location": {
+                        "file": "/home/runner/work/vdptest/vdptest/e2e/pages/RegistrationPage.ts",
+                        "column": 29,
+                        "line": 75
+                      },
+                      "message": "Error: locator.click: Test timeout of 60000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('form button[type=\"submit\"]')\u001b[22m\n\u001b[2m    - locator resolved to <button disabled type=\"submit\" class=\"inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 bg-primary text-primary-foreground hover:bg-secondary px-4 py-2 w-full h-11 shadow-soft mt-1\">…</button>\u001b[22m\n\u001b[2m  - attempting click action\u001b[22m\n\u001b[2m    2 × waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m      - element is not enabled\u001b[22m\n\u001b[2m    - retrying click action\u001b[22m\n\u001b[2m    - waiting 20ms\u001b[22m\n\u001b[2m    2 × waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m      - element is not enabled\u001b[22m\n\u001b[2m    - retrying click action\u001b[22m\n\u001b[2m      - waiting 100ms\u001b[22m\n\u001b[2m    111 × waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m        - element is not enabled\u001b[22m\n\u001b[2m      - retrying click action\u001b[22m\n\u001b[2m        - waiting 500ms\u001b[22m\n\u001b[2m    - waiting for element to be visible, enabled and stable\u001b[22m\n\n\n   at ../pages/RegistrationPage.ts:75\n\n  73 |\n  74 |   async submit(): Promise<void> {\n> 75 |     await this.submitButton.click();\n     |                             ^\n  76 |   }\n  77 | }\n  78 |\n    at RegistrationPage.submit (/home/runner/work/vdptest/vdptest/e2e/pages/RegistrationPage.ts:75:29)\n    at /home/runner/work/vdptest/vdptest/e2e/tests/registration.spec.ts:59:26"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 1,
+                  "startTime": "2026-07-16T07:57:51.218Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "/home/runner/work/vdptest/vdptest/test-results/artifacts/registration-Registration--619f6-formed-required-values-high-retry1/error-context.md"
+                    }
+                  ]
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "1e5aa7b6f95ae669165d-fed8147a31162cab3bba",
+          "file": "registration.spec.ts",
+          "line": 42,
+          "column": 1
+        },
+        {
+          "title": "Registration rejects duplicate username and email @high",
+          "ok": false,
+          "tags": [
+            "high"
+          ],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 8,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 21498,
+                  "error": {
+                    "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mpage\u001b[39m\u001b[2m).\u001b[22mtoHaveURL\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nExpected pattern: \u001b[32m/\\/login(?:\\?|$)/\u001b[39m\nReceived string:  \u001b[31m\"https://dev.app.vdpconnect.idxd.de/signup\"\u001b[39m\nTimeout: 10000ms\n\nCall log:\n\u001b[2m  - Expect \"toHaveURL\" with timeout 10000ms\u001b[22m\n\u001b[2m    24 × unexpected value \"https://dev.app.vdpconnect.idxd.de/signup\"\u001b[22m\n",
+                    "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mpage\u001b[39m\u001b[2m).\u001b[22mtoHaveURL\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nExpected pattern: \u001b[32m/\\/login(?:\\?|$)/\u001b[39m\nReceived string:  \u001b[31m\"https://dev.app.vdpconnect.idxd.de/signup\"\u001b[39m\nTimeout: 10000ms\n\nCall log:\n\u001b[2m  - Expect \"toHaveURL\" with timeout 10000ms\u001b[22m\n\u001b[2m    24 × unexpected value \"https://dev.app.vdpconnect.idxd.de/signup\"\u001b[22m\n\n    at /home/runner/work/vdptest/vdptest/e2e/tests/registration.spec.ts:93:22",
+                    "location": {
+                      "file": "/home/runner/work/vdptest/vdptest/e2e/tests/registration.spec.ts",
+                      "column": 22,
+                      "line": 93
+                    },
+                    "snippet": "\u001b[0m \u001b[90m 91 |\u001b[39m   \u001b[36mawait\u001b[39m registrationPage\u001b[33m.\u001b[39msubmit()\u001b[33m;\u001b[39m\n \u001b[90m 92 |\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 93 |\u001b[39m   \u001b[36mawait\u001b[39m expect(page)\u001b[33m.\u001b[39mtoHaveURL(\u001b[35m/\\/login(?:\\?|$)/\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                      \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 94 |\u001b[39m   \u001b[36mawait\u001b[39m expect(loginPage\u001b[33m.\u001b[39memailInput)\u001b[33m.\u001b[39mtoBeVisible()\u001b[33m;\u001b[39m\n \u001b[90m 95 |\u001b[39m })\u001b[33m;\u001b[39m\n \u001b[90m 96 |\u001b[39m\u001b[0m"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "/home/runner/work/vdptest/vdptest/e2e/tests/registration.spec.ts",
+                        "column": 22,
+                        "line": 93
+                      },
+                      "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mpage\u001b[39m\u001b[2m).\u001b[22mtoHaveURL\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nExpected pattern: \u001b[32m/\\/login(?:\\?|$)/\u001b[39m\nReceived string:  \u001b[31m\"https://dev.app.vdpconnect.idxd.de/signup\"\u001b[39m\nTimeout: 10000ms\n\nCall log:\n\u001b[2m  - Expect \"toHaveURL\" with timeout 10000ms\u001b[22m\n\u001b[2m    24 × unexpected value \"https://dev.app.vdpconnect.idxd.de/signup\"\u001b[22m\n\n\n  91 |   await registrationPage.submit();\n  92 |\n> 93 |   await expect(page).toHaveURL(/\\/login(?:\\?|$)/);\n     |                      ^\n  94 |   await expect(loginPage.emailInput).toBeVisible();\n  95 | });\n  96 |\n    at /home/runner/work/vdptest/vdptest/e2e/tests/registration.spec.ts:93:22"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-07-16T07:58:52.452Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "/home/runner/work/vdptest/vdptest/test-results/artifacts/registration-Registration--3030c-ate-username-and-email-high/error-context.md"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "/home/runner/work/vdptest/vdptest/e2e/tests/registration.spec.ts",
+                    "column": 22,
+                    "line": 93
+                  }
+                },
+                {
+                  "workerIndex": 9,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 17499,
+                  "error": {
+                    "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mpage\u001b[39m\u001b[2m).\u001b[22mtoHaveURL\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nExpected pattern: \u001b[32m/\\/login(?:\\?|$)/\u001b[39m\nReceived string:  \u001b[31m\"https://dev.app.vdpconnect.idxd.de/signup\"\u001b[39m\nTimeout: 10000ms\n\nCall log:\n\u001b[2m  - Expect \"toHaveURL\" with timeout 10000ms\u001b[22m\n\u001b[2m    24 × unexpected value \"https://dev.app.vdpconnect.idxd.de/signup\"\u001b[22m\n",
+                    "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mpage\u001b[39m\u001b[2m).\u001b[22mtoHaveURL\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nExpected pattern: \u001b[32m/\\/login(?:\\?|$)/\u001b[39m\nReceived string:  \u001b[31m\"https://dev.app.vdpconnect.idxd.de/signup\"\u001b[39m\nTimeout: 10000ms\n\nCall log:\n\u001b[2m  - Expect \"toHaveURL\" with timeout 10000ms\u001b[22m\n\u001b[2m    24 × unexpected value \"https://dev.app.vdpconnect.idxd.de/signup\"\u001b[22m\n\n    at /home/runner/work/vdptest/vdptest/e2e/tests/registration.spec.ts:93:22",
+                    "location": {
+                      "file": "/home/runner/work/vdptest/vdptest/e2e/tests/registration.spec.ts",
+                      "column": 22,
+                      "line": 93
+                    },
+                    "snippet": "\u001b[0m \u001b[90m 91 |\u001b[39m   \u001b[36mawait\u001b[39m registrationPage\u001b[33m.\u001b[39msubmit()\u001b[33m;\u001b[39m\n \u001b[90m 92 |\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 93 |\u001b[39m   \u001b[36mawait\u001b[39m expect(page)\u001b[33m.\u001b[39mtoHaveURL(\u001b[35m/\\/login(?:\\?|$)/\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                      \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 94 |\u001b[39m   \u001b[36mawait\u001b[39m expect(loginPage\u001b[33m.\u001b[39memailInput)\u001b[33m.\u001b[39mtoBeVisible()\u001b[33m;\u001b[39m\n \u001b[90m 95 |\u001b[39m })\u001b[33m;\u001b[39m\n \u001b[90m 96 |\u001b[39m\u001b[0m"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "/home/runner/work/vdptest/vdptest/e2e/tests/registration.spec.ts",
+                        "column": 22,
+                        "line": 93
+                      },
+                      "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mpage\u001b[39m\u001b[2m).\u001b[22mtoHaveURL\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nExpected pattern: \u001b[32m/\\/login(?:\\?|$)/\u001b[39m\nReceived string:  \u001b[31m\"https://dev.app.vdpconnect.idxd.de/signup\"\u001b[39m\nTimeout: 10000ms\n\nCall log:\n\u001b[2m  - Expect \"toHaveURL\" with timeout 10000ms\u001b[22m\n\u001b[2m    24 × unexpected value \"https://dev.app.vdpconnect.idxd.de/signup\"\u001b[22m\n\n\n  91 |   await registrationPage.submit();\n  92 |\n> 93 |   await expect(page).toHaveURL(/\\/login(?:\\?|$)/);\n     |                      ^\n  94 |   await expect(loginPage.emailInput).toBeVisible();\n  95 | });\n  96 |\n    at /home/runner/work/vdptest/vdptest/e2e/tests/registration.spec.ts:93:22"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 1,
+                  "startTime": "2026-07-16T07:59:14.951Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "/home/runner/work/vdptest/vdptest/test-results/artifacts/registration-Registration--3030c-ate-username-and-email-high-retry1/error-context.md"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "/home/runner/work/vdptest/vdptest/e2e/tests/registration.spec.ts",
+                    "column": 22,
+                    "line": 93
+                  }
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "1e5aa7b6f95ae669165d-932d2972b7212b217a7a",
+          "file": "registration.spec.ts",
+          "line": 67,
+          "column": 1
+        }
+      ]
+    },
+    {
+      "title": "responsive-smoke.spec.ts",
+      "file": "responsive-smoke.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "Critical guest and authenticated journeys remain usable at supported viewport sizes @low",
+          "ok": true,
+          "tags": [
+            "low"
+          ],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [
+                {
+                  "type": "skip",
+                  "description": "Missing selector in src/: viewport-specific primary-action selectors for all listed pages are not fully available in scoped selector sources",
+                  "location": {
+                    "file": "/home/runner/work/vdptest/vdptest/e2e/tests/responsive-smoke.spec.ts",
+                    "line": 4,
+                    "column": 8
+                  }
+                }
+              ],
+              "expectedStatus": "skipped",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 10,
+                  "parallelIndex": 0,
+                  "status": "skipped",
+                  "duration": 137,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-07-16T07:59:33.441Z",
+                  "annotations": [
+                    {
+                      "type": "skip",
+                      "description": "Missing selector in src/: viewport-specific primary-action selectors for all listed pages are not fully available in scoped selector sources",
+                      "location": {
+                        "file": "/home/runner/work/vdptest/vdptest/e2e/tests/responsive-smoke.spec.ts",
+                        "line": 4,
+                        "column": 8
+                      }
+                    }
+                  ],
+                  "attachments": []
+                }
+              ],
+              "status": "skipped"
+            }
+          ],
+          "id": "bd1571f4cfbcf65c3a71-3736e0ff578e91dbcf5e",
+          "file": "responsive-smoke.spec.ts",
+          "line": 3,
+          "column": 1
+        }
+      ]
+    },
+    {
+      "title": "search.spec.ts",
+      "file": "search.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "User searches for users, posts, and hashtags @medium",
+          "ok": false,
+          "tags": [
+            "medium"
+          ],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 10,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 6579,
+                  "error": {
+                    "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: getByText('@ashishjain')\nExpected: visible\nError: strict mode violation: getByText('@ashishjain') resolved to 2 elements:\n    1) <p class=\"text-xs text-muted-foreground truncate\">@ashishjain</p> aka getByRole('complementary').getByText('@ashishjain')\n    2) <p class=\"text-xs text-muted-foreground truncate\">@ashishjain</p> aka getByText('@ashishjain').nth(1)\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 10000ms\u001b[22m\n\u001b[2m  - waiting for getByText('@ashishjain')\u001b[22m\n\u001b[2m    4 × locator resolved to <p class=\"text-xs text-muted-foreground truncate\">@ashishjain</p>\u001b[22m\n\u001b[2m      - unexpected value \"hidden\"\u001b[22m\n",
+                    "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: getByText('@ashishjain')\nExpected: visible\nError: strict mode violation: getByText('@ashishjain') resolved to 2 elements:\n    1) <p class=\"text-xs text-muted-foreground truncate\">@ashishjain</p> aka getByRole('complementary').getByText('@ashishjain')\n    2) <p class=\"text-xs text-muted-foreground truncate\">@ashishjain</p> aka getByText('@ashishjain').nth(1)\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 10000ms\u001b[22m\n\u001b[2m  - waiting for getByText('@ashishjain')\u001b[22m\n\u001b[2m    4 × locator resolved to <p class=\"text-xs text-muted-foreground truncate\">@ashishjain</p>\u001b[22m\n\u001b[2m      - unexpected value \"hidden\"\u001b[22m\n\n    at /home/runner/work/vdptest/vdptest/e2e/tests/search.spec.ts:21:72",
+                    "location": {
+                      "file": "/home/runner/work/vdptest/vdptest/e2e/tests/search.spec.ts",
+                      "column": 72,
+                      "line": 21
+                    },
+                    "snippet": "\u001b[0m \u001b[90m 19 |\u001b[39m   \u001b[36mawait\u001b[39m expect(page)\u001b[33m.\u001b[39mtoHaveURL(\u001b[36mnew\u001b[39m \u001b[33mRegExp\u001b[39m(\u001b[32m`/explore\\\\?q=${existingHandle}`\u001b[39m\u001b[33m,\u001b[39m \u001b[32m'i'\u001b[39m))\u001b[33m;\u001b[39m\n \u001b[90m 20 |\u001b[39m   \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mgetByRole(\u001b[32m'tab'\u001b[39m\u001b[33m,\u001b[39m { name\u001b[33m:\u001b[39m \u001b[35m/^People\\b/i\u001b[39m })\u001b[33m.\u001b[39mclick()\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 21 |\u001b[39m   \u001b[36mawait\u001b[39m expect(page\u001b[33m.\u001b[39mgetByText(\u001b[32m`@${existingHandle}`\u001b[39m\u001b[33m,\u001b[39m { exact\u001b[33m:\u001b[39m \u001b[36mfalse\u001b[39m }))\u001b[33m.\u001b[39mtoBeVisible()\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                                                                        \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 22 |\u001b[39m\n \u001b[90m 23 |\u001b[39m   \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mgoto(\u001b[32m'/explore'\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 24 |\u001b[39m   \u001b[36mconst\u001b[39m firstHashtagLink \u001b[33m=\u001b[39m page\u001b[33m.\u001b[39mlocator(\u001b[32m'a[href^=\"/explore/tag/\"]'\u001b[39m)\u001b[33m.\u001b[39mfirst()\u001b[33m;\u001b[39m\u001b[0m"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "/home/runner/work/vdptest/vdptest/e2e/tests/search.spec.ts",
+                        "column": 72,
+                        "line": 21
+                      },
+                      "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: getByText('@ashishjain')\nExpected: visible\nError: strict mode violation: getByText('@ashishjain') resolved to 2 elements:\n    1) <p class=\"text-xs text-muted-foreground truncate\">@ashishjain</p> aka getByRole('complementary').getByText('@ashishjain')\n    2) <p class=\"text-xs text-muted-foreground truncate\">@ashishjain</p> aka getByText('@ashishjain').nth(1)\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 10000ms\u001b[22m\n\u001b[2m  - waiting for getByText('@ashishjain')\u001b[22m\n\u001b[2m    4 × locator resolved to <p class=\"text-xs text-muted-foreground truncate\">@ashishjain</p>\u001b[22m\n\u001b[2m      - unexpected value \"hidden\"\u001b[22m\n\n\n  19 |   await expect(page).toHaveURL(new RegExp(`/explore\\\\?q=${existingHandle}`, 'i'));\n  20 |   await page.getByRole('tab', { name: /^People\\b/i }).click();\n> 21 |   await expect(page.getByText(`@${existingHandle}`, { exact: false })).toBeVisible();\n     |                                                                        ^\n  22 |\n  23 |   await page.goto('/explore');\n  24 |   const firstHashtagLink = page.locator('a[href^=\"/explore/tag/\"]').first();\n    at /home/runner/work/vdptest/vdptest/e2e/tests/search.spec.ts:21:72"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-07-16T07:59:33.777Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "/home/runner/work/vdptest/vdptest/test-results/artifacts/search-User-searches-for-users-posts-and-hashtags-medium/error-context.md"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "/home/runner/work/vdptest/vdptest/e2e/tests/search.spec.ts",
+                    "column": 72,
+                    "line": 21
+                  }
+                },
+                {
+                  "workerIndex": 11,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 7194,
+                  "error": {
+                    "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: getByText('@ashishjain')\nExpected: visible\nError: strict mode violation: getByText('@ashishjain') resolved to 2 elements:\n    1) <p class=\"text-xs text-muted-foreground truncate\">@ashishjain</p> aka getByRole('complementary').getByText('@ashishjain')\n    2) <p class=\"text-xs text-muted-foreground truncate\">@ashishjain</p> aka getByText('@ashishjain').nth(1)\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 10000ms\u001b[22m\n\u001b[2m  - waiting for getByText('@ashishjain')\u001b[22m\n\u001b[2m    5 × locator resolved to <p class=\"text-xs text-muted-foreground truncate\">@ashishjain</p>\u001b[22m\n\u001b[2m      - unexpected value \"hidden\"\u001b[22m\n",
+                    "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: getByText('@ashishjain')\nExpected: visible\nError: strict mode violation: getByText('@ashishjain') resolved to 2 elements:\n    1) <p class=\"text-xs text-muted-foreground truncate\">@ashishjain</p> aka getByRole('complementary').getByText('@ashishjain')\n    2) <p class=\"text-xs text-muted-foreground truncate\">@ashishjain</p> aka getByText('@ashishjain').nth(1)\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 10000ms\u001b[22m\n\u001b[2m  - waiting for getByText('@ashishjain')\u001b[22m\n\u001b[2m    5 × locator resolved to <p class=\"text-xs text-muted-foreground truncate\">@ashishjain</p>\u001b[22m\n\u001b[2m      - unexpected value \"hidden\"\u001b[22m\n\n    at /home/runner/work/vdptest/vdptest/e2e/tests/search.spec.ts:21:72",
+                    "location": {
+                      "file": "/home/runner/work/vdptest/vdptest/e2e/tests/search.spec.ts",
+                      "column": 72,
+                      "line": 21
+                    },
+                    "snippet": "\u001b[0m \u001b[90m 19 |\u001b[39m   \u001b[36mawait\u001b[39m expect(page)\u001b[33m.\u001b[39mtoHaveURL(\u001b[36mnew\u001b[39m \u001b[33mRegExp\u001b[39m(\u001b[32m`/explore\\\\?q=${existingHandle}`\u001b[39m\u001b[33m,\u001b[39m \u001b[32m'i'\u001b[39m))\u001b[33m;\u001b[39m\n \u001b[90m 20 |\u001b[39m   \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mgetByRole(\u001b[32m'tab'\u001b[39m\u001b[33m,\u001b[39m { name\u001b[33m:\u001b[39m \u001b[35m/^People\\b/i\u001b[39m })\u001b[33m.\u001b[39mclick()\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 21 |\u001b[39m   \u001b[36mawait\u001b[39m expect(page\u001b[33m.\u001b[39mgetByText(\u001b[32m`@${existingHandle}`\u001b[39m\u001b[33m,\u001b[39m { exact\u001b[33m:\u001b[39m \u001b[36mfalse\u001b[39m }))\u001b[33m.\u001b[39mtoBeVisible()\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                                                                        \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 22 |\u001b[39m\n \u001b[90m 23 |\u001b[39m   \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mgoto(\u001b[32m'/explore'\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 24 |\u001b[39m   \u001b[36mconst\u001b[39m firstHashtagLink \u001b[33m=\u001b[39m page\u001b[33m.\u001b[39mlocator(\u001b[32m'a[href^=\"/explore/tag/\"]'\u001b[39m)\u001b[33m.\u001b[39mfirst()\u001b[33m;\u001b[39m\u001b[0m"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "/home/runner/work/vdptest/vdptest/e2e/tests/search.spec.ts",
+                        "column": 72,
+                        "line": 21
+                      },
+                      "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: getByText('@ashishjain')\nExpected: visible\nError: strict mode violation: getByText('@ashishjain') resolved to 2 elements:\n    1) <p class=\"text-xs text-muted-foreground truncate\">@ashishjain</p> aka getByRole('complementary').getByText('@ashishjain')\n    2) <p class=\"text-xs text-muted-foreground truncate\">@ashishjain</p> aka getByText('@ashishjain').nth(1)\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 10000ms\u001b[22m\n\u001b[2m  - waiting for getByText('@ashishjain')\u001b[22m\n\u001b[2m    5 × locator resolved to <p class=\"text-xs text-muted-foreground truncate\">@ashishjain</p>\u001b[22m\n\u001b[2m      - unexpected value \"hidden\"\u001b[22m\n\n\n  19 |   await expect(page).toHaveURL(new RegExp(`/explore\\\\?q=${existingHandle}`, 'i'));\n  20 |   await page.getByRole('tab', { name: /^People\\b/i }).click();\n> 21 |   await expect(page.getByText(`@${existingHandle}`, { exact: false })).toBeVisible();\n     |                                                                        ^\n  22 |\n  23 |   await page.goto('/explore');\n  24 |   const firstHashtagLink = page.locator('a[href^=\"/explore/tag/\"]').first();\n    at /home/runner/work/vdptest/vdptest/e2e/tests/search.spec.ts:21:72"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 1,
+                  "startTime": "2026-07-16T07:59:41.267Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "/home/runner/work/vdptest/vdptest/test-results/artifacts/search-User-searches-for-users-posts-and-hashtags-medium-retry1/error-context.md"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "/home/runner/work/vdptest/vdptest/e2e/tests/search.spec.ts",
+                    "column": 72,
+                    "line": 21
+                  }
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "a088064de9fe351eef5f-15ae6a715bbe7732a0e8",
+          "file": "search.spec.ts",
+          "line": 5,
+          "column": 1
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "stats": {
+    "startTime": "2026-07-16T07:53:22.413Z",
+    "duration": 386286.699,
+    "expected": 6,
+    "skipped": 23,
+    "unexpected": 6,
+    "flaky": 0
+  }
+}
