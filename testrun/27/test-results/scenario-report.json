@@ -1,0 +1,658 @@
+{
+  "generatedAt": "2026-07-16T06:53:29.053Z",
+  "run": {
+    "repository": "ashishjain2207/vdptest",
+    "branch": "main",
+    "runId": "29477672784",
+    "runNumber": "27",
+    "runAttempt": "1",
+    "workflow": "Playwright E2E",
+    "scenarioVersion": "v1",
+    "playwrightExitCode": "1"
+  },
+  "summary": {
+    "total": 35,
+    "passed": 6,
+    "failed": 4,
+    "timedOut": 2,
+    "interrupted": 0,
+    "skipped": 23,
+    "unknown": 0,
+    "high": 20,
+    "medium": 13,
+    "low": 2,
+    "unlabeled": 0
+  },
+  "scenarios": [
+    {
+      "scenario": "User accesses account and privacy settings and logs out",
+      "title": "User accesses account and privacy settings and logs out @high",
+      "priority": "high",
+      "tags": [
+        "@high"
+      ],
+      "status": "passed",
+      "ok": true,
+      "file": "account-settings.spec.ts",
+      "line": 5,
+      "column": 1,
+      "durationMs": 7192,
+      "retries": 0,
+      "suite": [
+        "account-settings.spec.ts"
+      ]
+    },
+    {
+      "scenario": "Admin moderation is available to admins and denied to normal users",
+      "title": "Admin moderation is available to admins and denied to normal users @medium",
+      "priority": "medium",
+      "tags": [
+        "@medium"
+      ],
+      "status": "skipped",
+      "ok": false,
+      "file": "admin-moderation.spec.ts",
+      "line": 3,
+      "column": 1,
+      "durationMs": 2,
+      "retries": 0,
+      "suite": [
+        "admin-moderation.spec.ts"
+      ]
+    },
+    {
+      "scenario": "Registered user logs in and reaches the home feed",
+      "title": "Registered user logs in and reaches the home feed @high",
+      "priority": "high",
+      "tags": [
+        "@high"
+      ],
+      "status": "passed",
+      "ok": true,
+      "file": "authentication.spec.ts",
+      "line": 5,
+      "column": 1,
+      "durationMs": 4783,
+      "retries": 0,
+      "suite": [
+        "authentication.spec.ts"
+      ]
+    },
+    {
+      "scenario": "Login rejects empty fields and invalid credentials",
+      "title": "Login rejects empty fields and invalid credentials @high",
+      "priority": "high",
+      "tags": [
+        "@high"
+      ],
+      "status": "passed",
+      "ok": true,
+      "file": "authentication.spec.ts",
+      "line": 14,
+      "column": 1,
+      "durationMs": 2554,
+      "retries": 0,
+      "suite": [
+        "authentication.spec.ts"
+      ]
+    },
+    {
+      "scenario": "User adds a comment, replies, and deletes their own comment",
+      "title": "User adds a comment, replies, and deletes their own comment @high",
+      "priority": "high",
+      "tags": [
+        "@high"
+      ],
+      "status": "skipped",
+      "ok": false,
+      "file": "comments.spec.ts",
+      "line": 3,
+      "column": 1,
+      "durationMs": 1,
+      "retries": 0,
+      "suite": [
+        "comments.spec.ts"
+      ]
+    },
+    {
+      "scenario": "Comment form rejects empty and over-limit text",
+      "title": "Comment form rejects empty and over-limit text @high",
+      "priority": "high",
+      "tags": [
+        "@high"
+      ],
+      "status": "skipped",
+      "ok": false,
+      "file": "comments.spec.ts",
+      "line": 10,
+      "column": 1,
+      "durationMs": 1,
+      "retries": 0,
+      "suite": [
+        "comments.spec.ts"
+      ]
+    },
+    {
+      "scenario": "Non-admin user cannot delete another user's comment",
+      "title": "Non-admin user cannot delete another user's comment @high",
+      "priority": "high",
+      "tags": [
+        "@high"
+      ],
+      "status": "skipped",
+      "ok": false,
+      "file": "comments.spec.ts",
+      "line": 17,
+      "column": 1,
+      "durationMs": 1,
+      "retries": 0,
+      "suite": [
+        "comments.spec.ts"
+      ]
+    },
+    {
+      "scenario": "User updates profile information and cancels an unsaved edit",
+      "title": "User updates profile information and cancels an unsaved edit @medium",
+      "priority": "medium",
+      "tags": [
+        "@medium"
+      ],
+      "status": "timedOut",
+      "ok": false,
+      "file": "edit-profile.spec.ts",
+      "line": 5,
+      "column": 1,
+      "durationMs": 120094,
+      "retries": 1,
+      "suite": [
+        "edit-profile.spec.ts"
+      ]
+    },
+    {
+      "scenario": "Edit Profile rejects invalid required, URL, length, and image values",
+      "title": "Edit Profile rejects invalid required, URL, length, and image values @medium",
+      "priority": "medium",
+      "tags": [
+        "@medium"
+      ],
+      "status": "skipped",
+      "ok": false,
+      "file": "edit-profile.spec.ts",
+      "line": 43,
+      "column": 1,
+      "durationMs": 144,
+      "retries": 0,
+      "suite": [
+        "edit-profile.spec.ts"
+      ]
+    },
+    {
+      "scenario": "User follows and unfollows another user",
+      "title": "User follows and unfollows another user @high",
+      "priority": "high",
+      "tags": [
+        "@high"
+      ],
+      "status": "skipped",
+      "ok": false,
+      "file": "follow.spec.ts",
+      "line": 3,
+      "column": 1,
+      "durationMs": 3,
+      "retries": 0,
+      "suite": [
+        "follow.spec.ts"
+      ]
+    },
+    {
+      "scenario": "Guest navigates the landing page and public information pages",
+      "title": "Guest navigates the landing page and public information pages @medium",
+      "priority": "medium",
+      "tags": [
+        "@medium"
+      ],
+      "status": "failed",
+      "ok": false,
+      "file": "guest-navigation.spec.ts",
+      "line": 7,
+      "column": 1,
+      "durationMs": 25578,
+      "retries": 1,
+      "suite": [
+        "guest-navigation.spec.ts"
+      ]
+    },
+    {
+      "scenario": "Authenticated user views and incrementally loads the personalized feed",
+      "title": "Authenticated user views and incrementally loads the personalized feed @high",
+      "priority": "high",
+      "tags": [
+        "@high"
+      ],
+      "status": "failed",
+      "ok": false,
+      "file": "home-feed.spec.ts",
+      "line": 5,
+      "column": 1,
+      "durationMs": 31198,
+      "retries": 1,
+      "suite": [
+        "home-feed.spec.ts"
+      ]
+    },
+    {
+      "scenario": "Guest is denied access to the home feed",
+      "title": "Guest is denied access to the home feed @high",
+      "priority": "high",
+      "tags": [
+        "@high"
+      ],
+      "status": "passed",
+      "ok": true,
+      "file": "home-feed.spec.ts",
+      "line": 21,
+      "column": 1,
+      "durationMs": 2354,
+      "retries": 0,
+      "suite": [
+        "home-feed.spec.ts"
+      ]
+    },
+    {
+      "scenario": "Registered users exchange a private message",
+      "title": "Registered users exchange a private message @medium",
+      "priority": "medium",
+      "tags": [
+        "@medium"
+      ],
+      "status": "skipped",
+      "ok": false,
+      "file": "messaging.spec.ts",
+      "line": 3,
+      "column": 1,
+      "durationMs": 4,
+      "retries": 0,
+      "suite": [
+        "messaging.spec.ts"
+      ]
+    },
+    {
+      "scenario": "User views a notification produced by an in-scope social action",
+      "title": "User views a notification produced by an in-scope social action @medium",
+      "priority": "medium",
+      "tags": [
+        "@medium"
+      ],
+      "status": "skipped",
+      "ok": false,
+      "file": "notifications.spec.ts",
+      "line": 3,
+      "column": 1,
+      "durationMs": 2,
+      "retries": 0,
+      "suite": [
+        "notifications.spec.ts"
+      ]
+    },
+    {
+      "scenario": "New user completes onboarding and reaches the feed",
+      "title": "New user completes onboarding and reaches the feed @medium",
+      "priority": "medium",
+      "tags": [
+        "@medium"
+      ],
+      "status": "skipped",
+      "ok": false,
+      "file": "onboarding.spec.ts",
+      "line": 3,
+      "column": 1,
+      "durationMs": 1,
+      "retries": 0,
+      "suite": [
+        "onboarding.spec.ts"
+      ]
+    },
+    {
+      "scenario": "User skips optional onboarding steps",
+      "title": "User skips optional onboarding steps @low",
+      "priority": "low",
+      "tags": [
+        "@low"
+      ],
+      "status": "skipped",
+      "ok": false,
+      "file": "onboarding.spec.ts",
+      "line": 10,
+      "column": 1,
+      "durationMs": 2,
+      "retries": 0,
+      "suite": [
+        "onboarding.spec.ts"
+      ]
+    },
+    {
+      "scenario": "Onboarding rejects a non-image profile-picture upload",
+      "title": "Onboarding rejects a non-image profile-picture upload @medium",
+      "priority": "medium",
+      "tags": [
+        "@medium"
+      ],
+      "status": "skipped",
+      "ok": false,
+      "file": "onboarding.spec.ts",
+      "line": 17,
+      "column": 1,
+      "durationMs": 1,
+      "retries": 0,
+      "suite": [
+        "onboarding.spec.ts"
+      ]
+    },
+    {
+      "scenario": "Password reset gives a security-safe response for existing and unknown email addresses",
+      "title": "Password reset gives a security-safe response for existing and unknown email addresses @medium",
+      "priority": "medium",
+      "tags": [
+        "@medium"
+      ],
+      "status": "passed",
+      "ok": true,
+      "file": "password-reset.spec.ts",
+      "line": 10,
+      "column": 1,
+      "durationMs": 4565,
+      "retries": 0,
+      "suite": [
+        "password-reset.spec.ts"
+      ]
+    },
+    {
+      "scenario": "User creates a valid text post with selected visibility",
+      "title": "User creates a valid text post with selected visibility @high",
+      "priority": "high",
+      "tags": [
+        "@high"
+      ],
+      "status": "skipped",
+      "ok": false,
+      "file": "post-creation.spec.ts",
+      "line": 3,
+      "column": 1,
+      "durationMs": 1,
+      "retries": 0,
+      "suite": [
+        "post-creation.spec.ts"
+      ]
+    },
+    {
+      "scenario": "User creates supported image, video, and link posts",
+      "title": "User creates supported image, video, and link posts @high",
+      "priority": "high",
+      "tags": [
+        "@high"
+      ],
+      "status": "skipped",
+      "ok": false,
+      "file": "post-creation.spec.ts",
+      "line": 10,
+      "column": 1,
+      "durationMs": 1,
+      "retries": 0,
+      "suite": [
+        "post-creation.spec.ts"
+      ]
+    },
+    {
+      "scenario": "Post composer rejects empty, oversized, and unsupported submissions",
+      "title": "Post composer rejects empty, oversized, and unsupported submissions @high",
+      "priority": "high",
+      "tags": [
+        "@high"
+      ],
+      "status": "skipped",
+      "ok": false,
+      "file": "post-creation.spec.ts",
+      "line": 17,
+      "column": 1,
+      "durationMs": 1,
+      "retries": 0,
+      "suite": [
+        "post-creation.spec.ts"
+      ]
+    },
+    {
+      "scenario": "User cancels post creation without publishing the draft",
+      "title": "User cancels post creation without publishing the draft @medium",
+      "priority": "medium",
+      "tags": [
+        "@medium"
+      ],
+      "status": "skipped",
+      "ok": false,
+      "file": "post-creation.spec.ts",
+      "line": 24,
+      "column": 1,
+      "durationMs": 1,
+      "retries": 0,
+      "suite": [
+        "post-creation.spec.ts"
+      ]
+    },
+    {
+      "scenario": "User likes, saves, opens comments, and opens an author profile from a feed post",
+      "title": "User likes, saves, opens comments, and opens an author profile from a feed post @high",
+      "priority": "high",
+      "tags": [
+        "@high"
+      ],
+      "status": "skipped",
+      "ok": false,
+      "file": "post-interactions.spec.ts",
+      "line": 3,
+      "column": 1,
+      "durationMs": 1,
+      "retries": 0,
+      "suite": [
+        "post-interactions.spec.ts"
+      ]
+    },
+    {
+      "scenario": "User shares and reports a feed post",
+      "title": "User shares and reports a feed post @medium",
+      "priority": "medium",
+      "tags": [
+        "@medium"
+      ],
+      "status": "skipped",
+      "ok": false,
+      "file": "post-interactions.spec.ts",
+      "line": 10,
+      "column": 1,
+      "durationMs": 1,
+      "retries": 0,
+      "suite": [
+        "post-interactions.spec.ts"
+      ]
+    },
+    {
+      "scenario": "Post owner edits and then deletes a post with confirmation",
+      "title": "Post owner edits and then deletes a post with confirmation @high",
+      "priority": "high",
+      "tags": [
+        "@high"
+      ],
+      "status": "skipped",
+      "ok": false,
+      "file": "post-management.spec.ts",
+      "line": 3,
+      "column": 1,
+      "durationMs": 1,
+      "retries": 0,
+      "suite": [
+        "post-management.spec.ts"
+      ]
+    },
+    {
+      "scenario": "Non-owner cannot edit or delete another user's post",
+      "title": "Non-owner cannot edit or delete another user's post @high",
+      "priority": "high",
+      "tags": [
+        "@high"
+      ],
+      "status": "skipped",
+      "ok": false,
+      "file": "post-management.spec.ts",
+      "line": 10,
+      "column": 1,
+      "durationMs": 1,
+      "retries": 0,
+      "suite": [
+        "post-management.spec.ts"
+      ]
+    },
+    {
+      "scenario": "Post visibility restricts followers-only and private content",
+      "title": "Post visibility restricts followers-only and private content @high",
+      "priority": "high",
+      "tags": [
+        "@high"
+      ],
+      "status": "skipped",
+      "ok": false,
+      "file": "post-visibility.spec.ts",
+      "line": 3,
+      "column": 1,
+      "durationMs": 1,
+      "retries": 0,
+      "suite": [
+        "post-visibility.spec.ts"
+      ]
+    },
+    {
+      "scenario": "Private profile content is restricted from unauthorized viewers",
+      "title": "Private profile content is restricted from unauthorized viewers @high",
+      "priority": "high",
+      "tags": [
+        "@high"
+      ],
+      "status": "skipped",
+      "ok": false,
+      "file": "profile-privacy.spec.ts",
+      "line": 3,
+      "column": 1,
+      "durationMs": 1,
+      "retries": 0,
+      "suite": [
+        "profile-privacy.spec.ts"
+      ]
+    },
+    {
+      "scenario": "User views own profile, public profiles, lists, and individual posts",
+      "title": "User views own profile, public profiles, lists, and individual posts @medium",
+      "priority": "medium",
+      "tags": [
+        "@medium"
+      ],
+      "status": "skipped",
+      "ok": false,
+      "file": "profile.spec.ts",
+      "line": 3,
+      "column": 1,
+      "durationMs": 1,
+      "retries": 0,
+      "suite": [
+        "profile.spec.ts"
+      ]
+    },
+    {
+      "scenario": "New user registers with valid required information",
+      "title": "New user registers with valid required information @high",
+      "priority": "high",
+      "tags": [
+        "@high"
+      ],
+      "status": "passed",
+      "ok": true,
+      "file": "registration.spec.ts",
+      "line": 22,
+      "column": 1,
+      "durationMs": 4017,
+      "retries": 0,
+      "suite": [
+        "registration.spec.ts"
+      ]
+    },
+    {
+      "scenario": "Registration rejects missing and malformed required values",
+      "title": "Registration rejects missing and malformed required values @high",
+      "priority": "high",
+      "tags": [
+        "@high"
+      ],
+      "status": "timedOut",
+      "ok": false,
+      "file": "registration.spec.ts",
+      "line": 42,
+      "column": 1,
+      "durationMs": 120278,
+      "retries": 1,
+      "suite": [
+        "registration.spec.ts"
+      ]
+    },
+    {
+      "scenario": "Registration rejects duplicate username and email",
+      "title": "Registration rejects duplicate username and email @high",
+      "priority": "high",
+      "tags": [
+        "@high"
+      ],
+      "status": "failed",
+      "ok": false,
+      "file": "registration.spec.ts",
+      "line": 67,
+      "column": 1,
+      "durationMs": 38467,
+      "retries": 1,
+      "suite": [
+        "registration.spec.ts"
+      ]
+    },
+    {
+      "scenario": "Critical guest and authenticated journeys remain usable at supported viewport sizes",
+      "title": "Critical guest and authenticated journeys remain usable at supported viewport sizes @low",
+      "priority": "low",
+      "tags": [
+        "@low"
+      ],
+      "status": "skipped",
+      "ok": false,
+      "file": "responsive-smoke.spec.ts",
+      "line": 3,
+      "column": 1,
+      "durationMs": 140,
+      "retries": 0,
+      "suite": [
+        "responsive-smoke.spec.ts"
+      ]
+    },
+    {
+      "scenario": "User searches for users, posts, and hashtags",
+      "title": "User searches for users, posts, and hashtags @medium",
+      "priority": "medium",
+      "tags": [
+        "@medium"
+      ],
+      "status": "failed",
+      "ok": false,
+      "file": "search.spec.ts",
+      "line": 5,
+      "column": 1,
+      "durationMs": 17101,
+      "retries": 1,
+      "suite": [
+        "search.spec.ts"
+      ]
+    }
+  ]
+}
