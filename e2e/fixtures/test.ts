@@ -1,7 +1,24 @@
 import { expect, test as base, type Page } from '@playwright/test';
 import { captureHighPriorityFailureScreenshot } from './screenshots';
 
-export const test = base;
+const UI_LANGUAGE_STORAGE_KEY = 'vdpconnect_language';
+
+function resolveUiLanguage(): 'EN' | 'DE' {
+  return env('E2E_LANGUAGE') === 'DE' ? 'DE' : 'EN';
+}
+
+export const test = base.extend({
+  context: async ({ context }, use) => {
+    await context.addInitScript(
+      ({ storageKey, language }) => {
+        window.localStorage.setItem(storageKey, language);
+      },
+      { storageKey: UI_LANGUAGE_STORAGE_KEY, language: resolveUiLanguage() },
+    );
+    await use(context);
+  },
+});
+
 test.afterEach(async ({ page }, testInfo) => {
   await captureHighPriorityFailureScreenshot(page, testInfo);
 });
@@ -41,4 +58,6 @@ export async function loginWithDefaultUser(
   await login.open();
   await login.fillCredentials(email, password);
   await login.submit();
+  await expect(page).toHaveURL(/\/posts(?:\?|$|\/)/);
+  await expect(page.locator('main')).toBeVisible();
 }

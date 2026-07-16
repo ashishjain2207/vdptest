@@ -8,6 +8,10 @@ export interface RegistrationRequiredInput {
   password: string;
 }
 
+function escapeRegex(value: string): string {
+  return value.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+}
+
 export class RegistrationPage {
   readonly page: Page;
   readonly nameInput: Locator;
@@ -16,6 +20,11 @@ export class RegistrationPage {
   readonly emailInput: Locator;
   readonly passwordInput: Locator;
   readonly submitButton: Locator;
+  readonly nameError: Locator;
+  readonly usernameError: Locator;
+  readonly homeCountryError: Locator;
+  readonly emailError: Locator;
+  readonly passwordError: Locator;
 
   constructor(page: Page) {
     this.page = page;
@@ -25,6 +34,11 @@ export class RegistrationPage {
     this.emailInput = page.locator('#email');
     this.passwordInput = page.locator('#password');
     this.submitButton = page.locator('form button[type="submit"]');
+    this.nameError = page.locator('#signup-name-err');
+    this.usernameError = page.locator('#signup-username-err');
+    this.homeCountryError = page.locator('#signup-home-country-err');
+    this.emailError = page.locator('#signup-email-err');
+    this.passwordError = page.locator('#signup-password-err');
   }
 
   async open(): Promise<void> {
@@ -34,14 +48,27 @@ export class RegistrationPage {
     await expect(this.homeCountryInput).toBeVisible();
     await expect(this.emailInput).toBeVisible();
     await expect(this.passwordInput).toBeVisible();
+    await expect(this.submitButton).toBeVisible();
   }
 
   async fillRequiredValues(data: RegistrationRequiredInput): Promise<void> {
     await this.nameInput.fill(data.name);
     await this.usernameInput.fill(data.username);
-    await this.homeCountryInput.fill(data.homeCountry);
+    await this.selectHomeCountry(data.homeCountry);
     await this.emailInput.fill(data.email);
     await this.passwordInput.fill(data.password);
+  }
+
+  async selectHomeCountry(label: string): Promise<void> {
+    const option = this.page.getByRole('option', {
+      name: new RegExp(`^${escapeRegex(label)}$`, 'i'),
+    });
+
+    await this.homeCountryInput.click();
+    await this.homeCountryInput.fill(label);
+    await expect(option).toBeVisible();
+    await option.click();
+    await expect(this.homeCountryInput).toHaveValue(new RegExp(`^${escapeRegex(label)}$`, 'i'));
   }
 
   async submit(): Promise<void> {

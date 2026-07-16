@@ -3,16 +3,19 @@ import { HomeFeedPage } from '../pages/HomeFeedPage';
 import { expect, loginWithDefaultUser, test } from '../fixtures/test';
 
 test('Authenticated user views and incrementally loads the personalized feed @high', async ({ page }) => {
-  test.skip(
-    true,
-    'Missing selector in src/: stable post-id attributes required for incremental-load verification are not available in scoped source files',
-  );
-
   const loginPage = new LoginPage(page);
   const homeFeedPage = new HomeFeedPage(page);
   await loginWithDefaultUser(page, loginPage);
   await homeFeedPage.open();
   await homeFeedPage.expectShellVisible();
+  await expect(page.getByTestId('header-global-search')).toBeVisible();
+  await expect(page.getByLabel(/create post/i)).toBeVisible();
+
+  const feedArticles = page.locator('main article');
+  const emptyFeedState = page.getByText(/no posts yet\. create your first post above\./i);
+  await expect
+    .poll(async () => (await feedArticles.count()) > 0 || (await emptyFeedState.count()) > 0)
+    .toBeTruthy();
 });
 
 test('Guest is denied access to the home feed @high', async ({ page }) => {

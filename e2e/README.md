@@ -28,19 +28,24 @@ From repository root:
 ```bash
 npm ci
 npx playwright install --with-deps
-PLAYWRIGHT_BASE_URL="https://example.test" \
-E2E_USER_EMAIL="user@example.test" \
-E2E_USER_PASSWORD="replace-with-password" \
-npx playwright test -c e2e/playwright.config.ts
+npm run test:e2e:local
 ```
+
+Local env file:
+
+- Playwright now loads repo-root `.env.e2e.local` automatically via `e2e/playwright.config.ts`.
+- Fill in `.env.e2e.local` with your local values before running.
+- `npm run test:e2e:local` also generates:
+  - `test-results/results.json`
+  - `test-results/scenario-report.json`
+  - `test-results/scenario-report.md`
+  - `playwright-report/`
+  - `testresults-run/testrun/local-.../` (GitHub-like staged output)
 
 Run a single spec:
 
 ```bash
-PLAYWRIGHT_BASE_URL="https://example.test" \
-E2E_USER_EMAIL="user@example.test" \
-E2E_USER_PASSWORD="replace-with-password" \
-npx playwright test -c e2e/playwright.config.ts e2e/tests/authentication.spec.ts
+npm run test:e2e:local -- e2e/tests/authentication.spec.ts
 ```
 
 ## GitHub Actions secrets
@@ -76,6 +81,8 @@ npx playwright test -c e2e/playwright.config.ts e2e/tests/authentication.spec.ts
 | `E2E_ADMIN_PASSWORD` | No | Admin-user password for admin scenarios | `replace-with-admin-password` |
 | `E2E_MODERATOR_EMAIL` | No | Moderator-user email for moderator scenarios | `moderator@example.test` |
 | `E2E_MODERATOR_PASSWORD` | No | Moderator-user password for moderator scenarios | `replace-with-moderator-password` |
+| `E2E_LANGUAGE` | No | UI language forced at browser startup for Playwright | `EN` |
+| `E2E_WORKERS` | No | Number of Playwright workers to use | `1` |
 | `E2E_SCENARIO_VERSION` | No | Screenshot suffix for `@high` failure screenshots | `v1` |
 
 ## CI results layout
