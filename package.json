@@ -17,7 +17,11 @@
     "preview": "vite preview",
     "test": "vitest",
     "test:ui": "vitest --ui",
-    "test:coverage": "vitest --coverage"
+    "test:coverage": "vitest --coverage",
+    "e2e": "playwright test -c e2e/playwright.config.ts",
+    "e2e:headed": "playwright test -c e2e/playwright.config.ts --headed",
+    "e2e:ui": "playwright test -c e2e/playwright.config.ts --ui",
+    "e2e:report": "playwright show-report e2e/playwright-report"
   },
   "dependencies": {
     "@hookform/resolvers": "^3.10.0",
@@ -79,6 +83,7 @@
   },
   "devDependencies": {
     "@eslint/js": "^9.32.0",
+    "@playwright/test": "^1.61.1",
     "@tailwindcss/typography": "^0.5.16",
     "@testing-library/jest-dom": "^6.1.5",
     "@testing-library/react": "^14.1.2",
@@ -88,6 +93,7 @@
     "@vitejs/plugin-react-swc": "^3.11.0",
     "@vitest/ui": "^1.0.4",
     "autoprefixer": "^10.4.21",
+    "dotenv": "^17.4.2",
     "eslint": "^9.32.0",
     "eslint-plugin-react": "^7.37.5",
     "eslint-plugin-react-hooks": "^5.2.0",

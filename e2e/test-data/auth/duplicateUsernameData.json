@@ -1,0 +1,10 @@
+{
+  "fullName": "Duplicate Username Scenario",
+  "username": "{{DUPLICATE_USERNAME}}",
+  "email": "duplicate-{{UNIQUE_SUFFIX}}@example.com",
+  "password": "Playwright!234",
+  "confirmPassword": "Playwright!234",
+  "dateOfBirth": "1990-01-01",
+  "homeCountry": "DE",
+  "acceptTerms": true
+}
