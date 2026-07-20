@@ -1,0 +1,6 @@
+{
+  "fullName": "Playwright Duplicate User",
+  "username": "testuser",
+  "emailLocalPrefix": "playwright-duplicate",
+  "passwordFallback": "ChangeMe123!"
+}

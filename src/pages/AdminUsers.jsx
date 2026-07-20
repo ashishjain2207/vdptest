@@ -224,7 +224,7 @@ const AdminUsers = () => {
   };
 
   return (
-    <div className="max-w-7xl mx-auto space-y-6 pb-12">
+    <div className="max-w-7xl mx-auto space-y-6 pb-12" data-testid="admin-users-page">
       <div className="flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between">
         <div className="space-y-1">
           <Button variant="ghost" size="sm" className="gap-2 -ml-2 w-fit text-muted-foreground" asChild>
@@ -266,7 +266,7 @@ const AdminUsers = () => {
       ) : (
         <div className="rounded-xl border border-border bg-card shadow-sm overflow-hidden">
           <div className="overflow-x-auto">
-            <table className="w-full text-sm min-w-[960px]">
+            <table className="w-full text-sm min-w-[960px]" data-testid="admin-users-table">
               <thead>
                 <tr className="border-b border-border bg-muted/30 text-left">
                   <th className="p-4 font-semibold text-foreground"><LangText path="admin.user"  /></th>
@@ -300,7 +300,7 @@ const AdminUsers = () => {
                   const busy = actionBusyId === userId;
 
                   return (
-                    <tr key={userId || handle} className="border-b border-border/80 last:border-0 hover:bg-muted/20 transition-colors">
+                    <tr key={userId || handle} className="border-b border-border/80 last:border-0 hover:bg-muted/20 transition-colors" data-testid="admin-user-row" data-user-id={userId}>
                       <td className="p-4">
                         <div className="flex items-center gap-3 min-w-[200px]">
                           <Avatar className="h-10 w-10 rounded-full border border-border">
@@ -326,7 +326,7 @@ const AdminUsers = () => {
                       <td className="p-4 text-right">
                         <DropdownMenu>
                           <DropdownMenuTrigger asChild>
-                            <Button variant="ghost" size="icon" className="h-8 w-8" disabled={busy} aria-label={t('admin.actions')}>
+                            <Button variant="ghost" size="icon" className="h-8 w-8" disabled={busy} aria-label={t('admin.actions')} data-testid="admin-user-actions">
                               {busy ? <Loader2 className="h-4 w-4 animate-spin" /> : <MoreHorizontal className="h-4 w-4" />}
                             </Button>
                           </DropdownMenuTrigger>
@@ -348,12 +348,13 @@ const AdminUsers = () => {
                             {isPlatformAdmin ? (
                               <>
                                 <DropdownMenuSeparator />
-                                <DropdownMenuItem onClick={() => openRoleDialog(row)}>
+                                <DropdownMenuItem onClick={() => openRoleDialog(row)} data-testid="admin-user-change-role">
                                   <LangText path="admin.change_role"  />
                                 </DropdownMenuItem>
                                 <DropdownMenuItem
                                   onClick={() => void handleSuspendToggle(row)}
                                   className={status !== 'Suspended' ? 'text-destructive focus:text-destructive' : undefined}
+                                  data-testid="admin-user-suspend-toggle"
                                 >
                                   {status === 'Suspended' ? (
                                     <LangText path="admin.unsuspend_user"  />

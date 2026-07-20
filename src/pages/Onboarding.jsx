@@ -36,7 +36,7 @@ export default function Onboarding() {
       <div className="absolute top-4 right-4 z-50">
         <LanguageSelector />
       </div>
-      <div className="w-full max-w-md space-y-6 rounded-lg border border-border bg-card p-8 shadow-sm">
+      <div className="w-full max-w-md space-y-6 rounded-lg border border-border bg-card p-8 shadow-sm" data-testid="onboarding-page">
         <div className="space-y-2 text-center">
           <img src="/vdpConnect.png" alt="vdpConnect logo" className="h-10 mx-auto mb-4" />
           <h1 className="text-2xl font-bold text-foreground">

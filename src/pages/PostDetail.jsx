@@ -585,7 +585,7 @@ const PostDetail = () => {
 
   return (
     <MainLayout>
-      <div className="w-full max-w-7xl 2xl:max-w-screen-2xl mx-auto">
+      <div className="w-full max-w-7xl 2xl:max-w-screen-2xl mx-auto" data-testid="post-detail-page">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-6">
           {/* Full-width column so post uses complete UI (no half-half layout) */}
           <div className="lg:col-span-12 space-y-4">
@@ -672,13 +672,13 @@ const PostDetail = () => {
                     <>
                       <DropdownMenu>
                         <DropdownMenuTrigger asChild>
-                          <Button variant="ghost" size="icon" className="h-8 w-8 text-muted-foreground hover:text-foreground focus:outline-none focus:ring-0" aria-label={t('posts.post_actions')}>
+                          <Button variant="ghost" size="icon" className="h-8 w-8 text-muted-foreground hover:text-foreground focus:outline-none focus:ring-0" aria-label={t('posts.post_actions')} data-testid="post-detail-actions">
                             <MoreHorizontal className="w-4 h-4" />
                           </Button>
                         </DropdownMenuTrigger>
                         <DropdownMenuContent align="end">
                           {isPostAuthor ? (
-                            <DropdownMenuItem onClick={() => setEditingPost(post)}>
+                            <DropdownMenuItem onClick={() => setEditingPost(post)} data-testid="post-detail-edit">
                               <Pencil className="w-4 h-4 mr-2" />
                               <LangText path="messages.edit"  />
                             </DropdownMenuItem>
@@ -686,6 +686,7 @@ const PostDetail = () => {
                           <DropdownMenuItem
                             className="text-destructive focus:text-destructive"
                             onClick={() => setDeleteDialogOpen(true)}
+                            data-testid="post-detail-delete"
                           >
                             <Trash2 className="w-4 h-4 mr-2" />
                             <LangText path="messages.delete"  />
@@ -1045,6 +1046,7 @@ const PostDetail = () => {
                             onKeyDown={handleMentionKeyDown}
                             onBlur={handleMentionBlur}
                             rows={3}
+                            data-testid="post-detail-comment-input"
                           />
                           {MentionDropdown()}
                         </div>
@@ -1059,6 +1061,7 @@ const PostDetail = () => {
                           disabled={!replyContent.trim() || submittingComment}
                           className="gap-2 shadow-soft"
                           onClick={handleAddComment}
+                          data-testid="post-detail-comment-submit"
                         >
                           <Send className="w-4 h-4" />
                           {submittingComment ? (t('posts.posting')) : (t('posts.post_comment'))}
@@ -1075,7 +1078,7 @@ const PostDetail = () => {
               {commentsLoading ? (
                 <div className="flex justify-center py-8 text-muted-foreground text-sm"><LangText path="posts.loading_comments"  /></div>
               ) : (
-                <div className="px-4 divide-y divide-border">
+                <div className="px-4 divide-y divide-border" data-testid="post-detail-comments-list">
                   {comments.map((comment) => (
                     <CommentItem
                       key={comment.id}

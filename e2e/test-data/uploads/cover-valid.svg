@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="640" height="160" viewBox="0 0 640 160" role="img" aria-label="Cover upload fixture">
+  <defs>
+    <linearGradient id="bg" x1="0%" x2="100%" y1="0%" y2="0%">
+      <stop offset="0%" stop-color="#0f172a" />
+      <stop offset="100%" stop-color="#1d4ed8" />
+    </linearGradient>
+  </defs>
+  <rect width="640" height="160" rx="16" fill="url(#bg)" />
+  <circle cx="116" cy="80" r="42" fill="#38bdf8" opacity="0.9" />
+  <rect x="198" y="44" width="300" height="18" rx="9" fill="#e2e8f0" opacity="0.92" />
+  <rect x="198" y="76" width="220" height="14" rx="7" fill="#cbd5e1" opacity="0.88" />
+  <rect x="198" y="106" width="260" height="12" rx="6" fill="#cbd5e1" opacity="0.75" />
+</svg>

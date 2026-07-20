@@ -542,7 +542,7 @@ const Index = () => {
         post={editingPost}
         onPostUpdated={handlePostUpdated}
       />
-      <div className="w-full max-w-7xl 2xl:max-w-screen-2xl mx-auto">
+      <div className="w-full max-w-7xl 2xl:max-w-screen-2xl mx-auto" data-testid="home-feed-page">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-6">
           {/* Main Feed */}
           <div className="lg:col-span-7 xl:col-span-8 space-y-4">
@@ -550,7 +550,7 @@ const Index = () => {
             {isLoggedIn && <CreatePost onPostCreated={handlePostCreated} />}
             
             {/* Posts from API */}
-            <div className="space-y-4">
+            <div className="space-y-4" data-testid="home-feed-list">
               {(feedLoading || (authLoading && isLoggedIn)) && (
                 <div className="space-y-4">
                   {[1, 2, 3].map((i) => <FeedPostSkeleton key={i} />)}
