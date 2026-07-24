@@ -1,0 +1,11 @@
+package-lock.json
+node_modules/
+vitest-full-output.txt
+vitest-result.txt
+dist/
+build/
+coverage/
+.next/
+.cache/
+test-results/
+playwright-report/
